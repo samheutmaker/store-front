@@ -41,6 +41,7 @@ gulp.task('webpack:dev', () => {
         }],
       },
     }))
+    .on('error', swallowError)
     .pipe(gulp.dest(__dirname + '/build/'))
 });
 
@@ -65,3 +66,11 @@ gulp.task('dev:watch', () => {
 gulp.task('build:dev', ['sass:all', 'webpack:dev', 'html:dev']);
 
 gulp.task('default', ['dev:watch', 'sass:watch']);
+
+
+
+function swallowError(err) {
+  console.log(err);
+
+  this.emit('end');
+}

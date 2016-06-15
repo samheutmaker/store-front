@@ -1,18 +1,38 @@
 import React from 'react';
-import ReactDOM from 'react-dom'
+import { Link } from 'react-router';
 
- module.exports = React.createClass({
+ export default React.createClass({
 	getInitialState: function() {
 	    return {
 	         someShit: true
 	    };
 	},
 	componentDidMount: function() {
-	     console.log('Layout mounted');
 	},
 	render: function () {
 		return (
-			<div>That is some shit homie</div>
+			<div className="page-container">
+				<nav>
+					<ul className="nav-button-list">
+						<li className="nav-button">
+							<Link to="home">
+								Home
+							</Link>
+						</li>
+						<li className="nav-button">
+							<Link to="about">
+								Home
+							</Link>
+						</li>
+						<li className="nav-button">
+							<Link to="home">
+								Home
+							</Link>
+						</li>
+					</ul>
+				</nav>
+				{this.props.children}
+			</div>
 		);
 	}
 });
