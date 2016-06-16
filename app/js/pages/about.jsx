@@ -1,6 +1,12 @@
 import React from 'react';
+import RequestMixin from './../mixins/requests.js';
 
 export default React.createClass({
+	displayName: 'AboutPage',
+	mixins: [RequestMixin],
+	propTypes: {
+ 		page: React.PropTypes.object
+ 	},
 	getInitialState: function() {
 	    return {
 	         someShit: true

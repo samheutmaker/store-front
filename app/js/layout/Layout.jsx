@@ -1,21 +1,28 @@
-import React from 'react';
-import { Link } from 'react-router';
-import Login from './Login.jsx'
-
 var $ = require('jquery');
 window.jQuery = $;
 window.$ = $;
 
+import React from 'react';
+import { Link } from 'react-router';
+import Login from './Login.jsx'
+import RequestMixin from './../mixins/requests.js';
+
+
  export default React.createClass({
  	displayName: 'Layout',
+	mixins: [RequestMixin],
 	getInitialState: function() {
 	    return {
-	         loginOpen: false,
+	    	user: null,
+	        loginOpen: false,
 
 	    };
 	},
 	componentDidMount: function() {
-
+		this.getUserInfo()
+		.then((res) => {
+			this.setUserSession({user: res});
+		});
 	},
 	toggleLogin: function() {
 		this.setState({
@@ -23,17 +30,40 @@ window.$ = $;
 		});
 	},
 	setUserSession: function(userInfo) {
-		if(userInfo) {
-			sessionStorage.setItem('token', userInfo.token);
+		if(userInfo.token) {
+			localStorage.setItem('token', userInfo.token);	
+		}
 
+		if(userInfo.user) {
 			this.setState({
-				user: userInfo.user
+				user: userInfo.user,
+				loginOpen: false
 			}, () => {
 				console.log(this.state.user);
 			});
 		}
 	},
+	renderUserInfo: function() {
+		if(this.state.user) {
+			return (
+				<div className="actions-container">
+					Hello, {this.state.user.name.first} 
+					&nbsp;&nbsp;|&nbsp;&nbsp;
+					<Link to="account">
+						Account
+					</Link>
+				</div>
+			);
+		} else {
+			return (
+				<div className="actions-container" onClick={this.toggleLogin}>
+						Login
+				</div>
+			);
+		}
+	},
 	render: function () {
+
 		return (
 			<div className="page-container">
 				<nav>
@@ -53,21 +83,16 @@ window.$ = $;
 								Home
 							</Link>
 						</li>
-						<li className="nav-button" onClick={this.toggleLogin}>
-							<Link to={''}>
-								Login
-							</Link>
-						</li>
 					</ul>
+					{this.renderUserInfo()}
 					<div style={(this.state.loginOpen) ? {} : {display: 'none'}}>
 						<Login 
 							page={this}
 							afterAuthentication={this.setUserSession}
 						/>		
 					</div>
-					
 				</nav>
-				{this.props.children}
+				{React.cloneElement(this.props.children, {page: this})}
 			</div>
 		);
 	}

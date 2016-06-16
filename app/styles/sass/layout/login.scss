@@ -2,8 +2,10 @@
 	position: relative;
 	width: 300px;
 	height: 150px;
-	background-color: red;
-	margin: 0 auto;
+	background-color: rgba(0,0,0,0.2);
+	margin-left: auto;
+	top: 40px;
+	z-index: 5000;
 
 	input{
 		margin: 10px;
