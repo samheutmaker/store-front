@@ -1,18 +1,31 @@
 import React from 'react';
+import ProductContainer from './../components/ProductContainer.jsx'
 
 export default React.createClass({
+	displayName: 'HomePage',
+	propTypes: {
+		page: React.PropTypes.object
+	},
 	getInitialState: function() {
 	    return {
 	         someShit: true
 	    };
 	},
-	componentDidMount: function() {
-
+	renderProducts: function() {
+		if(this.props.page) {
+			return(
+				<div>
+					<ProductContainer
+						page={this.props.page}
+					/>
+				</div>
+			);
+		}
 	},
 	render: function () {
 		return (
 			<div className="content-container">
-				The Home Page
+				{this.renderProducts()}
 			</div>
 		);
 	}

@@ -2,20 +2,20 @@ var $ = require('jquery');
 window.jQuery = $;
 window.$ = $;
 
-$.ajaxPrefilter(function( options ) {
-    if ( !options.beforeSend) {
-        options.beforeSend = function (xhr) { 
-            xhr.setRequestHeader('token', localStorage.getItem('token') || null);
-        }
-    }
+$.ajaxPrefilter(function(options) {
+	if (!options.beforeSend) {
+		options.beforeSend = function(xhr) {
+			xhr.setRequestHeader('token', localStorage.getItem('token') || null);
+		}
+	}
 });
 
 
 
 const Requests = {
-	loginRequest: function(loginObj){
+	loginRequest: function(loginObj) {
 		return new Promise((resolve, reject) => {
-			if(loginObj && loginObj.email && loginObj.password) {
+			if (loginObj && loginObj.email && loginObj.password) {
 
 				var login = 'Basic ' + btoa(loginObj.email + ':' + loginObj.password);
 				var url = BASE_URI + '/auth/login';
@@ -34,11 +34,11 @@ const Requests = {
 					}
 				});
 			}
-		});	
+		});
 	},
-	getUserInfo: function(){
+	getUserInfoRequest: function() {
 		return new Promise((resolve, reject) => {
-			if(localStorage.getItem('token')) {
+			if (localStorage.getItem('token')) {
 				var url = BASE_URI + '/user/info';
 
 				$.ajax({
@@ -56,9 +56,9 @@ const Requests = {
 			}
 		});
 	},
-	getUserCart: function(){
+	getUserCartRequest: function() {
 		return new Promise((resolve, reject) => {
-			if(localStorage.getItem('token')) {
+			if (localStorage.getItem('token')) {
 				var url = BASE_URI + '/user/cart';
 
 				$.ajax({
@@ -74,6 +74,22 @@ const Requests = {
 			} else {
 				resolve();
 			}
+		});
+	},
+	getAllProductsRequest: function() {
+		return new Promise((resolve, reject) => {
+			var url = BASE_URI + '/products';
+
+			$.ajax({
+				type: 'GET',
+				url: url,
+				success: (res) => {
+					resolve(res);
+				},
+				error: (err) => {
+					reject(err);
+				}
+			});
 		});
 	}
 };

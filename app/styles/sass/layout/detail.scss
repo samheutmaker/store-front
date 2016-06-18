@@ -1,0 +1,46 @@
+.detail-slide-show {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    background-color: lightgrey;
+    float: left;
+}
+
+.detail-info {
+    position: relative;
+    width: 50%;
+    float: left;
+    height: 100%;
+
+    .name {}
+
+    .desc {}
+
+    .options {
+        .detail-sizes-container {
+            position: relative;
+            width: 100%;
+            padding: 10px;
+
+            .detail-size {
+                position: relative;
+                float: left;
+                height: 20px;
+                width: 20px;
+                margin: 5px;
+                padding: 10px;
+                font-weight: 500;
+                font-size: 1.2rem;
+                text-align: center;
+                text-transform: uppercase;
+                background-color: lightblue;
+            }
+
+            .detail-size:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .actions {}
+}

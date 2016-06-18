@@ -1,0 +1,33 @@
+.product-container {
+    position: relative;
+    height: calc(100% - 40px);
+    width: 100%;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-align-content: flex-end;
+    align-content: flex-end;
+
+    .product-item-container {
+        width: 340px;
+        height: 400px;
+        position: relative;
+        margin: 0px;
+        padding: 20px;
+        margin-bottom: 10px;
+
+        .product-item {
+            position: relative;
+            width: auto;
+            height: 100%;
+            background-color: lightblue;
+            padding: 10px;
+            border-radius: 3px;
+        }
+    }
+}

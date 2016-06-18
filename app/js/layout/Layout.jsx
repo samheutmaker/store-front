@@ -6,22 +6,82 @@ import React from 'react';
 import { Link } from 'react-router';
 import Login from './Login.jsx'
 import RequestMixin from './../mixins/requests.js';
+import UtilityMixin from './../mixins/utility.js';
 
 
  export default React.createClass({
  	displayName: 'Layout',
-	mixins: [RequestMixin],
+	mixins: [RequestMixin, UtilityMixin],
 	getInitialState: function() {
 	    return {
 	    	user: null,
+	    	cart: [],
+	    	products: [],
+	    	productsHash: {},
 	        loginOpen: false,
 
 	    };
 	},
-	componentDidMount: function() {
-		this.getUserInfo()
-		.then((res) => {
-			this.setUserSession({user: res});
+	componentDidMount: function() {	
+		this.loadAll();
+	},
+	loadAll: function (){
+		var promiseHolder = [this.getUserInfo(), this.getUserCart(), this.getAllProducts()];
+
+		Promise.all(promiseHolder)
+		.then(() => {
+			console.log('Complete');
+		}, (err) => {
+			console.log(err);
+		});
+	},
+	getUserInfo: function() {
+		return new Promise((resolve, reject) => {
+			this.getUserInfoRequest()
+			.then((data) => {
+				this.setUserSession({user: data});
+				resolve();
+			})
+			.catch((e) => {
+				reject(e);
+			})
+		});
+	},
+	getUserCart: function () {
+		return new Promise((resolve, reject) => {
+			this.getUserCartRequest()
+			.then((data) => {
+				this.setState({
+					cart: (data && data.length) ? data : []
+				}, () => {
+					resolve();
+				});
+			}).catch((e) => {
+				reject(e);
+			})
+		});
+	},
+	getAllProducts: function() {
+		return new Promise((resolve, reject) => {
+			this.getAllProductsRequest()
+			.then((data) => {
+				if(data && data.length) {
+					var hash = {};
+
+					data.forEach((product, productIndex) => {
+						hash[product._id] = product;
+					});
+
+					this.setState({
+						products: (data && data.length) ? data : [],
+						productsHash: hash
+					}, () => {
+						resolve();
+					});	
+				}
+			}).catch((e) => {
+				reject(e);
+			})
 		});
 	},
 	toggleLogin: function() {
@@ -38,9 +98,7 @@ import RequestMixin from './../mixins/requests.js';
 			this.setState({
 				user: userInfo.user,
 				loginOpen: false
-			}, () => {
-				console.log(this.state.user);
-			});
+			}, () => {});
 		}
 	},
 	renderUserInfo: function() {
@@ -75,12 +133,7 @@ import RequestMixin from './../mixins/requests.js';
 						</li>
 						<li className="nav-button">
 							<Link to="about">
-								Home
-							</Link>
-						</li>
-						<li className="nav-button">
-							<Link to="home">
-								Home
+								About
 							</Link>
 						</li>
 					</ul>
@@ -92,7 +145,7 @@ import RequestMixin from './../mixins/requests.js';
 						/>		
 					</div>
 				</nav>
-				{React.cloneElement(this.props.children, {page: this})}
+				{(this.props.children) ? React.cloneElement(this.props.children, {page: this}) : null}
 			</div>
 		);
 	}

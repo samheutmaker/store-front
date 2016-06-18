@@ -6,6 +6,7 @@ import Layout from './layout/Layout.jsx';
 import Home from './pages/home.jsx';
 import About from './pages/about.jsx'
 import Account from './pages/account.jsx'
+import Product from './pages/product.jsx'
 
 
 
@@ -16,6 +17,7 @@ render((
     	<Route path='/home' component={Home} />
     	<Route path='/about' component={About} />
     	<Route path='/account' component={Account} />
+    	<Route path='/product/:id' component={Product} />
     </Route>
   </Router>
 ), document.getElementById('app'))
