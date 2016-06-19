@@ -17,6 +17,7 @@ import UtilityMixin from './../mixins/utility.js';
 	    	user: null,
 	    	cart: [],
 	    	products: [],
+	    	userShipping: [],
 	    	productsHash: {},
 	        loginOpen: false,
 
@@ -26,7 +27,7 @@ import UtilityMixin from './../mixins/utility.js';
 		this.loadAll();
 	},
 	loadAll: function (){
-		var promiseHolder = [this.getUserInfo(), this.getUserCart(), this.getAllProducts()];
+		var promiseHolder = [this.getUserInfo(), this.getUserCart(), this.getAllProducts(), this.getAllUserShippingAddresses()];
 
 		Promise.all(promiseHolder)
 		.then(() => {
@@ -58,7 +59,7 @@ import UtilityMixin from './../mixins/utility.js';
 				});
 			}).catch((e) => {
 				reject(e);
-			})
+			});
 		});
 	},
 	getAllProducts: function() {
@@ -81,7 +82,21 @@ import UtilityMixin from './../mixins/utility.js';
 				}
 			}).catch((e) => {
 				reject(e);
-			})
+			});
+		});
+	},
+	getAllUserShippingAddresses: function(){
+		return new Promise((resolve, reject) => {
+			this.getAllUserShippingAddressesRequest()
+			.then((data) => {
+				this.setState({
+					userShipping: (data && data.length) ? data : []
+				}, () => {
+					resolve();
+				});	
+			}).catch((e) => {
+				reject(e);
+			});
 		});
 	},
 	toggleLogin: function() {

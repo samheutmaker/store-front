@@ -54,3 +54,35 @@
     border-top: 0px;
     border-bottom: 0px;
 }
+
+.button{
+    position: relative;
+    width: 100px;
+    height: 25px;
+    padding-top: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: lightblue;
+    color: white;
+    margin: 10px auto;
+    text-align: center;
+    &:hover{
+        cursor: pointer
+    }
+}
+
+.small-button {
+    position: relative;
+    width: 60px;
+    height: 20px;
+    padding-top: 7px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    background-color: lightblue;
+    color: white;
+    margin: 10px 10px;
+    text-align: center;
+    &:hover{
+        cursor: pointer
+    }
+}

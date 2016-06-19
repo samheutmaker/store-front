@@ -32,15 +32,59 @@
                 font-weight: 500;
                 font-size: 1.2rem;
                 text-align: center;
+                color: white;
                 text-transform: uppercase;
-                background-color: lightblue;
+                background-color: #C1DFFF;
             }
 
             .detail-size:hover {
                 cursor: pointer;
             }
         }
+
+        .quantity-container {
+            position: relative;
+            height: 50px;
+            width: auto;
+            display: inline-block;
+            margin: 10px;
+
+            .quantity-button {
+                position: relative;
+                margin: 0px 5px;
+                display: inline-block;
+                font-size: 1.2rem;
+                font-weight: 600;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+
+            .quantity {
+                position: relative;
+                margin: 0px 5px;
+                display: inline-block;
+                font-size: 1.2rem;
+                font-weight: 600;
+            }
+        }
     }
 
-    .actions {}
+    .actions {
+        .add-item-button {
+            position: relative;
+            height: 40px;
+            font-size: 1.4rem;
+            color: white;
+            width: 150px;
+            text-align: center;
+            padding-top: 20px;
+            background-color: lightblue;
+            margin: 0 auto;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
 }
