@@ -183,6 +183,26 @@ const Requests = {
 				resolve('Missing Params');
 			}
 		});
-	}
+	},
+	updateUserShippingAddressRequest: function(postData) {
+		return new Promise((resolve, reject) => {
+			if (postData && localStorage.getItem('token')) {
+				var url = BASE_URI + '/user/shipping/address/update';
+				$.ajax({
+					type: 'PUT',
+					url: url,
+					data: postData,
+					success: (res) => {
+						resolve(res);
+					},
+					error: (err) => {
+						reject(err);
+					}
+				});
+			} else {
+				resolve('Missing Params');
+			}
+		});
+	},
 };
 module.exports = exports = Requests;

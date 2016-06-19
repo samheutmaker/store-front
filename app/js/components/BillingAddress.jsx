@@ -14,6 +14,7 @@ import UtilityMixin from './../mixins/utility.js';
 	    return {
 	          section: 'CURRENT_ADDRESSES',
 	          newAddress: {},
+	          editAddress: {},
 	    };
 	},
 	setSection: function(nextSection) {
@@ -21,15 +22,6 @@ import UtilityMixin from './../mixins/utility.js';
 			this.setState({
 				section: nextSection
 			});
-		}
-	},
-	updateNew: function(e, prop){
-		if(prop && typeof prop == 'string') {
-			var newAddress = this.state.newAddress;
-			newAddress[prop] = e.target.value.trim();
-			this.setState({
-				newAddress: newAddress
-			}, () => {});
 		}
 	},
 	createNewUserShippingAddress: function(){
@@ -46,11 +38,14 @@ import UtilityMixin from './../mixins/utility.js';
 			});
 		}
 	},
-	editUserShippingAddress: function() {
-
-	},
-	editAddress: function() {
-
+	updateUserShippingAddress: function(){
+		if(Object.keys(this.state.editAddress).length) {
+			this.updateUserShippingAddressRequest(this.state.editAddress)
+			.then((data) => {
+				this.props.page.getAllUserShippingAddresses();
+				console.log(data);
+			});
+		}
 	},
 	renderAddressControls: function() {
 		return (
@@ -88,7 +83,7 @@ import UtilityMixin from './../mixins/utility.js';
 											Remove
 										</div>
 										<div className="small-button" 
-											 onClick={this.editAddress.bind(null, address)}
+											 onClick={this.setEditAddress.bind(null, address)}
 											 style={{display: 'inline-block'}}
 											 >
 											Edit
@@ -107,23 +102,69 @@ import UtilityMixin from './../mixins/utility.js';
 			);	
 		}
 	},
+	setEditAddress: function(address) {
+		if(address) {
+			this.setState({
+				editAddress: address
+			}, () => {
+				this.setSection('EDIT_ADDRESS')
+			});
+		}
+	},
+	renderEditUserAddress: function() {
+		if(this.state.section == 'EDIT_ADDRESS') {
+			return (
+				<div className="address-items-container">
+					<input onChange={(e) => {this.updateEditUserAddress(e, 'fullName')}} value={this.state.editAddress.fullName} placeholder="fullName"/>
+					<input onChange={(e) => {this.updateEditUserAddress(e, 'street')}} value={this.state.editAddress.street} placeholder="street"/>
+					<input onChange={(e) => {this.updateEditUserAddress(e, 'city')}} value={this.state.editAddress.city} placeholder="city"/>
+					<input onChange={(e) => {this.updateEditUserAddress(e, 'suite')}} value={this.state.editAddress.suite} placeholder="suite"/>
+					<input onChange={(e) => {this.updateEditUserAddress(e, 'state')}} value={this.state.editAddress.state} placeholder="state"/>
+					<input onChange={(e) => {this.updateEditUserAddress(e, 'zip')}} value={this.state.editAddress.zip} placeholder="zip"/>
+					<input onChange={(e) => {this.updateEditUserAddress(e, 'phone')}} value={this.state.editAddress.phone} placeholder="phone"/>
+					<input onChange={(e) => {this.updateEditUserAddress(e, 'country')}} value={this.state.editAddress.country} placeholder="country"/>
+					<div className="button" onClick={this.updateUserShippingAddress}>
+						Submit
+					</div>
+				</div>
+			);
+		}
+	},
+	updateEditUserAddress: function(e, prop) {
+		if(prop && typeof prop == 'string') {
+			var newEditAddress = this.state.editAddress;
+			newEditAddress[prop] = e.target.value;
+			this.setState({
+				editAddress: newEditAddress
+			}, () => {});
+		}
+	},
 	renderAddNewAddress: function() {
 		if(this.state.section == 'ADD_NEW_ADDRESS') {
 			return (
 				<div className="address-items-container">
-					<input onChange={(e) => {this.updateNew(e, 'fullName')}} placeholder="fullName"/>
-					<input onChange={(e) => {this.updateNew(e, 'street')}} placeholder="street"/>
-					<input onChange={(e) => {this.updateNew(e, 'city')}} placeholder="city"/>
-					<input onChange={(e) => {this.updateNew(e, 'suite')}} placeholder="suite"/>
-					<input onChange={(e) => {this.updateNew(e, 'state')}} placeholder="state"/>
-					<input onChange={(e) => {this.updateNew(e, 'zip')}} placeholder="zip"/>
-					<input onChange={(e) => {this.updateNew(e, 'phone')}} placeholder="phone"/>
-					<input onChange={(e) => {this.updateNew(e, 'country')}} placeholder="country"/>
+					<input onChange={(e) => {this.updateNewUserAddress(e, 'fullName')}} placeholder="fullName"/>
+					<input onChange={(e) => {this.updateNewUserAddress(e, 'street')}} placeholder="street"/>
+					<input onChange={(e) => {this.updateNewUserAddress(e, 'city')}} placeholder="city"/>
+					<input onChange={(e) => {this.updateNewUserAddress(e, 'suite')}} placeholder="suite"/>
+					<input onChange={(e) => {this.updateNewUserAddress(e, 'state')}} placeholder="state"/>
+					<input onChange={(e) => {this.updateNewUserAddress(e, 'zip')}} placeholder="zip"/>
+					<input onChange={(e) => {this.updateNewUserAddress(e, 'phone')}} placeholder="phone"/>
+					<input onChange={(e) => {this.updateNewUserAddress(e, 'country')}} placeholder="country"/>
 					<div className="button" onClick={this.createNewUserShippingAddress}>
 						Add
 					</div>
 				</div>
 			);
+		}
+	},
+	updateNewUserAddress: function(e, prop){
+		if(prop && typeof prop == 'string') {
+			var newAddress = this.state.newAddress;
+			newAddress[prop] = e.target.value.trim();
+			this.setState({
+				newAddress: newAddress
+			}, () => {});
 		}
 	},
 
@@ -134,6 +175,7 @@ import UtilityMixin from './../mixins/utility.js';
 					{this.renderAddressControls()}
 					{this.renderAddresses()}
 					{this.renderAddNewAddress()}
+					{this.renderEditUserAddress()}
 				</div>
 			);
 		} else {
