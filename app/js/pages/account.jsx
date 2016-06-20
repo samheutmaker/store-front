@@ -1,6 +1,7 @@
 import React from 'react'
 import RequestMixin from './../mixins/requests.js'
-import BillingAddress from './../components/BillingAddress.jsx'
+import ShippingAddress from './../components/ShippingAddress.jsx'
+import CartSmall from './../components/CartSmall.jsx'
 import { Link } from 'react-router';
 
 export default React.createClass({
@@ -26,22 +27,6 @@ export default React.createClass({
 		if(nextSubSection && typeof nextSubSection == 'string') {
 			this.setState({
 				subSection: nextSubSection
-			});
-		}
-	},
-	removeItemFromCart: function(item){
-		console.log(item);
-		if(item.item_id && item.size) {
-			var postData = {
-				itemId: item.item_id,
-				size: item.size
-			};
-			this.removeItemFromCartRequest(postData)
-			.then((data) => {
-				console.log(data);
-				this.props.page.setState({
-					cart: data
-				});
 			});
 		}
 	},
@@ -79,7 +64,7 @@ export default React.createClass({
 		if(this.state.section == 'USER_INFO' && this.state.subSection == 'USER_ADDRESSES') {
 			return (
 				<div className="cart-container">
-					<BillingAddress
+					<ShippingAddress
 						page={this.props.page}
 					/>
 				</div>
@@ -98,33 +83,19 @@ export default React.createClass({
 	renderUserCart: function() {
 		if(this.props.page && this.props.page.state.user && this.state.section == 'USER_CART') {
 			return (
-				<div className="cart-container">
-					{this.props.page.state.cart.map((item, itemIndex) => {
-						return (
-							this.renderCartItem(item)
-						);
-					})}
+				<div>
+					<Link to="/checkout">
+						<div className="button">
+							Checkout
+						</div>
+					</Link>
+					<CartSmall 
+						page={this.props.page}
+					/>
 				</div>
 			);
 		}
 		
-	},
-	renderCartItem: function(item) {
-		return (
-			<div key={item._id} className="cart-item">
-				<div className="cart-item-image"></div>
-				<div className="cart-item-name">{item.item.name}</div>
-				<Link to={'/product/' + item.item._id}>
-					<div className="click-link">View Item</div>
-				</Link>
-				<div className="click-link cursor-on-hover" onClick={this.removeItemFromCart.bind(null, item)}>Remove Item</div>
-				<br/>
-				<div className="cart-item-size">Size: {item.size}</div>
-				<div className="cart-item-quantity">Number: {item.quantity}</div>
-				<div className="cart-item-cost">Cost: ${item.item.cost}.00</div>
-			</div>
-			
-		);
 	},
 	renderUserOptions: function () {
 		if(this.props.page && this.props.page.state.user && this.state.section == 'USER_OPTIONS') {

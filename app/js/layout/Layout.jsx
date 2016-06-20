@@ -19,6 +19,11 @@ import UtilityMixin from './../mixins/utility.js';
 	    	products: [],
 	    	userShipping: [],
 	    	productsHash: {},
+	    	stripeAccount: {},
+	    	order: {
+	    		card: null,
+	    		address: null
+	    	},
 	        loginOpen: false,
 
 	    };
@@ -27,11 +32,12 @@ import UtilityMixin from './../mixins/utility.js';
 		this.loadAll();
 	},
 	loadAll: function (){
-		var promiseHolder = [this.getUserInfo(), this.getUserCart(), this.getAllProducts(), this.getAllUserShippingAddresses()];
+		var promiseHolder = [this.getUserInfo(), this.getUserCart(), this.getAllProducts(), this.getAllUserShippingAddresses(), this.getStripeAccount()];
 
 		Promise.all(promiseHolder)
 		.then(() => {
 			console.log('Complete');
+			this.makeCartTotal();
 		}, (err) => {
 			console.log(err);
 		});
@@ -99,6 +105,44 @@ import UtilityMixin from './../mixins/utility.js';
 			});
 		});
 	},
+	getStripeAccount: function() {
+		return new Promise((resolve, reject) => {
+			this.getStripeAccountRequest()
+			.then((data) => {
+
+				var newOrder = this.state.order;
+				
+				data.sources.data.forEach((card, cardIndex) => {
+					if(card.id == data.default_source) {
+						newOrder.card = card		
+					}
+				})
+				
+				this.setState({
+					stripeAccount: data,
+					order: newOrder
+				}, () => {
+					resolve();
+				});
+
+			});
+		});
+	},
+	makeCartTotal: function() {
+		if(this.state.cart && this.state.cart.length) {
+
+			var cartTotal = this.state.cart
+			.map((item, itemIndex) => {
+				return item.item.cost;
+			})
+			.reduce((cur, next) => {
+				return cur + next;
+			}, 0);
+
+
+			return cartTotal;
+		}
+	},
 	toggleLogin: function() {
 		this.setState({
 			loginOpen: !this.state.loginOpen
@@ -117,7 +161,7 @@ import UtilityMixin from './../mixins/utility.js';
 		}
 	},
 	renderUserInfo: function() {
-		if(this.state.user) {
+		if(this.state.user && this.state.user.name) {
 			return (
 				<div className="actions-container">
 					Hello, {this.state.user.name.first} 
@@ -149,6 +193,11 @@ import UtilityMixin from './../mixins/utility.js';
 						<li className="nav-button">
 							<Link to="about">
 								About
+							</Link>
+						</li>
+						<li className="nav-button">
+							<Link to="checkout">
+								Checkout
 							</Link>
 						</li>
 					</ul>

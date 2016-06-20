@@ -5,10 +5,11 @@ import UtilityMixin from './../mixins/utility.js';
 
 
  export default React.createClass({
- 	displayName: 'BillingAddress',
+ 	displayName: 'ShippingAddress',
 	mixins: [RequestMixin, UtilityMixin],
 	propTypes: {
-	    page: React.PropTypes.object
+	    page: React.PropTypes.object,
+	    canSetAddress: React.PropTypes.bool
 	},
 	getInitialState: function() {
 	    return {
@@ -59,6 +60,13 @@ import UtilityMixin from './../mixins/utility.js';
 			</div>
 		);
 	},
+	setOrderAddress: function(address) {
+		var newOrder = this.props.page.state.order;
+		newOrder.address = address;
+		this.props.page.setState({
+			order: newOrder
+		});
+	},
 	renderAddresses: function() {
 		if(this.props.page.state.userShipping && this.props.page.state.userShipping.length) {
 			if(this.state.section == 'CURRENT_ADDRESSES'){
@@ -87,6 +95,12 @@ import UtilityMixin from './../mixins/utility.js';
 											 style={{display: 'inline-block'}}
 											 >
 											Edit
+										</div>
+										<div className="small-button" 
+											 onClick={this.setOrderAddress.bind(null, address)}
+											 style={(this.props.canSetAddress) ? {display: 'inline-block'} : {display: 'none'}}
+											 >
+											Select
 										</div>
 									</div>
 

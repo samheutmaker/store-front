@@ -32,6 +32,27 @@ const Requests = {
 			}
 		});
 	},
+	registerNewUserRequest: function(postData) {
+		return new Promise((resolve, reject) => {
+			if(postData ){
+				var url = BASE_URI + '/auth/register';
+
+				$.ajax({
+					type: 'POST',
+					url: url,
+					data: postData,
+					success: (res) => {
+						resolve(res);
+					},
+					error: (err) => {
+						reject(err);
+					}
+				});
+			} else {
+				resolve('Missing Params');
+			}
+		});
+	},
 	getUserInfoRequest: function() {
 		return new Promise((resolve, reject) => {
 			if (localStorage.getItem('token')) {
@@ -204,5 +225,74 @@ const Requests = {
 			}
 		});
 	},
+	getStripeAccountRequest: function(){
+		return new Promise((resolve, reject) => {
+			if (localStorage.getItem('token')) {
+
+				var url = BASE_URI + '/stripe/user';
+
+				$.ajax({
+					type: 'GET',
+					url: url,
+					success: (res) => {
+						resolve(res);
+					},
+					error: (err) => {
+						reject(err);
+					}
+				});
+			} else {
+				resolve('Missing Params');
+			}
+		});
+	},
+	submitOrderRequest: function(postData) {
+		return new Promise((resolve, reject) => {
+			if (postData.source && postData.amount && postData.cart && localStorage.getItem('token')) {
+
+				var url = BASE_URI + '/stripe/charge';
+
+				$.ajax({
+					type: 'POST',
+					url: url,
+					data: postData,
+					success: (res) => {
+						resolve(res);
+					},
+					error: (err) => {
+						reject(err);
+					}
+				});
+			} else {
+				resolve('Missing Params');
+			}
+		});
+	},
+	createNewStripeCardRequest: function(token){
+		return new Promise((resolve, reject) => {
+			if (token  && localStorage.getItem('token')) {
+
+				var url = BASE_URI + '/stripe/card/new';
+
+				var postData = {
+					stripeToken: token
+				};
+
+				$.ajax({
+					type: 'POST',
+					url: url,
+					data: postData,
+					success: (res) => {
+						resolve(res);
+					},
+					error: (err) => {
+						reject(err);
+					}
+				});
+			} else {
+				resolve('Missing Params');
+			}
+		});
+	}
 };
 module.exports = exports = Requests;
