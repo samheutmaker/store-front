@@ -30,6 +30,7 @@ import UtilityMixin from './../mixins/utility.js';
 	},
 	componentDidMount: function() {	
 		this.loadAll();
+
 	},
 	loadAll: function (){
 		var promiseHolder = [this.getUserInfo(), this.getUserCart(), this.getAllProducts(), this.getAllUserShippingAddresses(), this.getStripeAccount()];
@@ -37,7 +38,7 @@ import UtilityMixin from './../mixins/utility.js';
 		Promise.all(promiseHolder)
 		.then(() => {
 			console.log('Complete');
-			this.makeCartTotal();
+			console.log(this.makeCartTotal());
 		}, (err) => {
 			console.log(err);
 		});
@@ -133,7 +134,7 @@ import UtilityMixin from './../mixins/utility.js';
 
 			var cartTotal = this.state.cart
 			.map((item, itemIndex) => {
-				return item.item.cost;
+				return item.item.cost * (item.quantity || 1);
 			})
 			.reduce((cur, next) => {
 				return cur + next;

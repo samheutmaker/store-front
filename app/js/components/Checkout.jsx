@@ -5,7 +5,7 @@ import UtilityMixin from './../mixins/utility.js';
 
 
  export default React.createClass({
- 	displayName: 'StripeCardManager',
+ 	displayName: 'Checkout',
 	mixins: [RequestMixin, UtilityMixin],
 	propTypes: {
 	    page: React.PropTypes.object
@@ -23,11 +23,13 @@ import UtilityMixin from './../mixins/utility.js';
 		if(this.props.page.state.order.card && this.props.page.state.order.address) {
 			
 			var postData = {
-				amount: this.props.page.makeCartTotal * 100,
+				amount: this.props.page.makeCartTotal(),
 				source: this.props.page.state.order.card,
 				address: this.props.page.state.order.address,
 				cart: this.props.page.state.cart
 			};
+
+			console.log(postData);
 
 			this.submitOrderRequest(postData)
 			.then((data) => {
@@ -42,12 +44,11 @@ import UtilityMixin from './../mixins/utility.js';
 			});
 		}
 	},
-
 	render: function () {
 		if(this.props.page) {
 			return (
 				<div className="checkout-container">
-					
+					<div className="button" onClick={this.submitOrder}>Submit</div>
 				</div>
 			);
 		} else {

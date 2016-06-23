@@ -3,6 +3,7 @@ import RequestMixin from './../mixins/requests.js'
 import CartSmall from './../components/CartSmall.jsx'
 import StripeCardManager from './../components/StripeCardManager.jsx'
 import ShippingAddress from './../components/ShippingAddress.jsx'
+import Checkout from './../components/Checkout.jsx'
 import { Link } from 'react-router';
 
 export default React.createClass({
@@ -29,7 +30,7 @@ export default React.createClass({
 				<div className="checkout-container">
 					<div className="small-button" 
 						 style={{float: 'right'}}
-						 onClick={this.setSection.bind(null, 'CHECKOUT_PAYMENT')}>
+						 onClick={this.setSection.bind(null, 'CHECKOUT_PROMOTIONS')}>
 						Next
 					</div>
 					<h2>
@@ -43,46 +44,13 @@ export default React.createClass({
 			);
 		}
 	},
-	renderCheckoutPayment: function() {
-		if(this.state.section == 'CHECKOUT_PAYMENT'){
-			return (
-				<div className="checkout-container">
-					<div className="small-button" 
-						 style={{float: 'left'}}
-						 onClick={this.setSection.bind(null, 'CHECKOUT_OVERVIEW')}>
-						BACK
-					</div>
-					<div className="small-button" 
-						 style={{float: 'right'}}
-						 onClick={this.setSection.bind(null, 'CHECKOUT_PROMOTIONS')}>
-						Next
-					</div>
-					<h2>
-						Checkout Payment
-					</h2>
-					<div style={{width: '50%', float: 'left', position: 'relative', top: '19px'}}>
-						<ShippingAddress
-							page={this.props.page}
-							canSetAddress={true}
-						/>
-					</div>
-
-					<StripeCardManager
-						page={this.props.page}
-					/>
-				
-					
-				</div>
-			);
-		}	
-	},
 	renderCheckoutPromotions: function(){
 		if(this.state.section == 'CHECKOUT_PROMOTIONS'){
 			return (
 				<div className="checkout-container">
 					<div className="small-button" 
 						 style={{float: 'left'}}
-						 onClick={this.setSection.bind(null, 'CHECKOUT_PAYMENT')}>
+						 onClick={this.setSection.bind(null, 'CHECKOUT_OVERVIEW')}>
 						BACK
 					</div>
 					<div className="small-button" 
@@ -107,11 +75,25 @@ export default React.createClass({
 						BACK
 					</div>
 					<h2>
-						Checkout
+						Checkout Payment
 					</h2>
+					<StripeCardManager
+						page={this.props.page}
+					/>
+					<div style={{width: '50%', float: 'left', position: 'relative', top: '19px'}}>
+						<ShippingAddress
+							page={this.props.page}
+							canSetAddress={true}
+						/>
+					</div>
+					<div style={{width: '50%', float: 'left', position: 'relative', top: '19px'}}>
+						<Checkout
+							page={this.props.page}
+						/>
+					</div>
 				</div>
 			);
-		}
+		}	
 	},
 	render: function () {
 		return (
@@ -119,7 +101,6 @@ export default React.createClass({
 				<div className="section-container">
 					<div className="max-width-container">
 						{this.renderCheckoutOverview()}
-						{this.renderCheckoutPayment()}
 						{this.renderCheckoutPromotions()}
 						{this.renderCheckout()}
 					</div>
