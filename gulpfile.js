@@ -17,9 +17,27 @@ const files = {
 
 
 
+gulp.task('sass:all', function() {
+  gulp.src(files.sass)
+    .pipe(sass().on('error', sass.logError))
+    .pipe(concat('styles.min.css'))
+    .pipe(gulp.dest(__dirname + '/build/styles'))
+});
+
+
+
+gulp.task('sass:watch', function() {
+  gulp.watch(files.sass, ['sass:all']);
+});
+
 gulp.task('html:dev', () => {
   gulp.src([__dirname + '/app/*.html', __dirname + '/app/**/*.html'])
     .pipe(gulp.dest(__dirname + '/build'))
+})
+
+gulp.task('assets:dev', () => {
+  gulp.src([__dirname + '/app/assets/**/*'])
+    .pipe(gulp.dest(__dirname + '/build/assets/'))
 })
 
 // Webpack
@@ -45,23 +63,11 @@ gulp.task('webpack:dev', () => {
     .pipe(gulp.dest(__dirname + '/build/'))
 });
 
-gulp.task('sass:all', function() {
-  gulp.src(files.sass)
-    .pipe(sass().on('error', sass.logError))
-    .pipe(concat('styles.min.css'))
-    .pipe(gulp.dest(__dirname + '/build/styles'))
-});
-
-
-
-gulp.task('sass:watch', function() {
-  gulp.watch(files.sass, ['sass:all']);
-});
-
-
 gulp.task('dev:watch', () => {
-  gulp.watch(files.all, ['webpack:dev', 'html:dev'])
+  gulp.watch(files.all, ['webpack:dev', 'html:dev', 'assets:dev'])
 });
+
+
 
 gulp.task('build:dev', ['sass:all', 'webpack:dev', 'html:dev']);
 

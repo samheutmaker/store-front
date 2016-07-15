@@ -248,9 +248,31 @@ const Requests = {
 	},
 	submitOrderRequest: function(postData) {
 		return new Promise((resolve, reject) => {
-			if (postData.source && postData.amount && postData.cart && localStorage.getItem('token')) {
+			if (postData.source && postData.cart && postData.address && postData.order && localStorage.getItem('token')) {
 
-				var url = BASE_URI + '/stripe/charge';
+				var url = BASE_URI + '/stripe/checkout/charge';
+
+				$.ajax({
+					type: 'POST',
+					url: url,
+					data: postData,
+					success: (res) => {
+						resolve(res);
+					},
+					error: (err) => {
+						reject(err);
+					}
+				});
+			} else {
+				resolve('Missing Params');
+			}
+		});
+	},
+	validateOrderRequest: function(postData) {
+		return new Promise((resolve, reject) => {
+			if (postData.source && postData.cart && postData.address && localStorage.getItem('token')) {
+
+				var url = BASE_URI + '/stripe/checkout/validate';
 
 				$.ajax({
 					type: 'POST',
@@ -293,6 +315,101 @@ const Requests = {
 				resolve('Missing Params');
 			}
 		});
+	},
+	createNewProductRequest: function(postData) {
+		return new Promise((resolve, reject) => {
+			if (postData  && localStorage.getItem('token')) {
+
+				var url = BASE_URI + '/products/new';
+
+				$.ajax({
+					type: 'POST',
+					url: url,
+					data: postData,
+					success: (res) => {
+						resolve(res);
+					},
+					error: (err) => {
+						reject(err);
+					}
+				});
+			} else {
+				resolve('Missing Params');
+			}
+		});
+	},
+	updateProductRequest: function(postData) {
+		return new Promise((resolve, reject) => {
+			if (postData && localStorage.getItem('token')) {
+
+				var url = BASE_URI + '/products/update';
+
+				$.ajax({
+					type: 'PUT',
+					url: url,
+					data: postData,
+					success: (res) => {
+						resolve(res);
+					},
+					error: (err) => {
+						reject(err);
+					}
+				});
+			} else {
+				resolve('Missing Params');
+			}
+		});
+	},
+	removeProductRequest: function(postData) {
+		return new Promise((resolve, reject) => {
+			if (postData.product_id && postData.stripe_id  && localStorage.getItem('token')) {
+
+				var url = BASE_URI + '/products/remove';
+
+				$.ajax({
+					type: 'POST',
+					url: url,
+					data: postData,
+					success: (res) => {
+						resolve(res);
+					},
+					error: (err) => {
+						reject(err);
+					}
+				});
+			} else {
+				resolve('Missing Params');
+			}
+		});
+	},
+	addProductMediaRequest: function(postData, product_id) {
+		return new Promise((resolve, reject) => {
+			if ( postData && product_id && localStorage.getItem('token')) {
+
+				var url = BASE_URI + '/products/' + product_id + '/media/add';
+
+				$.ajax({
+					type: 'PUT',
+					url: url,
+					data: postData,
+					processData: false, 
+  					contentType: false, 
+  					dataType : 'json',
+					success: (res) => {
+						resolve(res);
+					},
+					error: (err) => {
+						reject(err);
+					}
+				});
+			} else {
+				resolve('Missing Params');
+			}
+		});
 	}
 };
+
+
+
+
 module.exports = exports = Requests;

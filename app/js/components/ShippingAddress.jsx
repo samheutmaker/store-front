@@ -110,9 +110,13 @@ import UtilityMixin from './../mixins/utility.js';
 					</div>
 				);
 			} 
-		} else {
+		} else if(this.state.section == 'CURRENT_ADDRESS'){
 			return (
-				<div>No Items. </div>
+				<div className="address-items-container" style={{height: '400px'}}>
+					<div className="address-item-prop-container">
+						NO Addresses			
+					</div>
+				</div>
 			);	
 		}
 	},

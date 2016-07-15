@@ -116,22 +116,30 @@ import RequestMixin from './../mixins/requests.js';
 	renderRegister: function() {
 		return (
 			<div className="login-container">
-				<input onChange={(e) => {
-					this.updateUserRequest(e, 'email');
+				<input  placeholder="email"
+					    onChange={(e) => {
+							this.updateUserRequest(e, 'email');
 				}} /><br/>
-				<input onChange={(e) => {
-					this.updateUserRequest(e, 'password');
+				<input  placeholder="password"
+						type="password"
+						onChange={(e) => {
+							this.updateUserRequest(e, 'password');
 				}} /><br/>
-				<input onChange={(e) => {
-					this.updateUserRequest(e, 'secondPassword');
+				<input  placeholder="password, again"
+						type="password"
+						onChange={(e) => {
+							this.updateUserRequest(e, 'secondPassword');
 				}} /><br/>
-				<input onChange={(e) => {
-					this.updateUserRequest(e, 'gender');
+				<input placeholder="gender"
+						onChange={(e) => {
+							this.updateUserRequest(e, 'gender');
 				}} /><br/>
-				<input onChange={(e) => {
-					this.updateUserRequest(e, 'firstName');
+				<input placeholder="first name"
+						onChange={(e) => {
+							this.updateUserRequest(e, 'firstName');
 				}} /><br/>
-				<input onChange={(e) => {
+				<input placeholder="last name"
+						onChange={(e) => {
 					this.updateUserRequest(e, 'lastName');
 				}} /><br/>
 				<div onClick={this.registerNewUser}>Register</div>

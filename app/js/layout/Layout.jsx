@@ -4,6 +4,7 @@ window.$ = $;
 
 import React from 'react';
 import { Link } from 'react-router';
+import { RouteTransition } from 'react-router-transition';
 import Login from './Login.jsx'
 import RequestMixin from './../mixins/requests.js';
 import UtilityMixin from './../mixins/utility.js';
@@ -25,11 +26,18 @@ import UtilityMixin from './../mixins/utility.js';
 	    		address: null
 	    	},
 	        loginOpen: false,
+	        scrollTop: 0
 
 	    };
 	},
 	componentDidMount: function() {	
 		this.loadAll();
+		$(document).scroll(() => {
+			if($(document).scrollTop() > 40 && $(document).scrollTop() < 80 ) {
+				this.setState({scrollTop: $(document).scrollTop()});	
+			}
+		});
+		
 
 	},
 	loadAll: function (){
@@ -73,20 +81,22 @@ import UtilityMixin from './../mixins/utility.js';
 		return new Promise((resolve, reject) => {
 			this.getAllProductsRequest()
 			.then((data) => {
+
 				if(data && data.length) {
 					var hash = {};
 
 					data.forEach((product, productIndex) => {
 						hash[product._id] = product;
 					});
-
-					this.setState({
-						products: (data && data.length) ? data : [],
-						productsHash: hash
-					}, () => {
-						resolve();
-					});	
 				}
+
+				this.setState({
+					products: (data && data.length) ? data : [],
+					productsHash: (hash) ? hash : {}
+				}, () => {
+					resolve();
+				});
+
 			}).catch((e) => {
 				reject(e);
 			});
@@ -97,7 +107,7 @@ import UtilityMixin from './../mixins/utility.js';
 			this.getAllUserShippingAddressesRequest()
 			.then((data) => {
 				this.setState({
-					userShipping: (data && data.length) ? data : []
+					userShipping: (data && Array.isArray(data)) ? data : []
 				}, () => {
 					resolve();
 				});	
@@ -111,21 +121,22 @@ import UtilityMixin from './../mixins/utility.js';
 			this.getStripeAccountRequest()
 			.then((data) => {
 
-				var newOrder = this.state.order;
-				
-				data.sources.data.forEach((card, cardIndex) => {
-					if(card.id == data.default_source) {
-						newOrder.card = card		
-					}
-				})
-				
-				this.setState({
-					stripeAccount: data,
-					order: newOrder
-				}, () => {
-					resolve();
-				});
-
+				if(data && data.sources) {
+					var newOrder = this.state.order;
+					
+					data.sources.data.forEach((card, cardIndex) => {
+						if(card.id == data.default_source) {
+							newOrder.card = card		
+						}
+					});
+					
+					this.setState({
+						stripeAccount: data,
+						order: newOrder
+					}, () => {
+						resolve();
+					});
+				}
 			});
 		});
 	},
@@ -181,14 +192,18 @@ import UtilityMixin from './../mixins/utility.js';
 		}
 	},
 	render: function () {
-
 		return (
 			<div className="page-container">
-				<nav>
+				<nav style={(this.state.scrollTop > 50) ? {position: 'fixed', backgroundColor: '#C1DCFF'} : {}}>
 					<ul className="nav-button-list">
 						<li className="nav-button">
 							<Link to="home">
 								Home
+							</Link>
+						</li>
+						<li className="nav-button">
+							<Link to="clothes">
+								Clothes
 							</Link>
 						</li>
 						<li className="nav-button">
@@ -201,6 +216,11 @@ import UtilityMixin from './../mixins/utility.js';
 								Checkout
 							</Link>
 						</li>
+						<li className="nav-button">
+							<Link to="admin">
+								Admin
+							</Link>
+						</li>
 					</ul>
 					{this.renderUserInfo()}
 					<div style={(this.state.loginOpen) ? {} : {display: 'none'}}>
@@ -210,7 +230,17 @@ import UtilityMixin from './../mixins/utility.js';
 						/>		
 					</div>
 				</nav>
-				{(this.props.children) ? React.cloneElement(this.props.children, {page: this}) : null}
+				
+
+				  <RouteTransition
+				    pathname={this.props.location.pathname}
+				    atEnter={{ opacity: 0 }}
+				    atLeave={{ opacity: 0 }}
+				    atActive={{ opacity: 1 }}
+				  >
+				    {(this.props.children) ? React.cloneElement(this.props.children, {page: this}) : null}
+				  </RouteTransition>
+				
 			</div>
 		);
 	}

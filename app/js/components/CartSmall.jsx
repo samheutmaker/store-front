@@ -28,7 +28,8 @@ import UtilityMixin from './../mixins/utility.js';
 		}
 	},
 	renderUserCart: function() {
-		if(this.props.page && this.props.page.state.user) {
+
+		if(this.props.page && this.props.page.state.user && this.props.page.state.cart && this.props.page.state.cart.length) {
 			return (
 				<div className="cart-container">
 					{this.props.page.state.cart.map((item, itemIndex) => {
@@ -36,6 +37,12 @@ import UtilityMixin from './../mixins/utility.js';
 							this.renderCartItem(item)
 						);
 					})}
+				</div>
+			);
+		} else {
+			return (
+				<div className="cart-container">
+					You have no items in your cart!
 				</div>
 			);
 		}

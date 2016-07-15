@@ -18,7 +18,7 @@ export default React.createClass({
 	renderChooseSize: function(product) {
 		return (
 			<div className="detail-sizes-container">
-				{product.sizes.map((size, sizeIndex) => {
+				{Object.keys(product.sizes).map((size, sizeIndex) => {
 					return (
 						<div 
 						key={size} 

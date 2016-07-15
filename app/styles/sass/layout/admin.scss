@@ -1,0 +1,68 @@
+.admin-nav {
+    position: relative;
+    height: 60px;
+    width: 100%;
+    background-color: #BFB4BE;
+
+    .button {
+        display: inline-block;
+        margin: 12px 10px;
+    }
+}
+
+.current-products-container {
+    position: relative;
+    width: 450px;
+	height: calc(100% - 60px);
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    float: left;
+    overflow: scroll;
+
+    .inside {
+		position: relative;
+		height: auto;
+		width: auto;
+        .current-product {
+            position: relative;
+            height: 40px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            width: auto;
+            margin: 0px;
+            padding: 20px;
+            transition: background-color 0.2s;
+
+            &:hover{
+            	background-color: #ecf0f1;
+            }
+        }
+    }
+}
+
+
+.active-product-container {
+		position: relative;
+	padding: 10px;
+    width: auto;
+	height: auto;
+	float: left;
+
+    .active-product {
+        form.active-product-form {
+        	float: left;
+            input {
+            	display: block;
+            	margin: 20px;
+            }
+        }
+
+        .active-product-sizes{
+        	position:relative;
+        	float: left;
+
+        }
+
+        .add-images-container{
+            position: relative;
+        }
+    }
+}

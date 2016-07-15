@@ -13,7 +13,8 @@ import UtilityMixin from './../mixins/utility.js';
 	getInitialState: function() {
 	    return {
 	    	section: 'CARD_OVERVIEW',
-	    	selectedCard: null
+	    	selectedCard: null,
+	    	stripe_order: {}
 	    };
 	},
 	componentDidMount: function() {
@@ -23,12 +24,12 @@ import UtilityMixin from './../mixins/utility.js';
 		if(this.props.page.state.order.card && this.props.page.state.order.address) {
 			
 			var postData = {
+				order: this.state.stripe_order,
 				amount: this.props.page.makeCartTotal(),
 				source: this.props.page.state.order.card,
 				address: this.props.page.state.order.address,
 				cart: this.props.page.state.cart
 			};
-
 			console.log(postData);
 
 			this.submitOrderRequest(postData)
@@ -36,6 +37,25 @@ import UtilityMixin from './../mixins/utility.js';
 				console.log(data)
 			});
 		}
+	},
+	validateOrder: function() {
+		if(this.props.page.state.order.card && this.props.page.state.order.address) {
+
+			var postData = {
+				amount: this.props.page.makeCartTotal(),
+				source: this.props.page.state.order.card,
+				address: this.props.page.state.order.address,
+				cart: this.props.page.state.cart
+			};
+
+			this.validateOrderRequest(postData)
+			.then((data) => {
+				console.log(data)
+				this.setState({
+					stripe_order: data
+				});
+			});
+		}	
 	},
 	setSection: function(nextSection) {
 		if(nextSection && typeof nextSection == 'string') {
@@ -48,7 +68,8 @@ import UtilityMixin from './../mixins/utility.js';
 		if(this.props.page) {
 			return (
 				<div className="checkout-container">
-					<div className="button" onClick={this.submitOrder}>Submit</div>
+					<div className="button" onClick={this.validateOrder}>Validate</div>
+					<div className="button" style={(Object.keys(this.state.stripe_order).length) ? {} : {display: 'none'}}onClick={this.submitOrder}>Buy</div>
 				</div>
 			);
 		} else {
