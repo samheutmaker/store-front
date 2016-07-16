@@ -6,6 +6,10 @@ samheutmaker/store-front:
   PkgExclude:
     - node_modules/
 
+  PreRelease:
+    - npm install
+    - gulp jshint
+
   PreInstall:
     - echo "Starting PreInstall"
     - sudo apt-get update
