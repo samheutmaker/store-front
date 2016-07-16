@@ -30,18 +30,18 @@ gulp.task('sass:watch', function() {
   gulp.watch(files.sass, ['sass:all']);
 });
 
-gulp.task('html:dev', () => {
+gulp.task('html:dev', function() {
   gulp.src([__dirname + '/app/*.html', __dirname + '/app/**/*.html'])
     .pipe(gulp.dest(__dirname + '/build'))
 })
 
-gulp.task('assets:dev', () => {
+gulp.task('assets:dev', function() {
   gulp.src([__dirname + '/app/assets/**/*'])
     .pipe(gulp.dest(__dirname + '/build/assets/'))
 })
 
 // Webpack
-gulp.task('webpack:dev', () => {
+gulp.task('webpack:dev', function() {
   gulp.src(__dirname + '/app/js/app.jsx')
     .pipe(webpack({
       output: {
@@ -63,7 +63,7 @@ gulp.task('webpack:dev', () => {
     .pipe(gulp.dest(__dirname + '/build/'))
 });
 
-gulp.task('dev:watch', () => {
+gulp.task('dev:watch', function() {
   gulp.watch(files.all, ['webpack:dev', 'html:dev', 'assets:dev'])
 });
 
