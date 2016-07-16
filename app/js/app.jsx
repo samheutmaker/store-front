@@ -10,7 +10,7 @@ import Account from './pages/account.jsx'
 import Checkout from './pages/checkout.jsx'
 import Product from './pages/product.jsx'
 import Products from './pages/products.jsx';
-import Admin from './pages/Admin.jsx'
+import Admin from './pages/admin.jsx'
 
 
 
