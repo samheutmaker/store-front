@@ -35,12 +35,16 @@
   },
   "devDependencies": {
     "babel": "^6.5.2",
+    "babel-core": "^6.10.4",
+    "babel-loader": "^6.2.4",
     "babel-preset-react": "^6.5.0",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
     "gulp-sass": "^2.3.1",
+    "jquery": "^3.1.0",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
+    "react-dropzone": "^3.5.3",
     "webpack": "^1.13.1",
     "webpack-env": "^0.8.0",
     "webpack-stream": "^3.2.0"
