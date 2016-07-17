@@ -139,13 +139,15 @@ export default React.createClass({
 	},
 	renderCurrentProducts: function() {
 		if(this.state.section == 'ADMIN_PRODUCTS' ) {
+
 			if(this.props.page.state.products && this.props.page.state.products.length) {
 				return (
 					<div className="current-products-container">
 						<div className="inside">
 							{this.props.page.state.products.map((product, productIndex) => {
+								console.log(product);
 								return (
-									<div className="current-product">
+									<div className="current-product" key={productIndex}>
 										{product.name}
 										<div style={{position: 'absolute', right: '20px'}}>
 											<div className="small-button"  style={(product.edited) ? {display: 'inline-block', backgroundColor: '#2980b9'} : {display: 'none'}} onClick={this.updateProduct}>Save</div>
@@ -177,7 +179,7 @@ export default React.createClass({
 						<h2 style={(this.state.activeProductIsNew) ? {} : {display: 'none'}}>Add Product</h2>
 						<h2 style={(this.state.activeProductIsNew) ? {display: 'none'} : {}}>Edit Product</h2>
 						<div className="active-product">
-							<form className="active-product-form" onSubimt={this.createNewProduct}>
+							<form className="active-product-form" onSubmit={this.createNewProduct}>
 								<input  className="" 
 										placeholder="Name"
 										value={this.state.activeProduct.name}
@@ -235,7 +237,6 @@ export default React.createClass({
 							</form>
 					
 								{this.renderActiveProductSizesContainer(this.state.activeProduct.sizes)}
-								{this.renderActiveProductMediaContainer(this.state.activeProduct.media)}
 								
 						</div>
 						<div style={{position: 'absolute', top: '450px', left: '250px'}}>
@@ -334,7 +335,7 @@ export default React.createClass({
 				<span>
 				{Object.keys(sizes).map((size, sizeIndex) => {
 					return (
-						<div className="active-product-size">
+						<div className="active-product-size" key={sizeIndex}>
 							<input  className=""
 							placeholder="size"
 							value={size}
