@@ -6,11 +6,12 @@ module.exports = exports = () => {
 	cron.schedule('* * * * *', function() {
 		pollForUpdatesRequest()
 			.then((products) => {
-				exec('gulp webpack:dev', (error, stdout, stderr) => {
+				exec('gulp build:dev', (error, stdout, stderr) => {
 					if (error) {
 						console.error(`exec error: ${error}`);
 						return;
 					}
+					console.log('Products Updated');
 					console.log(`stdout: ${stdout}`);
 					console.log(`stderr: ${stderr}`);
 				});

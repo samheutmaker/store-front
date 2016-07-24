@@ -5,8 +5,8 @@ const app = express();
 
 UpdateProducts();
 
-app.get('*', function (request, response){
-  response.sendFile(path.resolve(__dirname, 'app', 'index.html'))
+app.get(['/', '/home', '/clothes', '/checkout', '/admin', '/account', '/about', '/product/:id'], function (request, response){
+  response.sendFile(path.resolve(__dirname, 'build', 'index.html'))
 });
 
 

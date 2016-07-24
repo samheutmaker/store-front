@@ -216,27 +216,27 @@ import UtilityMixin from './../mixins/utility.js';
 				<nav style={(this.state.scrollTop > 50) ? {position: 'fixed', backgroundColor: '#C1DCFF'} : {}}>
 					<ul className="nav-button-list">
 						<li className="nav-button">
-							<Link to="home">
+							<Link to="/home">
 								Home
 							</Link>
 						</li>
 						<li className="nav-button">
-							<Link to="clothes">
+							<Link to="/clothes">
 								Clothes
 							</Link>
 						</li>
 						<li className="nav-button">
-							<Link to="about">
+							<Link to="/about">
 								About
 							</Link>
 						</li>
 						<li className="nav-button">
-							<Link to="checkout">
+							<Link to="/checkout">
 								Checkout
 							</Link>
 						</li>
 						<li className="nav-button">
-							<Link to="admin">
+							<Link to="/admin">
 								Admin
 							</Link>
 						</li>

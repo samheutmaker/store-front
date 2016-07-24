@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Router, Route, DefaultRoute, browserHistory } from 'react-router';
+import { Router, Route, DefaultRoute, browserHistory, IndexRedirect } from 'react-router';
 
 import Layout from './layout/Layout.jsx';
 
@@ -17,7 +17,8 @@ import Admin from './pages/admin.jsx'
 
 render((
   <Router history={browserHistory}>
-    <Route path='/' component={Layout}>
+    <Route path='locahost:3000' component={Layout}>
+        <IndexRedirect to="/home" />
     	<Route path="/clothes" component={Products} />
     	<Route path='/checkout' component={Checkout} />
     	<Route path='/admin' component={Admin} />
