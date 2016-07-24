@@ -91,10 +91,15 @@ gulp.task('webpack:dev', ['webpack:bundle'], function() {
 
         var firstHalf = contents.indexOf('<script type="text/javascript" data-name="bundle">');
         firstHalf = contents.substr(0, firstHalf);
+        var secondHalf = contents.indexOf('</body>');
+        console.log(secondHalf);
+        secondHalf = contents.substr(secondHalf, contents.length);
+
+        console.log(secondHalf);
 
         allJS = allJS.substr(0, allJS.length -1) + '()';
         
-        return firstHalf + allJS  + '</script>' + '</html>';
+        return firstHalf + allJS  + '</script>' + secondHalf;
       }))
       .pipe(gulp.dest(__dirname + '/app/'));
   });

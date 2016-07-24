@@ -4,23 +4,14 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Store</title>
-		        <style> .button:hover,.current-cards-container .card-item:hover,.cursor-on-hover:hover,.detail-info .actions .add-item-button:hover,.detail-info .options .detail-sizes-container .detail-size:hover,.detail-info .options .quantity-container .quantity-button:hover,.small-button:hover{cursor:pointer}a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline;font-family:'Open Sans',sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body,html{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none;height:100%}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}a,a:active,a:hover,a:visited{color:inherit;text-decoration:none}h2{position:relative;font-size:1.6rem;font-weight:600;margin:10px auto;color:#000;text-align:center}.order-item{position:relative;height:100px;width:100%;border-bottom:1px solid rgba(0,0,0,.4)}.product-container{position:relative;height:calc(100% - 40px);width:100%;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-justify-content:center;justify-content:center;-webkit-flex-flow:row wrap;flex-flow:row wrap;-webkit-align-content:flex-end;align-content:flex-end}.product-container .product-item-container{width:340px;height:400px;position:relative;margin:0 0 10px;padding:20px}.product-container .product-item-container .product-item{position:relative;width:auto;height:100%;background-color:#C1DFFF;padding:10px;border-radius:3px}.address-container{position:relative;height:100%;width:100%;left:0;top:0;overflow:hidden}.address-container .address-controls-container{height:60px;width:100%;border-bottom:1px solid rgba(0,0,0,.1)}.address-container .address-items-container{position:relative;height:auto}.address-container .address-items-container .address-item{height:100px;width:auto;padding:10px;border-bottom:1px solid rgba(0,0,0,.1)}.address-container .address-items-container .address-item .address-item-prop-container{position:relative;height:100%;width:50%;font-size:.8rem;font-weight:400;float:left}.address-container .address-items-container .address-item .address-item-controls{position:relative;height:100%;width:50%;font-size:.9rem;float:left}.slide-show-container{position:relative;height:700px;width:500px;border:1px solid rgba(0,0,0,.1)}.slide-show-container .image-select-container{position:relative;width:auto}.slide-show-container .current-image{position:relative;width:100%;height:100%}.slide-show-container .image-item{position:relative;height:100px;width:100px;margin:10px;display:inline-block;float:left}.card-manager-container{position:relative;height:auto;margin-top:20px;float:left}.new-card-form-container{margin:0 auto;position:relative;top:70px}.new-card-form-container .new-card-form{position:relative;width:100%;height:100%}.new-card-form-container .new-card-form label{display:inline-block}.new-card-form-container .new-card-form .new-card-input{position:relative;margin:0 auto;border-radius:5px;width:200px;height:30px;padding:5px;font-size:.8rem;font-weight:500}.current-cards-container{position:relative;height:400px;width:100%;top:100px}.current-cards-container .card-item{height:50px;width:80px;border:1px solid rgba(0,0,0,.15);text-align:center;padding-top:15px;float:left;border-radius:5px;margin:20px}.square-container{height:600px;position:relative;width:600px;margin:0 auto;border:1px solid rgba(0,0,0,.1);top:40px}.cart-item{position:relative;height:100px;border-bottom:1px solid rgba(0,0,0,.1);width:100%}.cart-item .cart-item-image{width:100px;height:100px;top:0;left:0;background-color:#add8e6;display:inline-block;float:left}.cart-item .cart-item-name{position:relative;display:inline-block;font-weight:600;font-size:1.4rem;margin:20px;top:0}.cart-item .click-link{display:inline-block;font-weight:400;margin-left:10px}.cart-item .click-link:hover{text-decoration:underline}.cart-item .cart-item-cost,.cart-item .cart-item-quantity,.cart-item .cart-item-size{position:relative;font-size:1.2rem;font-weight:400;display:inline-block;margin-left:20px}.account-section-container{position:relative;height:100%;margin:0;padding:0;width:calc(100% - 401px);float:left}.content-container .account-nav-container{position:relative;left:0;width:400px;height:100%;padding:0;margin:0;float:left;border-right:1px solid rgba(0,0,0,.4);background-color:#3C5E73}.content-container .account-nav-container .account-nav-list{list-style:none;height:auto;position:relative;margin:0 20px 0 0;padding:0;float:right}.content-container .account-nav-container .account-nav-list .account-button{position:relative;width:200px;margin:10px;height:calc(100% - 13px);padding:13px 0 0;text-align:right;font-weight:600;color:#fff;transition:color .2s}.content-container .account-nav-container .account-nav-list .account-button:hover{color:#CDE3F9}.admin-nav{position:relative;height:60px;width:100%;background-color:#BFB4BE}.admin-nav .button{display:inline-block;margin:12px 10px}.current-products-container{position:relative;width:450px;height:calc(100% - 60px);border-right:1px solid rgba(0,0,0,.1);float:left;overflow:scroll}.current-products-container .inside{position:relative;height:auto;width:auto}.current-products-container .inside .current-product{position:relative;height:40px;border-bottom:1px solid rgba(0,0,0,.1);width:auto;margin:0;padding:20px;transition:background-color .2s}.current-products-container .inside .current-product:hover{background-color:#ecf0f1}.active-product-container{position:relative;padding:10px;width:auto;height:auto;float:left}.active-product-container .active-product form.active-product-form{float:left}.active-product-container .active-product form.active-product-form input{display:block;margin:20px}.active-product-container .active-product .active-product-sizes{position:relative;float:left}.active-product-container .active-product .add-images-container{position:relative}.active-product-container .active-product .media-container{position:relative;width:300px;height:100px}.active-product-container .active-product .media-container .media-item{position:relative;height:100px;width:100px;margin:10px;display:inline-block;float:left}.checkout-container{position:relative;width:100%;height:700px}.detail-info,.detail-slide-show{width:50%;height:100%;position:relative;float:left}.detail-info .options .detail-sizes-container{position:relative;width:100%;padding:10px}.detail-info .options .detail-sizes-container .detail-size{position:relative;float:left;height:20px;width:20px;margin:5px;padding:10px;font-weight:500;font-size:1.2rem;text-align:center;color:#fff;text-transform:uppercase;background-color:#C1DFFF}.detail-info .options .quantity-container{position:relative;height:50px;width:auto;display:inline-block;margin:10px}.detail-info .options .quantity-container .quantity,.detail-info .options .quantity-container .quantity-button{margin:0 5px;font-size:1.2rem;font-weight:600;position:relative;display:inline-block}.detail-info .actions .add-item-button{position:relative;height:40px;font-size:1.4rem;color:#fff;width:150px;text-align:center;padding-top:20px;background-color:#add8e6;margin:0 auto}.login-container{position:relative;width:300px;height:150px;background-color:rgba(0,0,0,.2);margin-left:auto;top:40px;z-index:5000}.login-container input{margin:10px}nav{position:relative;height:60px;width:100%;background-color:#fff;z-index:500000000;-webkit-box-shadow:0 0 7px -2px rgba(0,0,0,.75);-moz-box-shadow:0 0 7px -2px rgba(0,0,0,.75);box-shadow:0 0 7px -2px rgba(0,0,0,.75);transition:background-color .5s}nav .nav-button-list{position:absolute;left:60px;top:18px}nav .nav-button-list .nav-button{position:relative;float:left;margin:5px}nav .actions-container{position:absolute;right:0;margin-right:60px;top:23px}.page-container{position:absolute;height:100%;width:100%;margin:0;padding:0}.content-container{position:absolute;top:60px;height:calc(100% - 60px);width:100%;left:0;margin:0 auto}.content-container .content-controls{position:relative;margin:0 auto;width:100%;height:60px;padding:20px 0 0;border-bottom:1px solid rgba(0,0,0,.1)}.content-container .content-controls .content-controls-button-container{list-style:none;height:40px;position:relative;width:360px;margin:0 auto}.content-container .content-controls .content-controls-button-container .control-button{position:relative;float:left;width:100px;margin:0 10px;height:calc(100% - 13px);padding:13px 0 0;text-align:center;background-color:#4E7DA6;font-weight:600;color:#fff}.button,.small-button{background-color:#add8e6;position:relative;text-align:center;font-weight:600;color:#fff}.max-width-container{position:relative;margin:0 auto;max-width:1200px;width:auto;height:100%;border:1px solid rgba(0,0,0,.1);border-top:0;border-bottom:0}.button{width:100px;height:25px;padding-top:12px;font-size:1rem;margin:10px auto}.small-button{width:60px;height:20px;padding-top:7px;font-size:.8rem;margin:10px}.width{position:relative;height:90%;display:inline-block}.width.50-percent{width:50%!important}.content-container .banner-container{margin-top:0;margin-bottom:20px;position:relative;width:100%;height:550px;background-image:url(../assets/images/background.jpg);background-size:cover;background-position:20% 0}.content-container .banner-container h1.banner-caption{position:relative;top:100px;font-size:1.8rem;text-align:center;font-weight:600;color:#fff;padding:40px}@media screen and (min-width:768px){.content-container .banner-container{margin-top:80px;margin-bottom:40px}.content-container .banner-container h1.banner-caption{top:175px;font-size:2.4rem}}</style>
+		
+		         <style> .button:hover,.current-cards-container .card-item:hover,.cursor-on-hover:hover,.detail-info .actions .add-item-button:hover,.detail-info .options .detail-sizes-container .detail-size:hover,.detail-info .options .quantity-container .quantity-button:hover,.small-button:hover{cursor:pointer}a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline;font-family:'Open Sans',sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body,html{line-height:1}body{animation:fadein 1s;-webkit-animation:fadein 1s;-moz-animation:fadein 1s;-o-animation:fadein 1s;-ms-animation:fadein 1s}ol,ul{list-style:none}blockquote,q{quotes:none;height:100%}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}a,a:active,a:hover,a:visited{color:inherit;text-decoration:none}h2{position:relative;font-size:1.6rem;font-weight:600;margin:10px auto;color:#000;text-align:center}@keyframes fadein{from{opacity:0}to{opacity:1}}@-moz-keyframes fadein{from{opacity:0}to{opacity:1}}@-webkit-keyframes fadein{from{opacity:0}to{opacity:1}}@-ms-keyframes fadein{from{opacity:0}to{opacity:1}}@-o-keyframes fadein{from{opacity:0}to{opacity:1}}.order-item{position:relative;height:100px;width:100%;border-bottom:1px solid rgba(0,0,0,.4)}.product-container{position:relative;height:calc(100% - 40px);width:100%;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-justify-content:center;justify-content:center;-webkit-flex-flow:row wrap;flex-flow:row wrap;-webkit-align-content:flex-end;align-content:flex-end}.product-container .product-item-container{width:340px;height:400px;position:relative;margin:0 0 10px;padding:20px}.product-container .product-item-container .product-item{position:relative;width:auto;height:100%;background-color:#C1DFFF;padding:10px;border-radius:3px}.address-container{position:relative;height:100%;width:100%;left:0;top:0;overflow:hidden}.address-container .address-controls-container{height:60px;width:100%;border-bottom:1px solid rgba(0,0,0,.1)}.address-container .address-items-container{position:relative;height:auto}.address-container .address-items-container .address-item{height:100px;width:auto;padding:10px;border-bottom:1px solid rgba(0,0,0,.1)}.address-container .address-items-container .address-item .address-item-prop-container{position:relative;height:100%;width:50%;font-size:.8rem;font-weight:400;float:left}.address-container .address-items-container .address-item .address-item-controls{position:relative;height:100%;width:50%;font-size:.9rem;float:left}.slide-show-container{position:relative;height:700px;width:500px;border:1px solid rgba(0,0,0,.1)}.slide-show-container .image-select-container{position:relative;width:auto}.slide-show-container .current-image{position:relative;width:100%;height:100%}.slide-show-container .image-item{position:relative;height:100px;width:100px;margin:10px;display:inline-block;float:left}.card-manager-container{position:relative;height:auto;margin-top:20px;float:left}.new-card-form-container{margin:0 auto;position:relative;top:70px}.new-card-form-container .new-card-form{position:relative;width:100%;height:100%}.new-card-form-container .new-card-form label{display:inline-block}.new-card-form-container .new-card-form .new-card-input{position:relative;margin:0 auto;border-radius:5px;width:200px;height:30px;padding:5px;font-size:.8rem;font-weight:500}.current-cards-container{position:relative;height:400px;width:100%;top:100px}.current-cards-container .card-item{height:50px;width:80px;border:1px solid rgba(0,0,0,.15);text-align:center;padding-top:15px;float:left;border-radius:5px;margin:20px}.square-container{height:600px;position:relative;width:600px;margin:0 auto;border:1px solid rgba(0,0,0,.1);top:40px}.cart-item{position:relative;height:100px;border-bottom:1px solid rgba(0,0,0,.1);width:100%}.cart-item .cart-item-image{width:100px;height:100px;top:0;left:0;background-color:#add8e6;display:inline-block;float:left}.cart-item .cart-item-name{position:relative;display:inline-block;font-weight:600;font-size:1.4rem;margin:20px;top:0}.cart-item .click-link{display:inline-block;font-weight:400;margin-left:10px}.cart-item .click-link:hover{text-decoration:underline}.cart-item .cart-item-cost,.cart-item .cart-item-quantity,.cart-item .cart-item-size{position:relative;font-size:1.2rem;font-weight:400;display:inline-block;margin-left:20px}.account-section-container{position:relative;height:100%;margin:0;padding:0;width:calc(100% - 401px);float:left}.content-container .account-nav-container{position:relative;left:0;width:400px;height:100%;padding:0;margin:0;float:left;border-right:1px solid rgba(0,0,0,.4);background-color:#3C5E73}.content-container .account-nav-container .account-nav-list{list-style:none;height:auto;position:relative;margin:0 20px 0 0;padding:0;float:right}.content-container .account-nav-container .account-nav-list .account-button{position:relative;width:200px;margin:10px;height:calc(100% - 13px);padding:13px 0 0;text-align:right;font-weight:600;color:#fff;transition:color .2s}.content-container .account-nav-container .account-nav-list .account-button:hover{color:#CDE3F9}.admin-nav{position:relative;height:60px;width:100%;background-color:#BFB4BE}.admin-nav .button{display:inline-block;margin:12px 10px}.current-products-container{position:relative;width:450px;height:calc(100% - 60px);border-right:1px solid rgba(0,0,0,.1);float:left;overflow:scroll}.current-products-container .inside{position:relative;height:auto;width:auto}.current-products-container .inside .current-product{position:relative;height:40px;border-bottom:1px solid rgba(0,0,0,.1);width:auto;margin:0;padding:20px;transition:background-color .2s}.current-products-container .inside .current-product:hover{background-color:#ecf0f1}.active-product-container{position:relative;padding:10px;width:auto;height:auto;float:left}.active-product-container .active-product form.active-product-form{float:left}.active-product-container .active-product form.active-product-form input{display:block;margin:20px}.active-product-container .active-product .active-product-sizes{position:relative;float:left}.active-product-container .active-product .add-images-container{position:relative}.active-product-container .active-product .media-container{position:relative;width:300px;height:100px}.active-product-container .active-product .media-container .media-item{position:relative;height:100px;width:100px;margin:10px;display:inline-block;float:left}.checkout-container{position:relative;width:100%;height:700px}.detail-info,.detail-slide-show{width:50%;height:100%;position:relative;float:left}.detail-info .options .detail-sizes-container{position:relative;width:100%;padding:10px}.detail-info .options .detail-sizes-container .detail-size{position:relative;float:left;height:20px;width:20px;margin:5px;padding:10px;font-weight:500;font-size:1.2rem;text-align:center;color:#fff;text-transform:uppercase;background-color:#C1DFFF}.detail-info .options .quantity-container{position:relative;height:50px;width:auto;display:inline-block;margin:10px}.detail-info .options .quantity-container .quantity,.detail-info .options .quantity-container .quantity-button{margin:0 5px;font-size:1.2rem;font-weight:600;position:relative;display:inline-block}.detail-info .actions .add-item-button{position:relative;height:40px;font-size:1.4rem;color:#fff;width:150px;text-align:center;padding-top:20px;background-color:#add8e6;margin:0 auto}.login-container{position:relative;width:300px;height:150px;background-color:rgba(0,0,0,.2);margin-left:auto;top:40px;z-index:5000}.login-container input{margin:10px}nav{position:relative;height:60px;width:100%;background-color:#fff;z-index:500000000;-webkit-box-shadow:0 0 7px -2px rgba(0,0,0,.75);-moz-box-shadow:0 0 7px -2px rgba(0,0,0,.75);box-shadow:0 0 7px -2px rgba(0,0,0,.75);transition:background-color .5s}nav .nav-button-list{position:absolute;left:60px;top:18px}nav .nav-button-list .nav-button{position:relative;float:left;margin:5px}nav .actions-container{position:absolute;right:0;margin-right:60px;top:23px}.page-container{position:absolute;height:100%;width:100%;margin:0;padding:0}.content-container{position:absolute;top:60px;height:calc(100% - 60px);width:100%;left:0;margin:0 auto}.content-container .content-controls{position:relative;margin:0 auto;width:100%;height:60px;padding:20px 0 0;border-bottom:1px solid rgba(0,0,0,.1)}.content-container .content-controls .content-controls-button-container{list-style:none;height:40px;position:relative;width:360px;margin:0 auto}.content-container .content-controls .content-controls-button-container .control-button{position:relative;float:left;width:100px;margin:0 10px;height:calc(100% - 13px);padding:13px 0 0;text-align:center;background-color:#4E7DA6;font-weight:600;color:#fff}.button,.small-button{background-color:#add8e6;position:relative;text-align:center;font-weight:600;color:#fff}.max-width-container{position:relative;margin:0 auto;max-width:1200px;width:auto;height:100%;border:1px solid rgba(0,0,0,.1);border-top:0;border-bottom:0}.button{width:100px;height:25px;padding-top:12px;font-size:1rem;margin:10px auto}.small-button{width:60px;height:20px;padding-top:7px;font-size:.8rem;margin:10px}.width{position:relative;height:90%;display:inline-block}.width.50-percent{width:50%!important}.content-container .banner-container{margin-top:0;margin-bottom:20px;position:relative;width:100%;height:550px;background-image:url(../assets/images/background.jpg);background-size:cover;background-position:20% 0}.content-container .banner-container h1.banner-caption{position:relative;top:100px;font-size:1.8rem;text-align:center;font-weight:600;color:#fff;padding:40px}@media screen and (min-width:768px){.content-container .banner-container{margin-top:80px;margin-bottom:40px}.content-container .banner-container h1.banner-caption{top:175px;font-size:2.4rem}}</style>
+	
 	</head>
+
 	<body>
-		<div id="app"></div>
-	</body>
-	<!-- <script src="bundle.js"></script> -->
-	<!-- <link rel="stylesheet" href="styles/styles.min.css"> -->
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
-	<script src="https://js.stripe.com/v2/"></script>
-	    <!-- Analytics.js -->
-    <script type="text/javascript">
-    !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
-      analytics.load("s4noKFWcS7z1Zpevty1nG6S6gnr1NkRF");
-      }}();
-      </script>
-	<script>Stripe.setPublishableKey('pk_test_fkQKoVu2v1k17463CJIJvFU8');</script>
-	          <script type="text/javascript" data-name="bundle"> /******/ (function(modules) { // webpackBootstrap
+		<script type="text/javascript">document.body.innerHTML += '<div id="app"></div>';</script>
+		       <script type="text/javascript" data-name="bundle"> /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 
@@ -76,35 +67,35 @@
 
 	var _reactRouter = __webpack_require__(172);
 
-	var _Layout = __webpack_require__(234);
+	var _Layout = __webpack_require__(235);
 
 	var _Layout2 = _interopRequireDefault(_Layout);
 
-	var _home = __webpack_require__(240);
+	var _home = __webpack_require__(241);
 
 	var _home2 = _interopRequireDefault(_home);
 
-	var _about = __webpack_require__(242);
+	var _about = __webpack_require__(243);
 
 	var _about2 = _interopRequireDefault(_about);
 
-	var _account = __webpack_require__(243);
+	var _account = __webpack_require__(244);
 
 	var _account2 = _interopRequireDefault(_account);
 
-	var _checkout = __webpack_require__(248);
+	var _checkout = __webpack_require__(249);
 
 	var _checkout2 = _interopRequireDefault(_checkout);
 
-	var _product = __webpack_require__(250);
+	var _product = __webpack_require__(251);
 
 	var _product2 = _interopRequireDefault(_product);
 
-	var _products = __webpack_require__(252);
+	var _products = __webpack_require__(253);
 
 	var _products2 = _interopRequireDefault(_products);
 
-	var _admin = __webpack_require__(253);
+	var _admin = __webpack_require__(254);
 
 	var _admin2 = _interopRequireDefault(_admin);
 
@@ -21204,81 +21195,81 @@
 
 	var _Router3 = _interopRequireDefault(_Router2);
 
-	var _Link2 = __webpack_require__(211);
+	var _Link2 = __webpack_require__(212);
 
 	var _Link3 = _interopRequireDefault(_Link2);
 
-	var _IndexLink2 = __webpack_require__(212);
+	var _IndexLink2 = __webpack_require__(213);
 
 	var _IndexLink3 = _interopRequireDefault(_IndexLink2);
 
-	var _withRouter2 = __webpack_require__(213);
+	var _withRouter2 = __webpack_require__(214);
 
 	var _withRouter3 = _interopRequireDefault(_withRouter2);
 
-	var _IndexRedirect2 = __webpack_require__(215);
+	var _IndexRedirect2 = __webpack_require__(216);
 
 	var _IndexRedirect3 = _interopRequireDefault(_IndexRedirect2);
 
-	var _IndexRoute2 = __webpack_require__(217);
+	var _IndexRoute2 = __webpack_require__(218);
 
 	var _IndexRoute3 = _interopRequireDefault(_IndexRoute2);
 
-	var _Redirect2 = __webpack_require__(216);
+	var _Redirect2 = __webpack_require__(217);
 
 	var _Redirect3 = _interopRequireDefault(_Redirect2);
 
-	var _Route2 = __webpack_require__(218);
+	var _Route2 = __webpack_require__(219);
 
 	var _Route3 = _interopRequireDefault(_Route2);
 
-	var _History2 = __webpack_require__(219);
+	var _History2 = __webpack_require__(220);
 
 	var _History3 = _interopRequireDefault(_History2);
 
-	var _Lifecycle2 = __webpack_require__(220);
+	var _Lifecycle2 = __webpack_require__(221);
 
 	var _Lifecycle3 = _interopRequireDefault(_Lifecycle2);
 
-	var _RouteContext2 = __webpack_require__(221);
+	var _RouteContext2 = __webpack_require__(222);
 
 	var _RouteContext3 = _interopRequireDefault(_RouteContext2);
 
-	var _useRoutes2 = __webpack_require__(222);
+	var _useRoutes2 = __webpack_require__(223);
 
 	var _useRoutes3 = _interopRequireDefault(_useRoutes2);
 
-	var _RouterContext2 = __webpack_require__(208);
+	var _RouterContext2 = __webpack_require__(209);
 
 	var _RouterContext3 = _interopRequireDefault(_RouterContext2);
 
-	var _RoutingContext2 = __webpack_require__(223);
+	var _RoutingContext2 = __webpack_require__(224);
 
 	var _RoutingContext3 = _interopRequireDefault(_RoutingContext2);
 
 	var _PropTypes3 = _interopRequireDefault(_PropTypes2);
 
-	var _match2 = __webpack_require__(224);
+	var _match2 = __webpack_require__(225);
 
 	var _match3 = _interopRequireDefault(_match2);
 
-	var _useRouterHistory2 = __webpack_require__(228);
+	var _useRouterHistory2 = __webpack_require__(229);
 
 	var _useRouterHistory3 = _interopRequireDefault(_useRouterHistory2);
 
-	var _applyRouterMiddleware2 = __webpack_require__(229);
+	var _applyRouterMiddleware2 = __webpack_require__(230);
 
 	var _applyRouterMiddleware3 = _interopRequireDefault(_applyRouterMiddleware2);
 
-	var _browserHistory2 = __webpack_require__(230);
+	var _browserHistory2 = __webpack_require__(231);
 
 	var _browserHistory3 = _interopRequireDefault(_browserHistory2);
 
-	var _hashHistory2 = __webpack_require__(233);
+	var _hashHistory2 = __webpack_require__(234);
 
 	var _hashHistory3 = _interopRequireDefault(_hashHistory2);
 
-	var _createMemoryHistory2 = __webpack_require__(225);
+	var _createMemoryHistory2 = __webpack_require__(226);
 
 	var _createMemoryHistory3 = _interopRequireDefault(_createMemoryHistory2);
 
@@ -22040,7 +22031,7 @@
 
 	var _createHashHistory2 = _interopRequireDefault(_createHashHistory);
 
-	var _useQueries = __webpack_require__(197);
+	var _useQueries = __webpack_require__(198);
 
 	var _useQueries2 = _interopRequireDefault(_useQueries);
 
@@ -22052,19 +22043,19 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _createTransitionManager = __webpack_require__(200);
+	var _createTransitionManager = __webpack_require__(201);
 
 	var _createTransitionManager2 = _interopRequireDefault(_createTransitionManager);
 
 	var _InternalPropTypes = __webpack_require__(178);
 
-	var _RouterContext = __webpack_require__(208);
+	var _RouterContext = __webpack_require__(209);
 
 	var _RouterContext2 = _interopRequireDefault(_RouterContext);
 
 	var _RouteUtils = __webpack_require__(173);
 
-	var _RouterUtils = __webpack_require__(210);
+	var _RouterUtils = __webpack_require__(211);
 
 	var _routerWarning = __webpack_require__(176);
 
@@ -22106,6 +22097,10 @@
 	    createElement: func,
 	    onError: func,
 	    onUpdate: func,
+
+	    // Deprecated:
+	    parseQueryString: func,
+	    stringifyQuery: func,
 
 	    // PRIVATE: For client-side rehydration of server match.
 	    matchContext: object
@@ -22264,7 +22259,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _warning = __webpack_require__(177);
+	var _warning = __webpack_require__(183);
 
 	var _warning2 = _interopRequireDefault(_warning);
 
@@ -22272,17 +22267,17 @@
 
 	var _invariant2 = _interopRequireDefault(_invariant);
 
-	var _Actions = __webpack_require__(183);
+	var _Actions = __webpack_require__(184);
 
-	var _PathUtils = __webpack_require__(184);
+	var _PathUtils = __webpack_require__(185);
 
-	var _ExecutionEnvironment = __webpack_require__(185);
+	var _ExecutionEnvironment = __webpack_require__(186);
 
-	var _DOMUtils = __webpack_require__(186);
+	var _DOMUtils = __webpack_require__(187);
 
-	var _DOMStateStorage = __webpack_require__(187);
+	var _DOMStateStorage = __webpack_require__(188);
 
-	var _createDOMHistory = __webpack_require__(188);
+	var _createDOMHistory = __webpack_require__(189);
 
 	var _createDOMHistory2 = _interopRequireDefault(_createDOMHistory);
 
@@ -22506,6 +22501,73 @@
 
 /***/ },
 /* 183 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {/**
+	 * Copyright 2014-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 */
+
+	'use strict';
+
+	/**
+	 * Similar to invariant but only logs a warning if the condition is not met.
+	 * This can be used to log issues in development environments in critical
+	 * paths. Removing the logging code for production environments will keep the
+	 * same logic and follow the same code paths.
+	 */
+
+	var warning = function() {};
+
+	if (process.env.NODE_ENV !== 'production') {
+	  warning = function(condition, format, args) {
+	    var len = arguments.length;
+	    args = new Array(len > 2 ? len - 2 : 0);
+	    for (var key = 2; key < len; key++) {
+	      args[key - 2] = arguments[key];
+	    }
+	    if (format === undefined) {
+	      throw new Error(
+	        '`warning(condition, format, ...args)` requires a warning ' +
+	        'message argument'
+	      );
+	    }
+
+	    if (format.length < 10 || (/^[s\W]*$/).test(format)) {
+	      throw new Error(
+	        'The warning format should be able to uniquely identify this ' +
+	        'warning. Please, use a more descriptive format than: ' + format
+	      );
+	    }
+
+	    if (!condition) {
+	      var argIndex = 0;
+	      var message = 'Warning: ' +
+	        format.replace(/%s/g, function() {
+	          return args[argIndex++];
+	        });
+	      if (typeof console !== 'undefined') {
+	        console.error(message);
+	      }
+	      try {
+	        // This error was thrown as a convenience so that you can use this stack
+	        // to find the callsite that caused this warning to fire.
+	        throw new Error(message);
+	      } catch(x) {}
+	    }
+	  };
+	}
+
+	module.exports = warning;
+
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 184 */
 /***/ function(module, exports) {
 
 	/**
@@ -22541,7 +22603,7 @@
 	};
 
 /***/ },
-/* 184 */
+/* 185 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -22552,7 +22614,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _warning = __webpack_require__(177);
+	var _warning = __webpack_require__(183);
 
 	var _warning2 = _interopRequireDefault(_warning);
 
@@ -22594,7 +22656,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 185 */
+/* 186 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -22604,7 +22666,7 @@
 	exports.canUseDOM = canUseDOM;
 
 /***/ },
-/* 186 */
+/* 187 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -22684,7 +22746,7 @@
 	}
 
 /***/ },
-/* 187 */
+/* 188 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/*eslint-disable no-empty */
@@ -22696,7 +22758,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _warning = __webpack_require__(177);
+	var _warning = __webpack_require__(183);
 
 	var _warning2 = _interopRequireDefault(_warning);
 
@@ -22763,7 +22825,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 188 */
+/* 189 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -22778,11 +22840,11 @@
 
 	var _invariant2 = _interopRequireDefault(_invariant);
 
-	var _ExecutionEnvironment = __webpack_require__(185);
+	var _ExecutionEnvironment = __webpack_require__(186);
 
-	var _DOMUtils = __webpack_require__(186);
+	var _DOMUtils = __webpack_require__(187);
 
-	var _createHistory = __webpack_require__(189);
+	var _createHistory = __webpack_require__(190);
 
 	var _createHistory2 = _interopRequireDefault(_createHistory);
 
@@ -22809,7 +22871,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 189 */
+/* 190 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -22820,29 +22882,29 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _warning = __webpack_require__(177);
+	var _warning = __webpack_require__(183);
 
 	var _warning2 = _interopRequireDefault(_warning);
 
-	var _deepEqual = __webpack_require__(190);
+	var _deepEqual = __webpack_require__(191);
 
 	var _deepEqual2 = _interopRequireDefault(_deepEqual);
 
-	var _PathUtils = __webpack_require__(184);
+	var _PathUtils = __webpack_require__(185);
 
-	var _AsyncUtils = __webpack_require__(193);
+	var _AsyncUtils = __webpack_require__(194);
 
-	var _Actions = __webpack_require__(183);
+	var _Actions = __webpack_require__(184);
 
-	var _createLocation2 = __webpack_require__(194);
+	var _createLocation2 = __webpack_require__(195);
 
 	var _createLocation3 = _interopRequireDefault(_createLocation2);
 
-	var _runTransitionHook = __webpack_require__(195);
+	var _runTransitionHook = __webpack_require__(196);
 
 	var _runTransitionHook2 = _interopRequireDefault(_runTransitionHook);
 
-	var _deprecate = __webpack_require__(196);
+	var _deprecate = __webpack_require__(197);
 
 	var _deprecate2 = _interopRequireDefault(_deprecate);
 
@@ -23103,12 +23165,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 190 */
+/* 191 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var pSlice = Array.prototype.slice;
-	var objectKeys = __webpack_require__(191);
-	var isArguments = __webpack_require__(192);
+	var objectKeys = __webpack_require__(192);
+	var isArguments = __webpack_require__(193);
 
 	var deepEqual = module.exports = function (actual, expected, opts) {
 	  if (!opts) opts = {};
@@ -23203,7 +23265,7 @@
 
 
 /***/ },
-/* 191 */
+/* 192 */
 /***/ function(module, exports) {
 
 	exports = module.exports = typeof Object.keys === 'function'
@@ -23218,7 +23280,7 @@
 
 
 /***/ },
-/* 192 */
+/* 193 */
 /***/ function(module, exports) {
 
 	var supportsArgumentsClass = (function(){
@@ -23244,7 +23306,7 @@
 
 
 /***/ },
-/* 193 */
+/* 194 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -23307,7 +23369,7 @@
 	}
 
 /***/ },
-/* 194 */
+/* 195 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -23318,13 +23380,13 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _warning = __webpack_require__(177);
+	var _warning = __webpack_require__(183);
 
 	var _warning2 = _interopRequireDefault(_warning);
 
-	var _Actions = __webpack_require__(183);
+	var _Actions = __webpack_require__(184);
 
-	var _PathUtils = __webpack_require__(184);
+	var _PathUtils = __webpack_require__(185);
 
 	function createLocation() {
 	  var location = arguments.length <= 0 || arguments[0] === undefined ? '/' : arguments[0];
@@ -23364,7 +23426,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 195 */
+/* 196 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -23373,7 +23435,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _warning = __webpack_require__(177);
+	var _warning = __webpack_require__(183);
 
 	var _warning2 = _interopRequireDefault(_warning);
 
@@ -23394,7 +23456,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 196 */
+/* 197 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -23403,7 +23465,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _warning = __webpack_require__(177);
+	var _warning = __webpack_require__(183);
 
 	var _warning2 = _interopRequireDefault(_warning);
 
@@ -23419,7 +23481,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 197 */
+/* 198 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -23430,19 +23492,19 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _warning = __webpack_require__(177);
+	var _warning = __webpack_require__(183);
 
 	var _warning2 = _interopRequireDefault(_warning);
 
-	var _queryString = __webpack_require__(198);
+	var _queryString = __webpack_require__(199);
 
-	var _runTransitionHook = __webpack_require__(195);
+	var _runTransitionHook = __webpack_require__(196);
 
 	var _runTransitionHook2 = _interopRequireDefault(_runTransitionHook);
 
-	var _PathUtils = __webpack_require__(184);
+	var _PathUtils = __webpack_require__(185);
 
-	var _deprecate = __webpack_require__(196);
+	var _deprecate = __webpack_require__(197);
 
 	var _deprecate2 = _interopRequireDefault(_deprecate);
 
@@ -23601,11 +23663,11 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 198 */
+/* 199 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var strictUriEncode = __webpack_require__(199);
+	var strictUriEncode = __webpack_require__(200);
 
 	exports.extract = function (str) {
 		return str.split('?')[1] || '';
@@ -23673,7 +23735,7 @@
 
 
 /***/ },
-/* 199 */
+/* 200 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -23685,7 +23747,7 @@
 
 
 /***/ },
-/* 200 */
+/* 201 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -23700,23 +23762,23 @@
 
 	var _routerWarning2 = _interopRequireDefault(_routerWarning);
 
-	var _Actions = __webpack_require__(183);
+	var _Actions = __webpack_require__(184);
 
-	var _computeChangedRoutes2 = __webpack_require__(201);
+	var _computeChangedRoutes2 = __webpack_require__(202);
 
 	var _computeChangedRoutes3 = _interopRequireDefault(_computeChangedRoutes2);
 
-	var _TransitionUtils = __webpack_require__(202);
+	var _TransitionUtils = __webpack_require__(203);
 
-	var _isActive2 = __webpack_require__(204);
+	var _isActive2 = __webpack_require__(205);
 
 	var _isActive3 = _interopRequireDefault(_isActive2);
 
-	var _getComponents = __webpack_require__(205);
+	var _getComponents = __webpack_require__(206);
 
 	var _getComponents2 = _interopRequireDefault(_getComponents);
 
-	var _matchRoutes = __webpack_require__(207);
+	var _matchRoutes = __webpack_require__(208);
 
 	var _matchRoutes2 = _interopRequireDefault(_matchRoutes);
 
@@ -23781,7 +23843,7 @@
 	    var enterRoutes = _computeChangedRoutes.enterRoutes;
 
 
-	    (0, _TransitionUtils.runLeaveHooks)(leaveRoutes);
+	    (0, _TransitionUtils.runLeaveHooks)(leaveRoutes, state);
 
 	    // Tear down confirmation hooks for left routes
 	    leaveRoutes.filter(function (route) {
@@ -23998,7 +24060,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 201 */
+/* 202 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -24080,7 +24142,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 202 */
+/* 203 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -24090,7 +24152,7 @@
 	exports.runChangeHooks = runChangeHooks;
 	exports.runLeaveHooks = runLeaveHooks;
 
-	var _AsyncUtils = __webpack_require__(203);
+	var _AsyncUtils = __webpack_require__(204);
 
 	var _routerWarning = __webpack_require__(176);
 
@@ -24157,8 +24219,8 @@
 	      if (error || redirectInfo) {
 	        done(error, redirectInfo); // No need to continue.
 	      } else {
-	          next();
-	        }
+	        next();
+	      }
 	    });
 	  }, callback);
 	}
@@ -24200,15 +24262,15 @@
 	/**
 	 * Runs all onLeave hooks in the given array of routes in order.
 	 */
-	function runLeaveHooks(routes) {
+	function runLeaveHooks(routes, prevState) {
 	  for (var i = 0, len = routes.length; i < len; ++i) {
-	    if (routes[i].onLeave) routes[i].onLeave.call(routes[i]);
+	    if (routes[i].onLeave) routes[i].onLeave.call(routes[i], prevState);
 	  }
 	}
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 203 */
+/* 204 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -24301,7 +24363,7 @@
 	}
 
 /***/ },
-/* 204 */
+/* 205 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -24458,16 +24520,16 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 205 */
+/* 206 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	exports.__esModule = true;
 
-	var _AsyncUtils = __webpack_require__(203);
+	var _AsyncUtils = __webpack_require__(204);
 
-	var _makeStateWithLocation = __webpack_require__(206);
+	var _makeStateWithLocation = __webpack_require__(207);
 
 	var _makeStateWithLocation2 = _interopRequireDefault(_makeStateWithLocation);
 
@@ -24509,7 +24571,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 206 */
+/* 207 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -24564,7 +24626,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 207 */
+/* 208 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -24577,9 +24639,9 @@
 
 	exports.default = matchRoutes;
 
-	var _AsyncUtils = __webpack_require__(203);
+	var _AsyncUtils = __webpack_require__(204);
 
-	var _makeStateWithLocation = __webpack_require__(206);
+	var _makeStateWithLocation = __webpack_require__(207);
 
 	var _makeStateWithLocation2 = _interopRequireDefault(_makeStateWithLocation);
 
@@ -24821,7 +24883,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 208 */
+/* 209 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -24844,7 +24906,7 @@
 
 	var _deprecateObjectProperties2 = _interopRequireDefault(_deprecateObjectProperties);
 
-	var _getRouteParams = __webpack_require__(209);
+	var _getRouteParams = __webpack_require__(210);
 
 	var _getRouteParams2 = _interopRequireDefault(_getRouteParams);
 
@@ -24983,7 +25045,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 209 */
+/* 210 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25014,7 +25076,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 210 */
+/* 211 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -25052,7 +25114,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 211 */
+/* 212 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -25159,37 +25221,29 @@
 	    };
 	  },
 	  handleClick: function handleClick(event) {
-	    !this.context.router ? process.env.NODE_ENV !== 'production' ? (0, _invariant2.default)(false, '<Link>s rendered outside of a router context cannot handle clicks.') : (0, _invariant2.default)(false) : void 0;
-
-	    var allowTransition = true;
-
 	    if (this.props.onClick) this.props.onClick(event);
+
+	    if (event.defaultPrevented) return;
+
+	    !this.context.router ? process.env.NODE_ENV !== 'production' ? (0, _invariant2.default)(false, '<Link>s rendered outside of a router context cannot navigate.') : (0, _invariant2.default)(false) : void 0;
 
 	    if (isModifiedEvent(event) || !isLeftClickEvent(event)) return;
 
-	    if (event.defaultPrevented === true) allowTransition = false;
-
-	    // If target prop is set (e.g. to "_blank") let browser handle link.
+	    // If target prop is set (e.g. to "_blank"), let browser handle link.
 	    /* istanbul ignore if: untestable with Karma */
-	    if (this.props.target) {
-	      if (!allowTransition) event.preventDefault();
-
-	      return;
-	    }
+	    if (this.props.target) return;
 
 	    event.preventDefault();
 
-	    if (allowTransition) {
-	      var _props = this.props;
-	      var to = _props.to;
-	      var query = _props.query;
-	      var hash = _props.hash;
-	      var state = _props.state;
+	    var _props = this.props;
+	    var to = _props.to;
+	    var query = _props.query;
+	    var hash = _props.hash;
+	    var state = _props.state;
 
-	      var location = createLocationDescriptor(to, { query: query, hash: hash, state: state });
+	    var location = createLocationDescriptor(to, { query: query, hash: hash, state: state });
 
-	      this.context.router.push(location);
-	    }
+	    this.context.router.push(location);
 	  },
 	  render: function render() {
 	    var _props2 = this.props;
@@ -25237,7 +25291,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 212 */
+/* 213 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25250,7 +25304,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Link = __webpack_require__(211);
+	var _Link = __webpack_require__(212);
 
 	var _Link2 = _interopRequireDefault(_Link);
 
@@ -25270,7 +25324,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 213 */
+/* 214 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25285,7 +25339,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _hoistNonReactStatics = __webpack_require__(214);
+	var _hoistNonReactStatics = __webpack_require__(215);
 
 	var _hoistNonReactStatics2 = _interopRequireDefault(_hoistNonReactStatics);
 
@@ -25315,7 +25369,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 214 */
+/* 215 */
 /***/ function(module, exports) {
 
 	/**
@@ -25371,7 +25425,7 @@
 
 
 /***/ },
-/* 215 */
+/* 216 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -25390,7 +25444,7 @@
 
 	var _invariant2 = _interopRequireDefault(_invariant);
 
-	var _Redirect = __webpack_require__(216);
+	var _Redirect = __webpack_require__(217);
 
 	var _Redirect2 = _interopRequireDefault(_Redirect);
 
@@ -25440,7 +25494,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 216 */
+/* 217 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -25548,7 +25602,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 217 */
+/* 218 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -25614,7 +25668,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 218 */
+/* 219 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -25677,7 +25731,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 219 */
+/* 220 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -25712,7 +25766,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 220 */
+/* 221 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -25786,7 +25840,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 221 */
+/* 222 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -25837,7 +25891,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 222 */
+/* 223 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -25846,11 +25900,11 @@
 
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-	var _useQueries = __webpack_require__(197);
+	var _useQueries = __webpack_require__(198);
 
 	var _useQueries2 = _interopRequireDefault(_useQueries);
 
-	var _createTransitionManager = __webpack_require__(200);
+	var _createTransitionManager = __webpack_require__(201);
 
 	var _createTransitionManager2 = _interopRequireDefault(_createTransitionManager);
 
@@ -25894,7 +25948,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 223 */
+/* 224 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -25905,7 +25959,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _RouterContext = __webpack_require__(208);
+	var _RouterContext = __webpack_require__(209);
 
 	var _RouterContext2 = _interopRequireDefault(_RouterContext);
 
@@ -25930,7 +25984,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 224 */
+/* 225 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -25943,17 +25997,17 @@
 
 	var _invariant2 = _interopRequireDefault(_invariant);
 
-	var _createMemoryHistory = __webpack_require__(225);
+	var _createMemoryHistory = __webpack_require__(226);
 
 	var _createMemoryHistory2 = _interopRequireDefault(_createMemoryHistory);
 
-	var _createTransitionManager = __webpack_require__(200);
+	var _createTransitionManager = __webpack_require__(201);
 
 	var _createTransitionManager2 = _interopRequireDefault(_createTransitionManager);
 
 	var _RouteUtils = __webpack_require__(173);
 
-	var _RouterUtils = __webpack_require__(210);
+	var _RouterUtils = __webpack_require__(211);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -26017,7 +26071,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 225 */
+/* 226 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26025,15 +26079,15 @@
 	exports.__esModule = true;
 	exports.default = createMemoryHistory;
 
-	var _useQueries = __webpack_require__(197);
+	var _useQueries = __webpack_require__(198);
 
 	var _useQueries2 = _interopRequireDefault(_useQueries);
 
-	var _useBasename = __webpack_require__(226);
+	var _useBasename = __webpack_require__(227);
 
 	var _useBasename2 = _interopRequireDefault(_useBasename);
 
-	var _createMemoryHistory = __webpack_require__(227);
+	var _createMemoryHistory = __webpack_require__(228);
 
 	var _createMemoryHistory2 = _interopRequireDefault(_createMemoryHistory);
 
@@ -26054,7 +26108,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 226 */
+/* 227 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -26065,19 +26119,19 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _warning = __webpack_require__(177);
+	var _warning = __webpack_require__(183);
 
 	var _warning2 = _interopRequireDefault(_warning);
 
-	var _ExecutionEnvironment = __webpack_require__(185);
+	var _ExecutionEnvironment = __webpack_require__(186);
 
-	var _PathUtils = __webpack_require__(184);
+	var _PathUtils = __webpack_require__(185);
 
-	var _runTransitionHook = __webpack_require__(195);
+	var _runTransitionHook = __webpack_require__(196);
 
 	var _runTransitionHook2 = _interopRequireDefault(_runTransitionHook);
 
-	var _deprecate = __webpack_require__(196);
+	var _deprecate = __webpack_require__(197);
 
 	var _deprecate2 = _interopRequireDefault(_deprecate);
 
@@ -26218,7 +26272,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 227 */
+/* 228 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -26229,7 +26283,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _warning = __webpack_require__(177);
+	var _warning = __webpack_require__(183);
 
 	var _warning2 = _interopRequireDefault(_warning);
 
@@ -26237,11 +26291,11 @@
 
 	var _invariant2 = _interopRequireDefault(_invariant);
 
-	var _PathUtils = __webpack_require__(184);
+	var _PathUtils = __webpack_require__(185);
 
-	var _Actions = __webpack_require__(183);
+	var _Actions = __webpack_require__(184);
 
-	var _createHistory = __webpack_require__(189);
+	var _createHistory = __webpack_require__(190);
 
 	var _createHistory2 = _interopRequireDefault(_createHistory);
 
@@ -26378,7 +26432,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 228 */
+/* 229 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26386,11 +26440,11 @@
 	exports.__esModule = true;
 	exports.default = useRouterHistory;
 
-	var _useQueries = __webpack_require__(197);
+	var _useQueries = __webpack_require__(198);
 
 	var _useQueries2 = _interopRequireDefault(_useQueries);
 
-	var _useBasename = __webpack_require__(226);
+	var _useBasename = __webpack_require__(227);
 
 	var _useBasename2 = _interopRequireDefault(_useBasename);
 
@@ -26406,7 +26460,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 229 */
+/* 230 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26419,7 +26473,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _RouterContext = __webpack_require__(208);
+	var _RouterContext = __webpack_require__(209);
 
 	var _RouterContext2 = _interopRequireDefault(_RouterContext);
 
@@ -26461,18 +26515,18 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 230 */
+/* 231 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	exports.__esModule = true;
 
-	var _createBrowserHistory = __webpack_require__(231);
+	var _createBrowserHistory = __webpack_require__(232);
 
 	var _createBrowserHistory2 = _interopRequireDefault(_createBrowserHistory);
 
-	var _createRouterHistory = __webpack_require__(232);
+	var _createRouterHistory = __webpack_require__(233);
 
 	var _createRouterHistory2 = _interopRequireDefault(_createRouterHistory);
 
@@ -26482,7 +26536,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 231 */
+/* 232 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -26497,17 +26551,17 @@
 
 	var _invariant2 = _interopRequireDefault(_invariant);
 
-	var _Actions = __webpack_require__(183);
+	var _Actions = __webpack_require__(184);
 
-	var _PathUtils = __webpack_require__(184);
+	var _PathUtils = __webpack_require__(185);
 
-	var _ExecutionEnvironment = __webpack_require__(185);
+	var _ExecutionEnvironment = __webpack_require__(186);
 
-	var _DOMUtils = __webpack_require__(186);
+	var _DOMUtils = __webpack_require__(187);
 
-	var _DOMStateStorage = __webpack_require__(187);
+	var _DOMStateStorage = __webpack_require__(188);
 
-	var _createDOMHistory = __webpack_require__(188);
+	var _createDOMHistory = __webpack_require__(189);
 
 	var _createDOMHistory2 = _interopRequireDefault(_createDOMHistory);
 
@@ -26668,7 +26722,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 232 */
+/* 233 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26681,7 +26735,7 @@
 	  return history;
 	};
 
-	var _useRouterHistory = __webpack_require__(228);
+	var _useRouterHistory = __webpack_require__(229);
 
 	var _useRouterHistory2 = _interopRequireDefault(_useRouterHistory);
 
@@ -26692,7 +26746,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 233 */
+/* 234 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26703,7 +26757,7 @@
 
 	var _createHashHistory2 = _interopRequireDefault(_createHashHistory);
 
-	var _createRouterHistory = __webpack_require__(232);
+	var _createRouterHistory = __webpack_require__(233);
 
 	var _createRouterHistory2 = _interopRequireDefault(_createRouterHistory);
 
@@ -26713,7 +26767,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 234 */
+/* 235 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26728,23 +26782,23 @@
 
 	var _reactRouter = __webpack_require__(172);
 
-	var _reactRouterTransition = __webpack_require__(235);
+	var _reactRouterTransition = __webpack_require__(236);
 
-	var _Login = __webpack_require__(236);
+	var _Login = __webpack_require__(237);
 
 	var _Login2 = _interopRequireDefault(_Login);
 
-	var _requests = __webpack_require__(237);
+	var _requests = __webpack_require__(238);
 
 	var _requests2 = _interopRequireDefault(_requests);
 
-	var _utility = __webpack_require__(239);
+	var _utility = __webpack_require__(240);
 
 	var _utility2 = _interopRequireDefault(_utility);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var $ = __webpack_require__(238);
+	var $ = __webpack_require__(239);
 	window.jQuery = $;
 	window.$ = $;
 
@@ -26755,9 +26809,9 @@
 			return {
 				user: null,
 				cart: [],
-				products: ([{"_id":"5770881ac8b3f8c5593f99e1","addedOn":"2016-06-27T01:57:46.704Z","addedBy":"576f600c9455b5d53497f318","type":"Hat","season":"Summer","cost":35,"desc":"A new green hat","gender":"Male","SKU":"09","sizes":{"XL":"15","L":"10","M":"10","S":"10"},"name":"Green Hat","__v":1,"stripe_SKUs":{"S":"sku_8iFSQhDf0pyyYp","M":"sku_8iFSMS4qGbLIZk","L":"sku_8iFScxCaad0YHS","XL":"sku_8j3IzI54hP7SId"},"stripe_id":"prod_8iFSlHSa71SCKD","imageUrls":[],"media":[{"imageUrlHash":{"-large":"https://s3-us-west-2.amazonaws.com/makermeeks/images/279d1b82-cdf7-48ab-9a2a-a27966b31711-large.jpg","-medium":"https://s3-us-west-2.amazonaws.com/makermeeks/images/279d1b82-cdf7-48ab-9a2a-a27966b31711-medium.jpg","-small":"https://s3-us-west-2.amazonaws.com/makermeeks/images/279d1b82-cdf7-48ab-9a2a-a27966b31711-small.jpg","-thumb1":"https://s3-us-west-2.amazonaws.com/makermeeks/images/279d1b82-cdf7-48ab-9a2a-a27966b31711-thumb1.png","-thumb2":"https://s3-us-west-2.amazonaws.com/makermeeks/images/279d1b82-cdf7-48ab-9a2a-a27966b31711-thumb2.jpg","default":"https://s3-us-west-2.amazonaws.com/makermeeks/images/279d1b82-cdf7-48ab-9a2a-a27966b31711.jpg"},"name":"null","addedOn":"2016-07-20T05:03:14.462Z","isDefaultImage":false,"_id":"578f06125b8ce2cd0a0f189d"}],"tags":[]},{"_id":"57941e51b3b8600834a2f4fb","addedOn":"2016-07-24T01:48:01.733Z","addedBy":"578995e40f97960100d5535a","type":"Hat","season":"Summer","cost":45,"desc":"A KEY WIERN FOOD","gender":"UNI","SKU":"011","sizes":{"L":"10","M":"10","S":"45"},"name":"Key Wienr ","__v":0,"stripe_SKUs":{"L":"sku_8sMNcdUZZXuEYj","M":"sku_8sMNErBuKLZjNd","S":"sku_8sMNUKm0Vsvc9V"},"stripe_id":"prod_8sMNTHRJwqGhSj","media":[],"tags":[]},{"_id":"5789c9e30f97960100d5535e","addedOn":"2016-07-16T05:45:07.710Z","addedBy":"578995e40f97960100d5535a","type":"Hat","season":"Summer","cost":35,"desc":"Nat's Hat","gender":"Male","SKU":"012","name":"Natalies Hat","sizes":[{"L":"10","S":"10"}],"__v":6,"media":[{"imageUrlHash":{"undefined":"https://s3-us-west-2.amazonaws.com/makermeeks/images/27d0a561-a2e6-41d5-a463-a57c507dc300.png","-thumb2":"https://s3-us-west-2.amazonaws.com/makermeeks/images/27d0a561-a2e6-41d5-a463-a57c507dc300-thumb2.png","-thumb1":"https://s3-us-west-2.amazonaws.com/makermeeks/images/27d0a561-a2e6-41d5-a463-a57c507dc300-thumb1.png","-small":"https://s3-us-west-2.amazonaws.com/makermeeks/images/27d0a561-a2e6-41d5-a463-a57c507dc300-small.png","-medium":"https://s3-us-west-2.amazonaws.com/makermeeks/images/27d0a561-a2e6-41d5-a463-a57c507dc300-medium.png","-large":"https://s3-us-west-2.amazonaws.com/makermeeks/images/27d0a561-a2e6-41d5-a463-a57c507dc300-large.jpg"},"name":"null","addedOn":"2016-07-18T00:36:07.381Z","isDefaultImage":false,"_id":"578c247757c74d83225f10cd"},{"imageUrlHash":{"undefined":"https://s3-us-west-2.amazonaws.com/makermeeks/images/a90c199e-0a9b-469f-9d28-7cdcf00d5723.png","-thumb2":"https://s3-us-west-2.amazonaws.com/makermeeks/images/a90c199e-0a9b-469f-9d28-7cdcf00d5723-thumb2.png","-thumb1":"https://s3-us-west-2.amazonaws.com/makermeeks/images/a90c199e-0a9b-469f-9d28-7cdcf00d5723-thumb1.png","-small":"https://s3-us-west-2.amazonaws.com/makermeeks/images/a90c199e-0a9b-469f-9d28-7cdcf00d5723-small.png","-medium":"https://s3-us-west-2.amazonaws.com/makermeeks/images/a90c199e-0a9b-469f-9d28-7cdcf00d5723-medium.png","-large":"https://s3-us-west-2.amazonaws.com/makermeeks/images/a90c199e-0a9b-469f-9d28-7cdcf00d5723-large.jpg"},"name":"null","addedOn":"2016-07-18T00:36:07.894Z","isDefaultImage":false,"_id":"578c247757c74d83225f10cc"},{"imageUrlHash":{"-large":"https://s3-us-west-2.amazonaws.com/makermeeks/images/80c597b3-3291-46bd-8fe8-50ec00ed9a58-large.jpg","-medium":"https://s3-us-west-2.amazonaws.com/makermeeks/images/80c597b3-3291-46bd-8fe8-50ec00ed9a58-medium.jpg","-small":"https://s3-us-west-2.amazonaws.com/makermeeks/images/80c597b3-3291-46bd-8fe8-50ec00ed9a58-small.jpg","-thumb1":"https://s3-us-west-2.amazonaws.com/makermeeks/images/80c597b3-3291-46bd-8fe8-50ec00ed9a58-thumb1.png","-thumb2":"https://s3-us-west-2.amazonaws.com/makermeeks/images/80c597b3-3291-46bd-8fe8-50ec00ed9a58-thumb2.jpg","undefined":"https://s3-us-west-2.amazonaws.com/makermeeks/images/80c597b3-3291-46bd-8fe8-50ec00ed9a58.jpg"},"name":"null","addedOn":"2016-07-18T00:46:25.048Z","isDefaultImage":false,"_id":"578c26e120310a2823ae7a73"}],"tags":[]},{"_id":"5789c93d0f97960100d5535d","addedOn":"2016-07-16T05:42:21.625Z","addedBy":"578995e40f97960100d5535a","type":"Shirt","season":"Summer","cost":15,"desc":"A New Product","gender":"Male","SKU":"011","name":"New Product","sizes":[{"L":"0"}],"__v":5,"media":[{"imageUrlHash":{"undefined":"https://s3-us-west-2.amazonaws.com/makermeeks/images/a8eeab91-1500-4592-a460-25a47081798c.png","-thumb2":"https://s3-us-west-2.amazonaws.com/makermeeks/images/a8eeab91-1500-4592-a460-25a47081798c-thumb2.png","-thumb1":"https://s3-us-west-2.amazonaws.com/makermeeks/images/a8eeab91-1500-4592-a460-25a47081798c-thumb1.png","-small":"https://s3-us-west-2.amazonaws.com/makermeeks/images/a8eeab91-1500-4592-a460-25a47081798c-small.png","-medium":"https://s3-us-west-2.amazonaws.com/makermeeks/images/a8eeab91-1500-4592-a460-25a47081798c-medium.png","-large":"https://s3-us-west-2.amazonaws.com/makermeeks/images/a8eeab91-1500-4592-a460-25a47081798c-large.jpg"},"name":"null","addedOn":"2016-07-18T00:43:26.131Z","isDefaultImage":false,"_id":"578c262e3aeacaba22decdc0"},{"imageUrlHash":{"undefined":"https://s3-us-west-2.amazonaws.com/makermeeks/images/564aeb30-1d91-47af-a737-623e75b7d6a8.png","-thumb2":"https://s3-us-west-2.amazonaws.com/makermeeks/images/564aeb30-1d91-47af-a737-623e75b7d6a8-thumb2.png","-thumb1":"https://s3-us-west-2.amazonaws.com/makermeeks/images/564aeb30-1d91-47af-a737-623e75b7d6a8-thumb1.png","-small":"https://s3-us-west-2.amazonaws.com/makermeeks/images/564aeb30-1d91-47af-a737-623e75b7d6a8-small.png","-medium":"https://s3-us-west-2.amazonaws.com/makermeeks/images/564aeb30-1d91-47af-a737-623e75b7d6a8-medium.png","-large":"https://s3-us-west-2.amazonaws.com/makermeeks/images/564aeb30-1d91-47af-a737-623e75b7d6a8-large.jpg"},"name":"null","addedOn":"2016-07-18T00:43:26.398Z","isDefaultImage":false,"_id":"578c262e3aeacaba22decdbf"},{"imageUrlHash":{"-large":"https://s3-us-west-2.amazonaws.com/makermeeks/images/65b55ed5-0d04-40b7-a001-7997ceafd58b-large.jpg","-medium":"https://s3-us-west-2.amazonaws.com/makermeeks/images/65b55ed5-0d04-40b7-a001-7997ceafd58b-medium.jpg","-small":"https://s3-us-west-2.amazonaws.com/makermeeks/images/65b55ed5-0d04-40b7-a001-7997ceafd58b-small.jpg","-thumb1":"https://s3-us-west-2.amazonaws.com/makermeeks/images/65b55ed5-0d04-40b7-a001-7997ceafd58b-thumb1.png","-thumb2":"https://s3-us-west-2.amazonaws.com/makermeeks/images/65b55ed5-0d04-40b7-a001-7997ceafd58b-thumb2.jpg","undefined":"https://s3-us-west-2.amazonaws.com/makermeeks/images/65b55ed5-0d04-40b7-a001-7997ceafd58b.jpg"},"name":"null","addedOn":"2016-07-18T00:46:12.156Z","isDefaultImage":false,"_id":"578c26d420310a2823ae7a72"}],"tags":[]},{"_id":"57941f72b3b8600834a2f4fc","addedOn":"2016-07-24T01:52:50.678Z","addedBy":"578995e40f97960100d5535a","type":"b","season":"Winter","cost":35,"desc":"Pamala","gender":"Female","SKU":"014","sizes":{"L":"10","M":"10","S":"20"},"name":"Pam Pam Pam Pam Pam ","__v":0,"stripe_SKUs":{"L":"sku_8sMSu7FFC6qWPu","M":"sku_8sMSkdpuwIakBA","S":"sku_8sMScJnvGMjdgs"},"stripe_id":"prod_8sMSCbHZmYyoQm","media":[],"tags":[]},{"_id":"5789c74d0f97960100d5535c","addedOn":"2016-07-16T05:34:05.624Z","addedBy":"578995e40f97960100d5535a","type":"pink hat","season":"Summer","cost":35,"desc":"A pink hat","SKU":"10","name":"Pink Hat","sizes":[{"L":"10","S":"10"}],"__v":1,"stripe_id":"prod_8pQHL5kjOXZroy","media":[{"imageUrlHash":{"-large":"https://s3-us-west-2.amazonaws.com/makermeeks/images/af8c4c06-2607-4179-8863-ea13f022c6cc-large.jpg","-medium":"https://s3-us-west-2.amazonaws.com/makermeeks/images/af8c4c06-2607-4179-8863-ea13f022c6cc-medium.jpg","-small":"https://s3-us-west-2.amazonaws.com/makermeeks/images/af8c4c06-2607-4179-8863-ea13f022c6cc-small.jpg","-thumb1":"https://s3-us-west-2.amazonaws.com/makermeeks/images/af8c4c06-2607-4179-8863-ea13f022c6cc-thumb1.png","-thumb2":"https://s3-us-west-2.amazonaws.com/makermeeks/images/af8c4c06-2607-4179-8863-ea13f022c6cc-thumb2.jpg","default":"https://s3-us-west-2.amazonaws.com/makermeeks/images/af8c4c06-2607-4179-8863-ea13f022c6cc.jpg"},"name":"null","addedOn":"2016-07-18T00:54:51.225Z","isDefaultImage":false,"_id":"578c28dbbf8b2aab236f9731"}],"tags":["That' a lit tag"]},{"_id":"57735d00a3c9e08a0cad4a03","addedOn":"2016-06-29T05:30:40.855Z","addedBy":"576f600c9455b5d53497f318","type":"fag","season":"Autumn","cost":90,"desc":"Ryless is a bitch ass nigga","gender":"Female","SKU":"1","sizes":{"XL":"10","L":"90"},"name":"Rylees a Bitch Ass","__v":2,"stripe_SKUs":{"XL":"sku_8j3Lfgl0GqHDd1","L":"sku_8j3Ln0aDHoA4bA"},"stripe_id":"prod_8j3LFWCxG1W9Fv","media":[{"imageUrlHash":{"-large":"https://s3-us-west-2.amazonaws.com/makermeeks/images/fa557e7a-e530-416f-b812-4209ad3851d4-large.jpg","-medium":"https://s3-us-west-2.amazonaws.com/makermeeks/images/fa557e7a-e530-416f-b812-4209ad3851d4-medium.jpg","-small":"https://s3-us-west-2.amazonaws.com/makermeeks/images/fa557e7a-e530-416f-b812-4209ad3851d4-small.jpg","-thumb1":"https://s3-us-west-2.amazonaws.com/makermeeks/images/fa557e7a-e530-416f-b812-4209ad3851d4-thumb1.png","-thumb2":"https://s3-us-west-2.amazonaws.com/makermeeks/images/fa557e7a-e530-416f-b812-4209ad3851d4-thumb2.jpg","default":"https://s3-us-west-2.amazonaws.com/makermeeks/images/fa557e7a-e530-416f-b812-4209ad3851d4.jpg"},"name":"null","addedOn":"2016-07-18T02:38:06.169Z","isDefaultImage":false,"_id":"578c410e372fd9fc26283e98"}],"tags":[]},{"_id":"577975150c8dc1f875c8e1f0","addedOn":"2016-07-03T20:27:01.192Z","addedBy":"576f600c9455b5d53497f318","type":"Shirt","season":"Summer","cost":35,"desc":"Sam's Sick Item","gender":"Male","SKU":"03","sizes":{"L":"10","M":"10"},"name":"Sam's Item","__v":5,"stripe_SKUs":{"L":"sku_8kmht8qKvTNLP4","M":"sku_8kmhxaPbsGrU7F"},"stripe_id":"prod_8kmh0OXS4Z9aod","media":[{"imageUrlHash":{"-large":"https://s3-us-west-2.amazonaws.com/makermeeks/images/65df7560-6d4f-4a13-95a6-0fcbc09e8d07-large.jpg","-medium":"https://s3-us-west-2.amazonaws.com/makermeeks/images/65df7560-6d4f-4a13-95a6-0fcbc09e8d07-medium.png","-small":"https://s3-us-west-2.amazonaws.com/makermeeks/images/65df7560-6d4f-4a13-95a6-0fcbc09e8d07-small.png","-thumb1":"https://s3-us-west-2.amazonaws.com/makermeeks/images/65df7560-6d4f-4a13-95a6-0fcbc09e8d07-thumb1.png","-thumb2":"https://s3-us-west-2.amazonaws.com/makermeeks/images/65df7560-6d4f-4a13-95a6-0fcbc09e8d07-thumb2.png","undefined":"https://s3-us-west-2.amazonaws.com/makermeeks/images/65df7560-6d4f-4a13-95a6-0fcbc09e8d07.png"},"name":"null","addedOn":"2016-07-18T00:29:41.104Z","isDefaultImage":false,"_id":"578c22f58c962d3b21dad464"}],"tags":[]},{"_id":"57941dd1b3b8600834a2f4fa","addedOn":"2016-07-24T01:45:53.547Z","addedBy":"578995e40f97960100d5535a","type":"Knitted Scarf","season":"Summer","cost":35,"desc":"Weiner Sauce","gender":"Male","SKU":"012","sizes":[{"L":"10","S":"10"}],"name":"Winer lamba","__v":0,"media":[],"tags":[]}]),
+				products: ([{"_id":"5770881ac8b3f8c5593f99e1","addedOn":"2016-06-27T01:57:46.704Z","addedBy":"576f600c9455b5d53497f318","type":"Hat","season":"Summer","cost":35,"desc":"A new green hat","gender":"Male","SKU":"09","sizes":{"XL":"15","L":"10","M":"10","S":"10"},"name":"Green Hat","__v":1,"stripe_SKUs":{"S":"sku_8iFSQhDf0pyyYp","M":"sku_8iFSMS4qGbLIZk","L":"sku_8iFScxCaad0YHS","XL":"sku_8j3IzI54hP7SId"},"stripe_id":"prod_8iFSlHSa71SCKD","imageUrls":[],"media":[{"imageUrlHash":{"-large":"https://s3-us-west-2.amazonaws.com/makermeeks/images/279d1b82-cdf7-48ab-9a2a-a27966b31711-large.jpg","-medium":"https://s3-us-west-2.amazonaws.com/makermeeks/images/279d1b82-cdf7-48ab-9a2a-a27966b31711-medium.jpg","-small":"https://s3-us-west-2.amazonaws.com/makermeeks/images/279d1b82-cdf7-48ab-9a2a-a27966b31711-small.jpg","-thumb1":"https://s3-us-west-2.amazonaws.com/makermeeks/images/279d1b82-cdf7-48ab-9a2a-a27966b31711-thumb1.png","-thumb2":"https://s3-us-west-2.amazonaws.com/makermeeks/images/279d1b82-cdf7-48ab-9a2a-a27966b31711-thumb2.jpg","default":"https://s3-us-west-2.amazonaws.com/makermeeks/images/279d1b82-cdf7-48ab-9a2a-a27966b31711.jpg"},"name":"null","addedOn":"2016-07-20T05:03:14.462Z","isDefaultImage":false,"_id":"578f06125b8ce2cd0a0f189d"}],"tags":[]},{"_id":"57941e51b3b8600834a2f4fb","addedOn":"2016-07-24T01:48:01.733Z","addedBy":"578995e40f97960100d5535a","type":"Hat","season":"Summer","cost":45,"desc":"A KEY WIERN FOOD","gender":"UNI","SKU":"011","sizes":{"L":"10","M":"10","S":"45"},"name":"Key Wienr ","__v":0,"stripe_SKUs":{"L":"sku_8sMNcdUZZXuEYj","M":"sku_8sMNErBuKLZjNd","S":"sku_8sMNUKm0Vsvc9V"},"stripe_id":"prod_8sMNTHRJwqGhSj","media":[],"tags":[]},{"_id":"5789c9e30f97960100d5535e","addedOn":"2016-07-16T05:45:07.710Z","addedBy":"578995e40f97960100d5535a","type":"Hat","season":"Summer","cost":35,"desc":"Nat's Hat","gender":"Male","SKU":"012","name":"Natalies Hat","sizes":[{"L":"10","S":"10"}],"__v":6,"media":[{"imageUrlHash":{"undefined":"https://s3-us-west-2.amazonaws.com/makermeeks/images/27d0a561-a2e6-41d5-a463-a57c507dc300.png","-thumb2":"https://s3-us-west-2.amazonaws.com/makermeeks/images/27d0a561-a2e6-41d5-a463-a57c507dc300-thumb2.png","-thumb1":"https://s3-us-west-2.amazonaws.com/makermeeks/images/27d0a561-a2e6-41d5-a463-a57c507dc300-thumb1.png","-small":"https://s3-us-west-2.amazonaws.com/makermeeks/images/27d0a561-a2e6-41d5-a463-a57c507dc300-small.png","-medium":"https://s3-us-west-2.amazonaws.com/makermeeks/images/27d0a561-a2e6-41d5-a463-a57c507dc300-medium.png","-large":"https://s3-us-west-2.amazonaws.com/makermeeks/images/27d0a561-a2e6-41d5-a463-a57c507dc300-large.jpg"},"name":"null","addedOn":"2016-07-18T00:36:07.381Z","isDefaultImage":false,"_id":"578c247757c74d83225f10cd"},{"imageUrlHash":{"undefined":"https://s3-us-west-2.amazonaws.com/makermeeks/images/a90c199e-0a9b-469f-9d28-7cdcf00d5723.png","-thumb2":"https://s3-us-west-2.amazonaws.com/makermeeks/images/a90c199e-0a9b-469f-9d28-7cdcf00d5723-thumb2.png","-thumb1":"https://s3-us-west-2.amazonaws.com/makermeeks/images/a90c199e-0a9b-469f-9d28-7cdcf00d5723-thumb1.png","-small":"https://s3-us-west-2.amazonaws.com/makermeeks/images/a90c199e-0a9b-469f-9d28-7cdcf00d5723-small.png","-medium":"https://s3-us-west-2.amazonaws.com/makermeeks/images/a90c199e-0a9b-469f-9d28-7cdcf00d5723-medium.png","-large":"https://s3-us-west-2.amazonaws.com/makermeeks/images/a90c199e-0a9b-469f-9d28-7cdcf00d5723-large.jpg"},"name":"null","addedOn":"2016-07-18T00:36:07.894Z","isDefaultImage":false,"_id":"578c247757c74d83225f10cc"},{"imageUrlHash":{"-large":"https://s3-us-west-2.amazonaws.com/makermeeks/images/80c597b3-3291-46bd-8fe8-50ec00ed9a58-large.jpg","-medium":"https://s3-us-west-2.amazonaws.com/makermeeks/images/80c597b3-3291-46bd-8fe8-50ec00ed9a58-medium.jpg","-small":"https://s3-us-west-2.amazonaws.com/makermeeks/images/80c597b3-3291-46bd-8fe8-50ec00ed9a58-small.jpg","-thumb1":"https://s3-us-west-2.amazonaws.com/makermeeks/images/80c597b3-3291-46bd-8fe8-50ec00ed9a58-thumb1.png","-thumb2":"https://s3-us-west-2.amazonaws.com/makermeeks/images/80c597b3-3291-46bd-8fe8-50ec00ed9a58-thumb2.jpg","undefined":"https://s3-us-west-2.amazonaws.com/makermeeks/images/80c597b3-3291-46bd-8fe8-50ec00ed9a58.jpg"},"name":"null","addedOn":"2016-07-18T00:46:25.048Z","isDefaultImage":false,"_id":"578c26e120310a2823ae7a73"}],"tags":[]},{"_id":"5789c93d0f97960100d5535d","addedOn":"2016-07-16T05:42:21.625Z","addedBy":"578995e40f97960100d5535a","type":"Shirt","season":"Summer","cost":15,"desc":"A New Product","gender":"Male","SKU":"011","name":"New Product","sizes":[{"L":"0"}],"__v":5,"media":[{"imageUrlHash":{"undefined":"https://s3-us-west-2.amazonaws.com/makermeeks/images/a8eeab91-1500-4592-a460-25a47081798c.png","-thumb2":"https://s3-us-west-2.amazonaws.com/makermeeks/images/a8eeab91-1500-4592-a460-25a47081798c-thumb2.png","-thumb1":"https://s3-us-west-2.amazonaws.com/makermeeks/images/a8eeab91-1500-4592-a460-25a47081798c-thumb1.png","-small":"https://s3-us-west-2.amazonaws.com/makermeeks/images/a8eeab91-1500-4592-a460-25a47081798c-small.png","-medium":"https://s3-us-west-2.amazonaws.com/makermeeks/images/a8eeab91-1500-4592-a460-25a47081798c-medium.png","-large":"https://s3-us-west-2.amazonaws.com/makermeeks/images/a8eeab91-1500-4592-a460-25a47081798c-large.jpg"},"name":"null","addedOn":"2016-07-18T00:43:26.131Z","isDefaultImage":false,"_id":"578c262e3aeacaba22decdc0"},{"imageUrlHash":{"undefined":"https://s3-us-west-2.amazonaws.com/makermeeks/images/564aeb30-1d91-47af-a737-623e75b7d6a8.png","-thumb2":"https://s3-us-west-2.amazonaws.com/makermeeks/images/564aeb30-1d91-47af-a737-623e75b7d6a8-thumb2.png","-thumb1":"https://s3-us-west-2.amazonaws.com/makermeeks/images/564aeb30-1d91-47af-a737-623e75b7d6a8-thumb1.png","-small":"https://s3-us-west-2.amazonaws.com/makermeeks/images/564aeb30-1d91-47af-a737-623e75b7d6a8-small.png","-medium":"https://s3-us-west-2.amazonaws.com/makermeeks/images/564aeb30-1d91-47af-a737-623e75b7d6a8-medium.png","-large":"https://s3-us-west-2.amazonaws.com/makermeeks/images/564aeb30-1d91-47af-a737-623e75b7d6a8-large.jpg"},"name":"null","addedOn":"2016-07-18T00:43:26.398Z","isDefaultImage":false,"_id":"578c262e3aeacaba22decdbf"},{"imageUrlHash":{"-large":"https://s3-us-west-2.amazonaws.com/makermeeks/images/65b55ed5-0d04-40b7-a001-7997ceafd58b-large.jpg","-medium":"https://s3-us-west-2.amazonaws.com/makermeeks/images/65b55ed5-0d04-40b7-a001-7997ceafd58b-medium.jpg","-small":"https://s3-us-west-2.amazonaws.com/makermeeks/images/65b55ed5-0d04-40b7-a001-7997ceafd58b-small.jpg","-thumb1":"https://s3-us-west-2.amazonaws.com/makermeeks/images/65b55ed5-0d04-40b7-a001-7997ceafd58b-thumb1.png","-thumb2":"https://s3-us-west-2.amazonaws.com/makermeeks/images/65b55ed5-0d04-40b7-a001-7997ceafd58b-thumb2.jpg","undefined":"https://s3-us-west-2.amazonaws.com/makermeeks/images/65b55ed5-0d04-40b7-a001-7997ceafd58b.jpg"},"name":"null","addedOn":"2016-07-18T00:46:12.156Z","isDefaultImage":false,"_id":"578c26d420310a2823ae7a72"}],"tags":[]},{"_id":"57941f72b3b8600834a2f4fc","addedOn":"2016-07-24T01:52:50.678Z","addedBy":"578995e40f97960100d5535a","type":"b","season":"Winter","cost":35,"desc":"Pamala","gender":"Female","SKU":"014","sizes":{"L":"10","M":"10","S":"20"},"name":"Pam Pam Pam Pam Pam ","__v":0,"stripe_SKUs":{"L":"sku_8sMSu7FFC6qWPu","M":"sku_8sMSkdpuwIakBA","S":"sku_8sMScJnvGMjdgs"},"stripe_id":"prod_8sMSCbHZmYyoQm","media":[],"tags":[]},{"_id":"5789c74d0f97960100d5535c","addedOn":"2016-07-16T05:34:05.624Z","addedBy":"578995e40f97960100d5535a","type":"pink hat","season":"Summer","cost":35,"desc":"A pink hat","SKU":"10","name":"Pink Hat","sizes":[{"L":"10","S":"10"}],"__v":1,"stripe_id":"prod_8pQHL5kjOXZroy","media":[{"imageUrlHash":{"-large":"https://s3-us-west-2.amazonaws.com/makermeeks/images/af8c4c06-2607-4179-8863-ea13f022c6cc-large.jpg","-medium":"https://s3-us-west-2.amazonaws.com/makermeeks/images/af8c4c06-2607-4179-8863-ea13f022c6cc-medium.jpg","-small":"https://s3-us-west-2.amazonaws.com/makermeeks/images/af8c4c06-2607-4179-8863-ea13f022c6cc-small.jpg","-thumb1":"https://s3-us-west-2.amazonaws.com/makermeeks/images/af8c4c06-2607-4179-8863-ea13f022c6cc-thumb1.png","-thumb2":"https://s3-us-west-2.amazonaws.com/makermeeks/images/af8c4c06-2607-4179-8863-ea13f022c6cc-thumb2.jpg","default":"https://s3-us-west-2.amazonaws.com/makermeeks/images/af8c4c06-2607-4179-8863-ea13f022c6cc.jpg"},"name":"null","addedOn":"2016-07-18T00:54:51.225Z","isDefaultImage":false,"_id":"578c28dbbf8b2aab236f9731"}],"tags":["That' a lit tag"]},{"_id":"57735d00a3c9e08a0cad4a03","addedOn":"2016-06-29T05:30:40.855Z","addedBy":"576f600c9455b5d53497f318","type":"fag","season":"Autumn","cost":90,"desc":"Ryless is a bitch ass nigga","gender":"Female","SKU":"1","sizes":{"XL":"10","L":"90"},"name":"Rylees a Bitch Ass","__v":2,"stripe_SKUs":{"XL":"sku_8j3Lfgl0GqHDd1","L":"sku_8j3Ln0aDHoA4bA"},"stripe_id":"prod_8j3LFWCxG1W9Fv","media":[{"imageUrlHash":{"-large":"https://s3-us-west-2.amazonaws.com/makermeeks/images/fa557e7a-e530-416f-b812-4209ad3851d4-large.jpg","-medium":"https://s3-us-west-2.amazonaws.com/makermeeks/images/fa557e7a-e530-416f-b812-4209ad3851d4-medium.jpg","-small":"https://s3-us-west-2.amazonaws.com/makermeeks/images/fa557e7a-e530-416f-b812-4209ad3851d4-small.jpg","-thumb1":"https://s3-us-west-2.amazonaws.com/makermeeks/images/fa557e7a-e530-416f-b812-4209ad3851d4-thumb1.png","-thumb2":"https://s3-us-west-2.amazonaws.com/makermeeks/images/fa557e7a-e530-416f-b812-4209ad3851d4-thumb2.jpg","default":"https://s3-us-west-2.amazonaws.com/makermeeks/images/fa557e7a-e530-416f-b812-4209ad3851d4.jpg"},"name":"null","addedOn":"2016-07-18T02:38:06.169Z","isDefaultImage":false,"_id":"578c410e372fd9fc26283e98"}],"tags":[]},{"_id":"577975150c8dc1f875c8e1f0","addedOn":"2016-07-03T20:27:01.192Z","addedBy":"576f600c9455b5d53497f318","type":"Shirt","season":"Summer","cost":35,"desc":"Sam's Sick Item","gender":"Male","SKU":"03","sizes":{"L":"10","M":"10"},"name":"Sam's Item","__v":5,"stripe_SKUs":{"L":"sku_8kmht8qKvTNLP4","M":"sku_8kmhxaPbsGrU7F"},"stripe_id":"prod_8kmh0OXS4Z9aod","media":[{"imageUrlHash":{"-large":"https://s3-us-west-2.amazonaws.com/makermeeks/images/65df7560-6d4f-4a13-95a6-0fcbc09e8d07-large.jpg","-medium":"https://s3-us-west-2.amazonaws.com/makermeeks/images/65df7560-6d4f-4a13-95a6-0fcbc09e8d07-medium.png","-small":"https://s3-us-west-2.amazonaws.com/makermeeks/images/65df7560-6d4f-4a13-95a6-0fcbc09e8d07-small.png","-thumb1":"https://s3-us-west-2.amazonaws.com/makermeeks/images/65df7560-6d4f-4a13-95a6-0fcbc09e8d07-thumb1.png","-thumb2":"https://s3-us-west-2.amazonaws.com/makermeeks/images/65df7560-6d4f-4a13-95a6-0fcbc09e8d07-thumb2.png","undefined":"https://s3-us-west-2.amazonaws.com/makermeeks/images/65df7560-6d4f-4a13-95a6-0fcbc09e8d07.png"},"name":"null","addedOn":"2016-07-18T00:29:41.104Z","isDefaultImage":false,"_id":"578c22f58c962d3b21dad464"}],"tags":[]},{"_id":"57941dbf4dd7bf362d36fc98","addedOn":"2016-07-24T01:45:35.389Z","addedBy":"578995e40f97960100d5535a","type":"Knitted Scarf","season":"Summer","cost":35,"desc":"Weiner Sauce","gender":"Male","SKU":"012","sizes":[{"L":"10","S":"10"}],"name":"Winer lamba","__v":0,"media":[],"tags":[]}]),
 				userShipping: [],
-				productsHash: this.createHash(([{"_id":"5770881ac8b3f8c5593f99e1","addedOn":"2016-06-27T01:57:46.704Z","addedBy":"576f600c9455b5d53497f318","type":"Hat","season":"Summer","cost":35,"desc":"A new green hat","gender":"Male","SKU":"09","sizes":{"XL":"15","L":"10","M":"10","S":"10"},"name":"Green Hat","__v":1,"stripe_SKUs":{"S":"sku_8iFSQhDf0pyyYp","M":"sku_8iFSMS4qGbLIZk","L":"sku_8iFScxCaad0YHS","XL":"sku_8j3IzI54hP7SId"},"stripe_id":"prod_8iFSlHSa71SCKD","imageUrls":[],"media":[{"imageUrlHash":{"-large":"https://s3-us-west-2.amazonaws.com/makermeeks/images/279d1b82-cdf7-48ab-9a2a-a27966b31711-large.jpg","-medium":"https://s3-us-west-2.amazonaws.com/makermeeks/images/279d1b82-cdf7-48ab-9a2a-a27966b31711-medium.jpg","-small":"https://s3-us-west-2.amazonaws.com/makermeeks/images/279d1b82-cdf7-48ab-9a2a-a27966b31711-small.jpg","-thumb1":"https://s3-us-west-2.amazonaws.com/makermeeks/images/279d1b82-cdf7-48ab-9a2a-a27966b31711-thumb1.png","-thumb2":"https://s3-us-west-2.amazonaws.com/makermeeks/images/279d1b82-cdf7-48ab-9a2a-a27966b31711-thumb2.jpg","default":"https://s3-us-west-2.amazonaws.com/makermeeks/images/279d1b82-cdf7-48ab-9a2a-a27966b31711.jpg"},"name":"null","addedOn":"2016-07-20T05:03:14.462Z","isDefaultImage":false,"_id":"578f06125b8ce2cd0a0f189d"}],"tags":[]},{"_id":"57941e51b3b8600834a2f4fb","addedOn":"2016-07-24T01:48:01.733Z","addedBy":"578995e40f97960100d5535a","type":"Hat","season":"Summer","cost":45,"desc":"A KEY WIERN FOOD","gender":"UNI","SKU":"011","sizes":{"L":"10","M":"10","S":"45"},"name":"Key Wienr ","__v":0,"stripe_SKUs":{"L":"sku_8sMNcdUZZXuEYj","M":"sku_8sMNErBuKLZjNd","S":"sku_8sMNUKm0Vsvc9V"},"stripe_id":"prod_8sMNTHRJwqGhSj","media":[],"tags":[]},{"_id":"5789c9e30f97960100d5535e","addedOn":"2016-07-16T05:45:07.710Z","addedBy":"578995e40f97960100d5535a","type":"Hat","season":"Summer","cost":35,"desc":"Nat's Hat","gender":"Male","SKU":"012","name":"Natalies Hat","sizes":[{"L":"10","S":"10"}],"__v":6,"media":[{"imageUrlHash":{"undefined":"https://s3-us-west-2.amazonaws.com/makermeeks/images/27d0a561-a2e6-41d5-a463-a57c507dc300.png","-thumb2":"https://s3-us-west-2.amazonaws.com/makermeeks/images/27d0a561-a2e6-41d5-a463-a57c507dc300-thumb2.png","-thumb1":"https://s3-us-west-2.amazonaws.com/makermeeks/images/27d0a561-a2e6-41d5-a463-a57c507dc300-thumb1.png","-small":"https://s3-us-west-2.amazonaws.com/makermeeks/images/27d0a561-a2e6-41d5-a463-a57c507dc300-small.png","-medium":"https://s3-us-west-2.amazonaws.com/makermeeks/images/27d0a561-a2e6-41d5-a463-a57c507dc300-medium.png","-large":"https://s3-us-west-2.amazonaws.com/makermeeks/images/27d0a561-a2e6-41d5-a463-a57c507dc300-large.jpg"},"name":"null","addedOn":"2016-07-18T00:36:07.381Z","isDefaultImage":false,"_id":"578c247757c74d83225f10cd"},{"imageUrlHash":{"undefined":"https://s3-us-west-2.amazonaws.com/makermeeks/images/a90c199e-0a9b-469f-9d28-7cdcf00d5723.png","-thumb2":"https://s3-us-west-2.amazonaws.com/makermeeks/images/a90c199e-0a9b-469f-9d28-7cdcf00d5723-thumb2.png","-thumb1":"https://s3-us-west-2.amazonaws.com/makermeeks/images/a90c199e-0a9b-469f-9d28-7cdcf00d5723-thumb1.png","-small":"https://s3-us-west-2.amazonaws.com/makermeeks/images/a90c199e-0a9b-469f-9d28-7cdcf00d5723-small.png","-medium":"https://s3-us-west-2.amazonaws.com/makermeeks/images/a90c199e-0a9b-469f-9d28-7cdcf00d5723-medium.png","-large":"https://s3-us-west-2.amazonaws.com/makermeeks/images/a90c199e-0a9b-469f-9d28-7cdcf00d5723-large.jpg"},"name":"null","addedOn":"2016-07-18T00:36:07.894Z","isDefaultImage":false,"_id":"578c247757c74d83225f10cc"},{"imageUrlHash":{"-large":"https://s3-us-west-2.amazonaws.com/makermeeks/images/80c597b3-3291-46bd-8fe8-50ec00ed9a58-large.jpg","-medium":"https://s3-us-west-2.amazonaws.com/makermeeks/images/80c597b3-3291-46bd-8fe8-50ec00ed9a58-medium.jpg","-small":"https://s3-us-west-2.amazonaws.com/makermeeks/images/80c597b3-3291-46bd-8fe8-50ec00ed9a58-small.jpg","-thumb1":"https://s3-us-west-2.amazonaws.com/makermeeks/images/80c597b3-3291-46bd-8fe8-50ec00ed9a58-thumb1.png","-thumb2":"https://s3-us-west-2.amazonaws.com/makermeeks/images/80c597b3-3291-46bd-8fe8-50ec00ed9a58-thumb2.jpg","undefined":"https://s3-us-west-2.amazonaws.com/makermeeks/images/80c597b3-3291-46bd-8fe8-50ec00ed9a58.jpg"},"name":"null","addedOn":"2016-07-18T00:46:25.048Z","isDefaultImage":false,"_id":"578c26e120310a2823ae7a73"}],"tags":[]},{"_id":"5789c93d0f97960100d5535d","addedOn":"2016-07-16T05:42:21.625Z","addedBy":"578995e40f97960100d5535a","type":"Shirt","season":"Summer","cost":15,"desc":"A New Product","gender":"Male","SKU":"011","name":"New Product","sizes":[{"L":"0"}],"__v":5,"media":[{"imageUrlHash":{"undefined":"https://s3-us-west-2.amazonaws.com/makermeeks/images/a8eeab91-1500-4592-a460-25a47081798c.png","-thumb2":"https://s3-us-west-2.amazonaws.com/makermeeks/images/a8eeab91-1500-4592-a460-25a47081798c-thumb2.png","-thumb1":"https://s3-us-west-2.amazonaws.com/makermeeks/images/a8eeab91-1500-4592-a460-25a47081798c-thumb1.png","-small":"https://s3-us-west-2.amazonaws.com/makermeeks/images/a8eeab91-1500-4592-a460-25a47081798c-small.png","-medium":"https://s3-us-west-2.amazonaws.com/makermeeks/images/a8eeab91-1500-4592-a460-25a47081798c-medium.png","-large":"https://s3-us-west-2.amazonaws.com/makermeeks/images/a8eeab91-1500-4592-a460-25a47081798c-large.jpg"},"name":"null","addedOn":"2016-07-18T00:43:26.131Z","isDefaultImage":false,"_id":"578c262e3aeacaba22decdc0"},{"imageUrlHash":{"undefined":"https://s3-us-west-2.amazonaws.com/makermeeks/images/564aeb30-1d91-47af-a737-623e75b7d6a8.png","-thumb2":"https://s3-us-west-2.amazonaws.com/makermeeks/images/564aeb30-1d91-47af-a737-623e75b7d6a8-thumb2.png","-thumb1":"https://s3-us-west-2.amazonaws.com/makermeeks/images/564aeb30-1d91-47af-a737-623e75b7d6a8-thumb1.png","-small":"https://s3-us-west-2.amazonaws.com/makermeeks/images/564aeb30-1d91-47af-a737-623e75b7d6a8-small.png","-medium":"https://s3-us-west-2.amazonaws.com/makermeeks/images/564aeb30-1d91-47af-a737-623e75b7d6a8-medium.png","-large":"https://s3-us-west-2.amazonaws.com/makermeeks/images/564aeb30-1d91-47af-a737-623e75b7d6a8-large.jpg"},"name":"null","addedOn":"2016-07-18T00:43:26.398Z","isDefaultImage":false,"_id":"578c262e3aeacaba22decdbf"},{"imageUrlHash":{"-large":"https://s3-us-west-2.amazonaws.com/makermeeks/images/65b55ed5-0d04-40b7-a001-7997ceafd58b-large.jpg","-medium":"https://s3-us-west-2.amazonaws.com/makermeeks/images/65b55ed5-0d04-40b7-a001-7997ceafd58b-medium.jpg","-small":"https://s3-us-west-2.amazonaws.com/makermeeks/images/65b55ed5-0d04-40b7-a001-7997ceafd58b-small.jpg","-thumb1":"https://s3-us-west-2.amazonaws.com/makermeeks/images/65b55ed5-0d04-40b7-a001-7997ceafd58b-thumb1.png","-thumb2":"https://s3-us-west-2.amazonaws.com/makermeeks/images/65b55ed5-0d04-40b7-a001-7997ceafd58b-thumb2.jpg","undefined":"https://s3-us-west-2.amazonaws.com/makermeeks/images/65b55ed5-0d04-40b7-a001-7997ceafd58b.jpg"},"name":"null","addedOn":"2016-07-18T00:46:12.156Z","isDefaultImage":false,"_id":"578c26d420310a2823ae7a72"}],"tags":[]},{"_id":"57941f72b3b8600834a2f4fc","addedOn":"2016-07-24T01:52:50.678Z","addedBy":"578995e40f97960100d5535a","type":"b","season":"Winter","cost":35,"desc":"Pamala","gender":"Female","SKU":"014","sizes":{"L":"10","M":"10","S":"20"},"name":"Pam Pam Pam Pam Pam ","__v":0,"stripe_SKUs":{"L":"sku_8sMSu7FFC6qWPu","M":"sku_8sMSkdpuwIakBA","S":"sku_8sMScJnvGMjdgs"},"stripe_id":"prod_8sMSCbHZmYyoQm","media":[],"tags":[]},{"_id":"5789c74d0f97960100d5535c","addedOn":"2016-07-16T05:34:05.624Z","addedBy":"578995e40f97960100d5535a","type":"pink hat","season":"Summer","cost":35,"desc":"A pink hat","SKU":"10","name":"Pink Hat","sizes":[{"L":"10","S":"10"}],"__v":1,"stripe_id":"prod_8pQHL5kjOXZroy","media":[{"imageUrlHash":{"-large":"https://s3-us-west-2.amazonaws.com/makermeeks/images/af8c4c06-2607-4179-8863-ea13f022c6cc-large.jpg","-medium":"https://s3-us-west-2.amazonaws.com/makermeeks/images/af8c4c06-2607-4179-8863-ea13f022c6cc-medium.jpg","-small":"https://s3-us-west-2.amazonaws.com/makermeeks/images/af8c4c06-2607-4179-8863-ea13f022c6cc-small.jpg","-thumb1":"https://s3-us-west-2.amazonaws.com/makermeeks/images/af8c4c06-2607-4179-8863-ea13f022c6cc-thumb1.png","-thumb2":"https://s3-us-west-2.amazonaws.com/makermeeks/images/af8c4c06-2607-4179-8863-ea13f022c6cc-thumb2.jpg","default":"https://s3-us-west-2.amazonaws.com/makermeeks/images/af8c4c06-2607-4179-8863-ea13f022c6cc.jpg"},"name":"null","addedOn":"2016-07-18T00:54:51.225Z","isDefaultImage":false,"_id":"578c28dbbf8b2aab236f9731"}],"tags":["That' a lit tag"]},{"_id":"57735d00a3c9e08a0cad4a03","addedOn":"2016-06-29T05:30:40.855Z","addedBy":"576f600c9455b5d53497f318","type":"fag","season":"Autumn","cost":90,"desc":"Ryless is a bitch ass nigga","gender":"Female","SKU":"1","sizes":{"XL":"10","L":"90"},"name":"Rylees a Bitch Ass","__v":2,"stripe_SKUs":{"XL":"sku_8j3Lfgl0GqHDd1","L":"sku_8j3Ln0aDHoA4bA"},"stripe_id":"prod_8j3LFWCxG1W9Fv","media":[{"imageUrlHash":{"-large":"https://s3-us-west-2.amazonaws.com/makermeeks/images/fa557e7a-e530-416f-b812-4209ad3851d4-large.jpg","-medium":"https://s3-us-west-2.amazonaws.com/makermeeks/images/fa557e7a-e530-416f-b812-4209ad3851d4-medium.jpg","-small":"https://s3-us-west-2.amazonaws.com/makermeeks/images/fa557e7a-e530-416f-b812-4209ad3851d4-small.jpg","-thumb1":"https://s3-us-west-2.amazonaws.com/makermeeks/images/fa557e7a-e530-416f-b812-4209ad3851d4-thumb1.png","-thumb2":"https://s3-us-west-2.amazonaws.com/makermeeks/images/fa557e7a-e530-416f-b812-4209ad3851d4-thumb2.jpg","default":"https://s3-us-west-2.amazonaws.com/makermeeks/images/fa557e7a-e530-416f-b812-4209ad3851d4.jpg"},"name":"null","addedOn":"2016-07-18T02:38:06.169Z","isDefaultImage":false,"_id":"578c410e372fd9fc26283e98"}],"tags":[]},{"_id":"577975150c8dc1f875c8e1f0","addedOn":"2016-07-03T20:27:01.192Z","addedBy":"576f600c9455b5d53497f318","type":"Shirt","season":"Summer","cost":35,"desc":"Sam's Sick Item","gender":"Male","SKU":"03","sizes":{"L":"10","M":"10"},"name":"Sam's Item","__v":5,"stripe_SKUs":{"L":"sku_8kmht8qKvTNLP4","M":"sku_8kmhxaPbsGrU7F"},"stripe_id":"prod_8kmh0OXS4Z9aod","media":[{"imageUrlHash":{"-large":"https://s3-us-west-2.amazonaws.com/makermeeks/images/65df7560-6d4f-4a13-95a6-0fcbc09e8d07-large.jpg","-medium":"https://s3-us-west-2.amazonaws.com/makermeeks/images/65df7560-6d4f-4a13-95a6-0fcbc09e8d07-medium.png","-small":"https://s3-us-west-2.amazonaws.com/makermeeks/images/65df7560-6d4f-4a13-95a6-0fcbc09e8d07-small.png","-thumb1":"https://s3-us-west-2.amazonaws.com/makermeeks/images/65df7560-6d4f-4a13-95a6-0fcbc09e8d07-thumb1.png","-thumb2":"https://s3-us-west-2.amazonaws.com/makermeeks/images/65df7560-6d4f-4a13-95a6-0fcbc09e8d07-thumb2.png","undefined":"https://s3-us-west-2.amazonaws.com/makermeeks/images/65df7560-6d4f-4a13-95a6-0fcbc09e8d07.png"},"name":"null","addedOn":"2016-07-18T00:29:41.104Z","isDefaultImage":false,"_id":"578c22f58c962d3b21dad464"}],"tags":[]},{"_id":"57941dd1b3b8600834a2f4fa","addedOn":"2016-07-24T01:45:53.547Z","addedBy":"578995e40f97960100d5535a","type":"Knitted Scarf","season":"Summer","cost":35,"desc":"Weiner Sauce","gender":"Male","SKU":"012","sizes":[{"L":"10","S":"10"}],"name":"Winer lamba","__v":0,"media":[],"tags":[]}]), '_id'),
+				productsHash: this.createHash(([{"_id":"5770881ac8b3f8c5593f99e1","addedOn":"2016-06-27T01:57:46.704Z","addedBy":"576f600c9455b5d53497f318","type":"Hat","season":"Summer","cost":35,"desc":"A new green hat","gender":"Male","SKU":"09","sizes":{"XL":"15","L":"10","M":"10","S":"10"},"name":"Green Hat","__v":1,"stripe_SKUs":{"S":"sku_8iFSQhDf0pyyYp","M":"sku_8iFSMS4qGbLIZk","L":"sku_8iFScxCaad0YHS","XL":"sku_8j3IzI54hP7SId"},"stripe_id":"prod_8iFSlHSa71SCKD","imageUrls":[],"media":[{"imageUrlHash":{"-large":"https://s3-us-west-2.amazonaws.com/makermeeks/images/279d1b82-cdf7-48ab-9a2a-a27966b31711-large.jpg","-medium":"https://s3-us-west-2.amazonaws.com/makermeeks/images/279d1b82-cdf7-48ab-9a2a-a27966b31711-medium.jpg","-small":"https://s3-us-west-2.amazonaws.com/makermeeks/images/279d1b82-cdf7-48ab-9a2a-a27966b31711-small.jpg","-thumb1":"https://s3-us-west-2.amazonaws.com/makermeeks/images/279d1b82-cdf7-48ab-9a2a-a27966b31711-thumb1.png","-thumb2":"https://s3-us-west-2.amazonaws.com/makermeeks/images/279d1b82-cdf7-48ab-9a2a-a27966b31711-thumb2.jpg","default":"https://s3-us-west-2.amazonaws.com/makermeeks/images/279d1b82-cdf7-48ab-9a2a-a27966b31711.jpg"},"name":"null","addedOn":"2016-07-20T05:03:14.462Z","isDefaultImage":false,"_id":"578f06125b8ce2cd0a0f189d"}],"tags":[]},{"_id":"57941e51b3b8600834a2f4fb","addedOn":"2016-07-24T01:48:01.733Z","addedBy":"578995e40f97960100d5535a","type":"Hat","season":"Summer","cost":45,"desc":"A KEY WIERN FOOD","gender":"UNI","SKU":"011","sizes":{"L":"10","M":"10","S":"45"},"name":"Key Wienr ","__v":0,"stripe_SKUs":{"L":"sku_8sMNcdUZZXuEYj","M":"sku_8sMNErBuKLZjNd","S":"sku_8sMNUKm0Vsvc9V"},"stripe_id":"prod_8sMNTHRJwqGhSj","media":[],"tags":[]},{"_id":"5789c9e30f97960100d5535e","addedOn":"2016-07-16T05:45:07.710Z","addedBy":"578995e40f97960100d5535a","type":"Hat","season":"Summer","cost":35,"desc":"Nat's Hat","gender":"Male","SKU":"012","name":"Natalies Hat","sizes":[{"L":"10","S":"10"}],"__v":6,"media":[{"imageUrlHash":{"undefined":"https://s3-us-west-2.amazonaws.com/makermeeks/images/27d0a561-a2e6-41d5-a463-a57c507dc300.png","-thumb2":"https://s3-us-west-2.amazonaws.com/makermeeks/images/27d0a561-a2e6-41d5-a463-a57c507dc300-thumb2.png","-thumb1":"https://s3-us-west-2.amazonaws.com/makermeeks/images/27d0a561-a2e6-41d5-a463-a57c507dc300-thumb1.png","-small":"https://s3-us-west-2.amazonaws.com/makermeeks/images/27d0a561-a2e6-41d5-a463-a57c507dc300-small.png","-medium":"https://s3-us-west-2.amazonaws.com/makermeeks/images/27d0a561-a2e6-41d5-a463-a57c507dc300-medium.png","-large":"https://s3-us-west-2.amazonaws.com/makermeeks/images/27d0a561-a2e6-41d5-a463-a57c507dc300-large.jpg"},"name":"null","addedOn":"2016-07-18T00:36:07.381Z","isDefaultImage":false,"_id":"578c247757c74d83225f10cd"},{"imageUrlHash":{"undefined":"https://s3-us-west-2.amazonaws.com/makermeeks/images/a90c199e-0a9b-469f-9d28-7cdcf00d5723.png","-thumb2":"https://s3-us-west-2.amazonaws.com/makermeeks/images/a90c199e-0a9b-469f-9d28-7cdcf00d5723-thumb2.png","-thumb1":"https://s3-us-west-2.amazonaws.com/makermeeks/images/a90c199e-0a9b-469f-9d28-7cdcf00d5723-thumb1.png","-small":"https://s3-us-west-2.amazonaws.com/makermeeks/images/a90c199e-0a9b-469f-9d28-7cdcf00d5723-small.png","-medium":"https://s3-us-west-2.amazonaws.com/makermeeks/images/a90c199e-0a9b-469f-9d28-7cdcf00d5723-medium.png","-large":"https://s3-us-west-2.amazonaws.com/makermeeks/images/a90c199e-0a9b-469f-9d28-7cdcf00d5723-large.jpg"},"name":"null","addedOn":"2016-07-18T00:36:07.894Z","isDefaultImage":false,"_id":"578c247757c74d83225f10cc"},{"imageUrlHash":{"-large":"https://s3-us-west-2.amazonaws.com/makermeeks/images/80c597b3-3291-46bd-8fe8-50ec00ed9a58-large.jpg","-medium":"https://s3-us-west-2.amazonaws.com/makermeeks/images/80c597b3-3291-46bd-8fe8-50ec00ed9a58-medium.jpg","-small":"https://s3-us-west-2.amazonaws.com/makermeeks/images/80c597b3-3291-46bd-8fe8-50ec00ed9a58-small.jpg","-thumb1":"https://s3-us-west-2.amazonaws.com/makermeeks/images/80c597b3-3291-46bd-8fe8-50ec00ed9a58-thumb1.png","-thumb2":"https://s3-us-west-2.amazonaws.com/makermeeks/images/80c597b3-3291-46bd-8fe8-50ec00ed9a58-thumb2.jpg","undefined":"https://s3-us-west-2.amazonaws.com/makermeeks/images/80c597b3-3291-46bd-8fe8-50ec00ed9a58.jpg"},"name":"null","addedOn":"2016-07-18T00:46:25.048Z","isDefaultImage":false,"_id":"578c26e120310a2823ae7a73"}],"tags":[]},{"_id":"5789c93d0f97960100d5535d","addedOn":"2016-07-16T05:42:21.625Z","addedBy":"578995e40f97960100d5535a","type":"Shirt","season":"Summer","cost":15,"desc":"A New Product","gender":"Male","SKU":"011","name":"New Product","sizes":[{"L":"0"}],"__v":5,"media":[{"imageUrlHash":{"undefined":"https://s3-us-west-2.amazonaws.com/makermeeks/images/a8eeab91-1500-4592-a460-25a47081798c.png","-thumb2":"https://s3-us-west-2.amazonaws.com/makermeeks/images/a8eeab91-1500-4592-a460-25a47081798c-thumb2.png","-thumb1":"https://s3-us-west-2.amazonaws.com/makermeeks/images/a8eeab91-1500-4592-a460-25a47081798c-thumb1.png","-small":"https://s3-us-west-2.amazonaws.com/makermeeks/images/a8eeab91-1500-4592-a460-25a47081798c-small.png","-medium":"https://s3-us-west-2.amazonaws.com/makermeeks/images/a8eeab91-1500-4592-a460-25a47081798c-medium.png","-large":"https://s3-us-west-2.amazonaws.com/makermeeks/images/a8eeab91-1500-4592-a460-25a47081798c-large.jpg"},"name":"null","addedOn":"2016-07-18T00:43:26.131Z","isDefaultImage":false,"_id":"578c262e3aeacaba22decdc0"},{"imageUrlHash":{"undefined":"https://s3-us-west-2.amazonaws.com/makermeeks/images/564aeb30-1d91-47af-a737-623e75b7d6a8.png","-thumb2":"https://s3-us-west-2.amazonaws.com/makermeeks/images/564aeb30-1d91-47af-a737-623e75b7d6a8-thumb2.png","-thumb1":"https://s3-us-west-2.amazonaws.com/makermeeks/images/564aeb30-1d91-47af-a737-623e75b7d6a8-thumb1.png","-small":"https://s3-us-west-2.amazonaws.com/makermeeks/images/564aeb30-1d91-47af-a737-623e75b7d6a8-small.png","-medium":"https://s3-us-west-2.amazonaws.com/makermeeks/images/564aeb30-1d91-47af-a737-623e75b7d6a8-medium.png","-large":"https://s3-us-west-2.amazonaws.com/makermeeks/images/564aeb30-1d91-47af-a737-623e75b7d6a8-large.jpg"},"name":"null","addedOn":"2016-07-18T00:43:26.398Z","isDefaultImage":false,"_id":"578c262e3aeacaba22decdbf"},{"imageUrlHash":{"-large":"https://s3-us-west-2.amazonaws.com/makermeeks/images/65b55ed5-0d04-40b7-a001-7997ceafd58b-large.jpg","-medium":"https://s3-us-west-2.amazonaws.com/makermeeks/images/65b55ed5-0d04-40b7-a001-7997ceafd58b-medium.jpg","-small":"https://s3-us-west-2.amazonaws.com/makermeeks/images/65b55ed5-0d04-40b7-a001-7997ceafd58b-small.jpg","-thumb1":"https://s3-us-west-2.amazonaws.com/makermeeks/images/65b55ed5-0d04-40b7-a001-7997ceafd58b-thumb1.png","-thumb2":"https://s3-us-west-2.amazonaws.com/makermeeks/images/65b55ed5-0d04-40b7-a001-7997ceafd58b-thumb2.jpg","undefined":"https://s3-us-west-2.amazonaws.com/makermeeks/images/65b55ed5-0d04-40b7-a001-7997ceafd58b.jpg"},"name":"null","addedOn":"2016-07-18T00:46:12.156Z","isDefaultImage":false,"_id":"578c26d420310a2823ae7a72"}],"tags":[]},{"_id":"57941f72b3b8600834a2f4fc","addedOn":"2016-07-24T01:52:50.678Z","addedBy":"578995e40f97960100d5535a","type":"b","season":"Winter","cost":35,"desc":"Pamala","gender":"Female","SKU":"014","sizes":{"L":"10","M":"10","S":"20"},"name":"Pam Pam Pam Pam Pam ","__v":0,"stripe_SKUs":{"L":"sku_8sMSu7FFC6qWPu","M":"sku_8sMSkdpuwIakBA","S":"sku_8sMScJnvGMjdgs"},"stripe_id":"prod_8sMSCbHZmYyoQm","media":[],"tags":[]},{"_id":"5789c74d0f97960100d5535c","addedOn":"2016-07-16T05:34:05.624Z","addedBy":"578995e40f97960100d5535a","type":"pink hat","season":"Summer","cost":35,"desc":"A pink hat","SKU":"10","name":"Pink Hat","sizes":[{"L":"10","S":"10"}],"__v":1,"stripe_id":"prod_8pQHL5kjOXZroy","media":[{"imageUrlHash":{"-large":"https://s3-us-west-2.amazonaws.com/makermeeks/images/af8c4c06-2607-4179-8863-ea13f022c6cc-large.jpg","-medium":"https://s3-us-west-2.amazonaws.com/makermeeks/images/af8c4c06-2607-4179-8863-ea13f022c6cc-medium.jpg","-small":"https://s3-us-west-2.amazonaws.com/makermeeks/images/af8c4c06-2607-4179-8863-ea13f022c6cc-small.jpg","-thumb1":"https://s3-us-west-2.amazonaws.com/makermeeks/images/af8c4c06-2607-4179-8863-ea13f022c6cc-thumb1.png","-thumb2":"https://s3-us-west-2.amazonaws.com/makermeeks/images/af8c4c06-2607-4179-8863-ea13f022c6cc-thumb2.jpg","default":"https://s3-us-west-2.amazonaws.com/makermeeks/images/af8c4c06-2607-4179-8863-ea13f022c6cc.jpg"},"name":"null","addedOn":"2016-07-18T00:54:51.225Z","isDefaultImage":false,"_id":"578c28dbbf8b2aab236f9731"}],"tags":["That' a lit tag"]},{"_id":"57735d00a3c9e08a0cad4a03","addedOn":"2016-06-29T05:30:40.855Z","addedBy":"576f600c9455b5d53497f318","type":"fag","season":"Autumn","cost":90,"desc":"Ryless is a bitch ass nigga","gender":"Female","SKU":"1","sizes":{"XL":"10","L":"90"},"name":"Rylees a Bitch Ass","__v":2,"stripe_SKUs":{"XL":"sku_8j3Lfgl0GqHDd1","L":"sku_8j3Ln0aDHoA4bA"},"stripe_id":"prod_8j3LFWCxG1W9Fv","media":[{"imageUrlHash":{"-large":"https://s3-us-west-2.amazonaws.com/makermeeks/images/fa557e7a-e530-416f-b812-4209ad3851d4-large.jpg","-medium":"https://s3-us-west-2.amazonaws.com/makermeeks/images/fa557e7a-e530-416f-b812-4209ad3851d4-medium.jpg","-small":"https://s3-us-west-2.amazonaws.com/makermeeks/images/fa557e7a-e530-416f-b812-4209ad3851d4-small.jpg","-thumb1":"https://s3-us-west-2.amazonaws.com/makermeeks/images/fa557e7a-e530-416f-b812-4209ad3851d4-thumb1.png","-thumb2":"https://s3-us-west-2.amazonaws.com/makermeeks/images/fa557e7a-e530-416f-b812-4209ad3851d4-thumb2.jpg","default":"https://s3-us-west-2.amazonaws.com/makermeeks/images/fa557e7a-e530-416f-b812-4209ad3851d4.jpg"},"name":"null","addedOn":"2016-07-18T02:38:06.169Z","isDefaultImage":false,"_id":"578c410e372fd9fc26283e98"}],"tags":[]},{"_id":"577975150c8dc1f875c8e1f0","addedOn":"2016-07-03T20:27:01.192Z","addedBy":"576f600c9455b5d53497f318","type":"Shirt","season":"Summer","cost":35,"desc":"Sam's Sick Item","gender":"Male","SKU":"03","sizes":{"L":"10","M":"10"},"name":"Sam's Item","__v":5,"stripe_SKUs":{"L":"sku_8kmht8qKvTNLP4","M":"sku_8kmhxaPbsGrU7F"},"stripe_id":"prod_8kmh0OXS4Z9aod","media":[{"imageUrlHash":{"-large":"https://s3-us-west-2.amazonaws.com/makermeeks/images/65df7560-6d4f-4a13-95a6-0fcbc09e8d07-large.jpg","-medium":"https://s3-us-west-2.amazonaws.com/makermeeks/images/65df7560-6d4f-4a13-95a6-0fcbc09e8d07-medium.png","-small":"https://s3-us-west-2.amazonaws.com/makermeeks/images/65df7560-6d4f-4a13-95a6-0fcbc09e8d07-small.png","-thumb1":"https://s3-us-west-2.amazonaws.com/makermeeks/images/65df7560-6d4f-4a13-95a6-0fcbc09e8d07-thumb1.png","-thumb2":"https://s3-us-west-2.amazonaws.com/makermeeks/images/65df7560-6d4f-4a13-95a6-0fcbc09e8d07-thumb2.png","undefined":"https://s3-us-west-2.amazonaws.com/makermeeks/images/65df7560-6d4f-4a13-95a6-0fcbc09e8d07.png"},"name":"null","addedOn":"2016-07-18T00:29:41.104Z","isDefaultImage":false,"_id":"578c22f58c962d3b21dad464"}],"tags":[]},{"_id":"57941dbf4dd7bf362d36fc98","addedOn":"2016-07-24T01:45:35.389Z","addedBy":"578995e40f97960100d5535a","type":"Knitted Scarf","season":"Summer","cost":35,"desc":"Weiner Sauce","gender":"Male","SKU":"012","sizes":[{"L":"10","S":"10"}],"name":"Winer lamba","__v":0,"media":[],"tags":[]}]), '_id'),
 				stripeAccount: {},
 				order: {
 					card: null,
@@ -27031,7 +27085,7 @@
 	});
 
 /***/ },
-/* 235 */
+/* 236 */
 /***/ function(module, exports, __webpack_require__) {
 
 	(function webpackUniversalModuleDefinition(root, factory) {
@@ -48410,7 +48464,7 @@
 	//# sourceMappingURL=react-router-transition.map
 
 /***/ },
-/* 236 */
+/* 237 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -48425,7 +48479,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _requests = __webpack_require__(237);
+	var _requests = __webpack_require__(238);
 
 	var _requests2 = _interopRequireDefault(_requests);
 
@@ -48603,10 +48657,10 @@
 	});
 
 /***/ },
-/* 237 */
+/* 238 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = __webpack_require__(238);
+	var $ = __webpack_require__(239);
 	window.jQuery = $;
 	window.$ = $;
 	$.ajaxPrefilter(function(options) {
@@ -49042,7 +49096,7 @@
 	module.exports = exports = Requests;
 
 /***/ },
-/* 238 */
+/* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*eslint-disable no-unused-vars*/
@@ -59122,7 +59176,7 @@
 
 
 /***/ },
-/* 239 */
+/* 240 */
 /***/ function(module, exports) {
 
 	const Util = {
@@ -59138,7 +59192,7 @@
 	module.exports = exports = Util;
 
 /***/ },
-/* 240 */
+/* 241 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -59151,7 +59205,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _ProductContainer = __webpack_require__(241);
+	var _ProductContainer = __webpack_require__(242);
 
 	var _ProductContainer2 = _interopRequireDefault(_ProductContainer);
 
@@ -59188,7 +59242,7 @@
 	});
 
 /***/ },
-/* 241 */
+/* 242 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -59203,11 +59257,11 @@
 
 	var _reactRouter = __webpack_require__(172);
 
-	var _requests = __webpack_require__(237);
+	var _requests = __webpack_require__(238);
 
 	var _requests2 = _interopRequireDefault(_requests);
 
-	var _utility = __webpack_require__(239);
+	var _utility = __webpack_require__(240);
 
 	var _utility2 = _interopRequireDefault(_utility);
 
@@ -59258,7 +59312,7 @@
 	});
 
 /***/ },
-/* 242 */
+/* 243 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -59271,7 +59325,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _requests = __webpack_require__(237);
+	var _requests = __webpack_require__(238);
 
 	var _requests2 = _interopRequireDefault(_requests);
 
@@ -59299,7 +59353,7 @@
 	});
 
 /***/ },
-/* 243 */
+/* 244 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -59312,23 +59366,23 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _requests = __webpack_require__(237);
+	var _requests = __webpack_require__(238);
 
 	var _requests2 = _interopRequireDefault(_requests);
 
-	var _ShippingAddress = __webpack_require__(244);
+	var _ShippingAddress = __webpack_require__(245);
 
 	var _ShippingAddress2 = _interopRequireDefault(_ShippingAddress);
 
-	var _StripeCardManager = __webpack_require__(245);
+	var _StripeCardManager = __webpack_require__(246);
 
 	var _StripeCardManager2 = _interopRequireDefault(_StripeCardManager);
 
-	var _OrderHistory = __webpack_require__(246);
+	var _OrderHistory = __webpack_require__(247);
 
 	var _OrderHistory2 = _interopRequireDefault(_OrderHistory);
 
-	var _CartSmall = __webpack_require__(247);
+	var _CartSmall = __webpack_require__(248);
 
 	var _CartSmall2 = _interopRequireDefault(_CartSmall);
 
@@ -59502,7 +59556,7 @@
 	});
 
 /***/ },
-/* 244 */
+/* 245 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -59517,11 +59571,11 @@
 
 	var _reactRouter = __webpack_require__(172);
 
-	var _requests = __webpack_require__(237);
+	var _requests = __webpack_require__(238);
 
 	var _requests2 = _interopRequireDefault(_requests);
 
-	var _utility = __webpack_require__(239);
+	var _utility = __webpack_require__(240);
 
 	var _utility2 = _interopRequireDefault(_utility);
 
@@ -59816,7 +59870,7 @@
 	});
 
 /***/ },
-/* 245 */
+/* 246 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -59831,11 +59885,11 @@
 
 	var _reactRouter = __webpack_require__(172);
 
-	var _requests = __webpack_require__(237);
+	var _requests = __webpack_require__(238);
 
 	var _requests2 = _interopRequireDefault(_requests);
 
-	var _utility = __webpack_require__(239);
+	var _utility = __webpack_require__(240);
 
 	var _utility2 = _interopRequireDefault(_utility);
 
@@ -60020,7 +60074,7 @@
 	});
 
 /***/ },
-/* 246 */
+/* 247 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -60035,11 +60089,11 @@
 
 	var _reactRouter = __webpack_require__(172);
 
-	var _requests = __webpack_require__(237);
+	var _requests = __webpack_require__(238);
 
 	var _requests2 = _interopRequireDefault(_requests);
 
-	var _utility = __webpack_require__(239);
+	var _utility = __webpack_require__(240);
 
 	var _utility2 = _interopRequireDefault(_utility);
 
@@ -60112,7 +60166,7 @@
 	});
 
 /***/ },
-/* 247 */
+/* 248 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -60127,11 +60181,11 @@
 
 	var _reactRouter = __webpack_require__(172);
 
-	var _requests = __webpack_require__(237);
+	var _requests = __webpack_require__(238);
 
 	var _requests2 = _interopRequireDefault(_requests);
 
-	var _utility = __webpack_require__(239);
+	var _utility = __webpack_require__(240);
 
 	var _utility2 = _interopRequireDefault(_utility);
 
@@ -60250,7 +60304,7 @@
 	});
 
 /***/ },
-/* 248 */
+/* 249 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -60263,23 +60317,23 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _requests = __webpack_require__(237);
+	var _requests = __webpack_require__(238);
 
 	var _requests2 = _interopRequireDefault(_requests);
 
-	var _CartSmall = __webpack_require__(247);
+	var _CartSmall = __webpack_require__(248);
 
 	var _CartSmall2 = _interopRequireDefault(_CartSmall);
 
-	var _StripeCardManager = __webpack_require__(245);
+	var _StripeCardManager = __webpack_require__(246);
 
 	var _StripeCardManager2 = _interopRequireDefault(_StripeCardManager);
 
-	var _ShippingAddress = __webpack_require__(244);
+	var _ShippingAddress = __webpack_require__(245);
 
 	var _ShippingAddress2 = _interopRequireDefault(_ShippingAddress);
 
-	var _Checkout = __webpack_require__(249);
+	var _Checkout = __webpack_require__(250);
 
 	var _Checkout2 = _interopRequireDefault(_Checkout);
 
@@ -60417,7 +60471,7 @@
 	});
 
 /***/ },
-/* 249 */
+/* 250 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -60432,11 +60486,11 @@
 
 	var _reactRouter = __webpack_require__(172);
 
-	var _requests = __webpack_require__(237);
+	var _requests = __webpack_require__(238);
 
 	var _requests2 = _interopRequireDefault(_requests);
 
-	var _utility = __webpack_require__(239);
+	var _utility = __webpack_require__(240);
 
 	var _utility2 = _interopRequireDefault(_utility);
 
@@ -60523,7 +60577,7 @@
 	});
 
 /***/ },
-/* 250 */
+/* 251 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -60536,15 +60590,15 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _requests = __webpack_require__(237);
+	var _requests = __webpack_require__(238);
 
 	var _requests2 = _interopRequireDefault(_requests);
 
-	var _utility = __webpack_require__(239);
+	var _utility = __webpack_require__(240);
 
 	var _utility2 = _interopRequireDefault(_utility);
 
-	var _SlideShow = __webpack_require__(251);
+	var _SlideShow = __webpack_require__(252);
 
 	var _SlideShow2 = _interopRequireDefault(_SlideShow);
 
@@ -60702,7 +60756,7 @@
 	});
 
 /***/ },
-/* 251 */
+/* 252 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -60717,11 +60771,11 @@
 
 	var _reactRouter = __webpack_require__(172);
 
-	var _requests = __webpack_require__(237);
+	var _requests = __webpack_require__(238);
 
 	var _requests2 = _interopRequireDefault(_requests);
 
-	var _utility = __webpack_require__(239);
+	var _utility = __webpack_require__(240);
 
 	var _utility2 = _interopRequireDefault(_utility);
 
@@ -60836,7 +60890,7 @@
 	});
 
 /***/ },
-/* 252 */
+/* 253 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -60849,15 +60903,15 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _requests = __webpack_require__(237);
+	var _requests = __webpack_require__(238);
 
 	var _requests2 = _interopRequireDefault(_requests);
 
-	var _utility = __webpack_require__(239);
+	var _utility = __webpack_require__(240);
 
 	var _utility2 = _interopRequireDefault(_utility);
 
-	var _ProductContainer = __webpack_require__(241);
+	var _ProductContainer = __webpack_require__(242);
 
 	var _ProductContainer2 = _interopRequireDefault(_ProductContainer);
 
@@ -60913,7 +60967,7 @@
 	});
 
 /***/ },
-/* 253 */
+/* 254 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -60928,19 +60982,19 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactDropzone = __webpack_require__(254);
+	var _reactDropzone = __webpack_require__(255);
 
 	var _reactDropzone2 = _interopRequireDefault(_reactDropzone);
 
-	var _SlideShow = __webpack_require__(251);
+	var _SlideShow = __webpack_require__(252);
 
 	var _SlideShow2 = _interopRequireDefault(_SlideShow);
 
-	var _requests = __webpack_require__(237);
+	var _requests = __webpack_require__(238);
 
 	var _requests2 = _interopRequireDefault(_requests);
 
-	var _utility = __webpack_require__(239);
+	var _utility = __webpack_require__(240);
 
 	var _utility2 = _interopRequireDefault(_utility);
 
@@ -61415,7 +61469,7 @@
 	});
 
 /***/ },
-/* 254 */
+/* 255 */
 /***/ function(module, exports, __webpack_require__) {
 
 	(function webpackUniversalModuleDefinition(root, factory) {
@@ -61813,4 +61867,17 @@
 	//# sourceMappingURL=index.js.map
 
 /***/ }
-/******/ ])()</script></html>
+/******/ ])()</script></body>
+	
+	<!-- <script src="bundle.js"></script> -->
+	<!-- <link rel="stylesheet" href="styles/styles.min.css"> -->
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+	<script src="https://js.stripe.com/v2/"></script>
+	    <!-- Analytics.js -->
+    <script type="text/javascript">
+    !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
+      analytics.load("s4noKFWcS7z1Zpevty1nG6S6gnr1NkRF");
+      }}();
+      </script>
+	<script>Stripe.setPublishableKey('pk_test_fkQKoVu2v1k17463CJIJvFU8');</script>
+	</html>
