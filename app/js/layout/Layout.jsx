@@ -17,9 +17,9 @@ import UtilityMixin from './../mixins/utility.js';
 	    return {
 	    	user: null,
 	    	cart: [],
-	    	products: [],
+	    	products: PRODUCTS,
 	    	userShipping: [],
-	    	productsHash: {},
+	    	productsHash: this.createHash(PRODUCTS, '_id'),
 	    	stripeAccount: {},
 	    	order: {
 	    		card: null,
@@ -41,12 +41,11 @@ import UtilityMixin from './../mixins/utility.js';
 
 	},
 	loadAll: function (){
-		var promiseHolder = [this.getUserInfo(), this.getUserCart(), this.getAllProducts(), this.getAllUserShippingAddresses(), this.getStripeAccount()];
+		var promiseHolder = [this.getUserInfo(), this.getUserCart(), this.getAllUserShippingAddresses(), this.getStripeAccount()];
 
 		Promise.all(promiseHolder)
 		.then(() => {
 			console.log('Complete');
-			console.log(this.makeCartTotal());
 		}, (err) => {
 			console.log(err);
 		});
@@ -137,6 +136,26 @@ import UtilityMixin from './../mixins/utility.js';
 						resolve();
 					});
 				}
+			});
+		});
+	},
+	getAllUserOrderHistory: function() {
+		return new Promise((resolve, reject) => {
+			this.getAllUserOrderHistoryRequest()
+			.then((data) => {
+				if(data && data.length) {
+					this.setState({
+						allUserOrderHistory: data
+					}, () => {
+						resolve();
+					});
+				} else {
+					console.log('No Data');
+					resolve();
+				}
+			})
+			.catch((err) => {
+				console.log(err);
 			});
 		});
 	},

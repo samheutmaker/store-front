@@ -1,6 +1,7 @@
 import React from 'react';
-import RequestMixin from './../mixins/requests.js';
-import UtilityMixin from './../mixins/utility.js';
+import RequestMixin from './../mixins/requests.js'
+import UtilityMixin from './../mixins/utility.js'
+import SlideShow from './../components/SlideShow.jsx'
 
 export default React.createClass({
 	displayName: 'ProductDetailPage',
@@ -76,6 +77,21 @@ export default React.createClass({
 			});
 		}
 	},
+	renderSlideShow: function() {
+		if(this.state.activeItem.media && this.state.activeItem.media.length) {
+			return (
+				<SlideShow
+				  page={this.props.page}
+				  mediaArray={this.state.activeItem.media}
+				  containerStyles={{
+				  	width: '100%',
+				  	height: '80%',
+				  	position: 'relative'
+				  }}
+				/>
+			);
+		}
+	},
 	render: function () {
 		if(this.state.activeItem) {
 			console.log(this.state.activeItem);
@@ -83,7 +99,7 @@ export default React.createClass({
 				<div className="content-container">
 					<div className="max-width-container">
 						<div className="detail-slide-show">
-							
+							{this.renderSlideShow()}
 						</div>
 						<div className="detail-info">
 							<div className="name">

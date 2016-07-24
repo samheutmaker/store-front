@@ -31,7 +31,7 @@ import UtilityMixin from './../mixins/utility.js';
 
 		if(this.props.page && this.props.page.state.user && this.props.page.state.cart && this.props.page.state.cart.length) {
 			return (
-				<div className="cart-container">
+				<div className="square-container">
 					{this.props.page.state.cart.map((item, itemIndex) => {
 						return (
 							this.renderCartItem(item)
@@ -41,7 +41,7 @@ import UtilityMixin from './../mixins/utility.js';
 			);
 		} else {
 			return (
-				<div className="cart-container">
+				<div className="square-container">
 					You have no items in your cart!
 				</div>
 			);
@@ -49,9 +49,17 @@ import UtilityMixin from './../mixins/utility.js';
 		
 	},
 	renderCartItem: function(item) {
+
+		var imageUrl = (item.item.media.length) ? item.item.media[0].imageUrlHash['-small'] : null;
+
 		return (
 			<div key={item._id} className="cart-item">
-				<div className="cart-item-image"></div>
+				<div className="cart-item-image">
+					<img src={imageUrl} 
+						 height="100px" 
+						 width="100px"
+						 style={(imageUrl) ? {} : {display: 'none'}}/>
+				</div>
 				<div className="cart-item-name">{item.item.name}</div>
 				<Link to={'/product/' + item.item._id}>
 					<div className="click-link">View Item</div>

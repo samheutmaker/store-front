@@ -1,13 +1,18 @@
+const fs = require('fs');
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const webpack = require('webpack-stream');
 const webpackEnv = require('webpack-env');
 const concat = require('gulp-concat');
 const babel = require('babel-core')
+const webpackConfig = require(__dirname + '/util/WebPackReadConfig')();
+
+
+
+var products = JSON.parse(fs.readFileSync('./package.json'));
 
 const files = {
   all: [__dirname + '/app/**/*.html',
-    __dirname + '/app/*.html',
     __dirname + '/app/js/*.jsx',
     __dirname + '/app/js/**/*.jsx',
     __dirname + '/app/js/**/**/*.jsx'
@@ -31,7 +36,7 @@ gulp.task('sass:watch', function() {
 });
 
 gulp.task('html:dev', function() {
-  gulp.src([__dirname + '/app/*.html', __dirname + '/app/**/*.html'])
+  gulp.src([__dirname + '/app/**/*.html'])
     .pipe(gulp.dest(__dirname + '/build'))
 })
 
@@ -47,7 +52,7 @@ gulp.task('webpack:dev', function() {
       output: {
         filename: 'bundle.js'
       },
-      plugins: [webpackEnv],
+      plugins: [webpackEnv, webpackConfig],
       module: {
         loaders: [{
           test: /\.jsx$/,
@@ -62,6 +67,7 @@ gulp.task('webpack:dev', function() {
     .on('error', swallowError)
     .pipe(gulp.dest(__dirname + '/build/'))
 });
+
 
 gulp.task('dev:watch', function() {
   gulp.watch(files.all, ['webpack:dev', 'html:dev', 'assets:dev'])

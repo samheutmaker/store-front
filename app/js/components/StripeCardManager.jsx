@@ -17,6 +17,7 @@ import UtilityMixin from './../mixins/utility.js';
 	    };
 	},
 	setSection: function(nextSection) {
+		console.log('joit');
 		if(nextSection && typeof nextSection == 'string') {
 			this.setState({
 				section: nextSection
@@ -62,30 +63,36 @@ import UtilityMixin from './../mixins/utility.js';
 		}
 	},
 	renderCurrentCards: function() {
-		if(this.props.page.state.stripeAccount.sources && this.state.section == 'CARD_OVERVIEW'){
-			return (
-				<div className="new-card-form-container">
+		if(this.state.section == 'CARD_OVERVIEW'){ 
+			if(this.props.page.state.stripeAccount.sources && this.props.page.state.stripeAccount.sources.data.length) {
+				return (
+						<div className="current-cards-container">
+							{this.props.page.state.stripeAccount.sources.data.map((card, cardIndex) => {
+								return (
+									<div key={card.last4 + cardIndex} 
+										 className="card-item" 
+										 style={(this.props.page.state.order.card == card) ? {backgroundColor: 'lightblue'} :{}}
+										 onClick={() => {
+											this.setSelectedCard(card)
+										}}>
+										<div className="card-last-4">
+											{card.last4}
+										</div>
+										<div className="card-type">
+											{card.brand.toUpperCase()}
+										</div>
+									</div>
+								);
+							})}
+						</div>
+				);
+			} else {
+				return (
 					<div className="current-cards-container">
-						{this.props.page.state.stripeAccount.sources.data.map((card, cardIndex) => {
-							return (
-								<div key={card.last4} 
-									 className="card-item" 
-									 style={(this.props.page.state.order.card == card) ? {backgroundColor: 'lightblue'} :{}}
-									 onClick={() => {
-										this.setSelectedCard(card)
-									}}>
-									<div className="card-last-4">
-										{card.last4}
-									</div>
-									<div className="card-type">
-										{card.brand.toUpperCase()}
-									</div>
-								</div>
-							);
-						})}
+						No Cards. Add a card!
 					</div>
-				</div>
-			);
+				);
+			}
 		}
 	},
 	renderNewCreditCardForm: function() {
@@ -108,24 +115,18 @@ import UtilityMixin from './../mixins/utility.js';
 		if(this.props.page) {
 			return (
 				<div className="card-manager-container">
-				<div>
-					<div className="small-button"
-						 style={{display: 'inline-block'}} 
-					     onClick={() => {
-							this.setSection('NEW_CARD')
-						}}>
-						Add New
+				<div className="address-controls-container">
+					<div className="button" style={{margin: '10px 10px', float: 'left'}} onClick={this.setSection.bind(null, 'CARD_OVERVIEW')}>
+						View
 					</div>
-					<div className="small-button" 
-						 style={{display: 'inline-block'}} 
-					     onClick={() => {
-							this.setSection('CARD_OVERVIEW')
-						}}>
-						Cards
+					<div className="button" style={{margin: '10px 10px', float: 'left'}} onClick={this.setSection.bind(null, 'NEW_CARD')}>
+						Add
 					</div>
 				</div>
+				<div>
 					{this.renderNewCreditCardForm()}
 					{this.renderCurrentCards()}
+				</div>
 				</div>
 			);
 		} else {

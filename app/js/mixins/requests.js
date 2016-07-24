@@ -147,6 +147,25 @@ const Requests = {
 			}
 		});
 	},
+	getAllUserOrderHistoryRequest: function() {
+		return new Promise((resolve, reject) => {
+			if(localStorage.getItem('token')) {
+				var url = BASE_URI + '/orders';
+				$.ajax({
+					type: 'GET',
+					url: url,
+					success: (data) => {
+						resolve(data);
+					},
+					error: (err) => {
+						reject(err);
+					}
+				});
+			} else {
+				resolve('Missing Params');
+			}
+		});
+	},
 	getAllUserShippingAddressesRequest: function(){
 		return new Promise((resolve, reject) => {
 			if (localStorage.getItem('token')) {
@@ -382,11 +401,11 @@ const Requests = {
 			}
 		});
 	},
-	addProductMediaRequest: function(postData, product_id) {
+	addProductMediaRequest: function(postData, product_id, fileCount) {
 		return new Promise((resolve, reject) => {
 			if ( postData && product_id && localStorage.getItem('token')) {
 
-				var url = BASE_URI + '/products/' + product_id + '/media/add';
+				var url = BASE_URI + '/products/' + product_id + '/media/add/' + fileCount;
 
 				$.ajax({
 					type: 'PUT',

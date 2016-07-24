@@ -87,3 +87,14 @@
         cursor: pointer
     }
 }
+
+
+.width {
+    position: relative;
+    height: 90%;
+    display: inline-block
+}
+
+.width.50-percent{
+    width: 50% !important;
+}

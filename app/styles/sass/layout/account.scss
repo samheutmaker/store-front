@@ -1,4 +1,4 @@
-.cart-container {
+.square-container {
     height: 600px;
     position: relative;
     width: 600px;
@@ -62,5 +62,63 @@
         font-weight: 400;
         display: inline-block;
         margin-left: 20px;
+    }
+}
+
+.account-section-container{
+    position: relative;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    width: calc(100% - 401px);
+    float: left;
+}
+
+
+.content-container {
+    position: absolute;
+    top: 60px;
+    height: calc(100% - 60px);
+    width: 100%;
+    left: 0%;
+    margin: 0 auto;
+
+    .account-nav-container {
+        position: relative;
+        left: 0px;
+        width: 400px;
+        height: 100%;
+        padding: 0px;
+        margin: 0px;
+        float: left;
+        border-right: 1px solid rgba(0, 0, 0, 0.4);
+        background-color: #3C5E73;
+
+        .account-nav-list {
+            list-style: none;
+            height: auto;
+            position: relative;
+            margin: 0px;
+            padding: 0px;
+            float: right;
+            margin-right: 20px;
+
+            .account-button {
+                position: relative;
+                width: 200px;
+                margin: 10px;
+                height: calc(100% - 13px);
+                padding: 13px 0px 0px 0px;
+                text-align: right;
+                font-weight: 600;
+                color: white;
+                transition: color 0.2s;
+
+                &:hover{
+                    color: #CDE3F9;
+                }
+
+            }
+        }
     }
 }

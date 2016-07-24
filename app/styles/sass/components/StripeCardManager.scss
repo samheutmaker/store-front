@@ -3,56 +3,53 @@
     height: auto;
     margin-top: 20px;
     float: left;
+}
 
-    .new-card-form-container {
-        width: 500px;
-        height: 700px;
-        margin: 0 auto;
-        border: 1px solid rgba(0, 0, 0, 0.15);
+.new-card-form-container {
+    margin: 0 auto;
+    position: relative;
+    top: 70px;
 
-        .new-card-form {
-            position: relative;
-            width: 100%;
-            height: 100%;
+    .new-card-form {
+        position: relative;
+        width: 100%;
+        height: 100%;
 
-            label {
-                display: inline-block;
-            }
-
-            .new-card-input {
-                position: relative;
-                margin: 0 auto;
-                width: 200px;
-                border-radius: 5px;
-                width: 125px;
-                height: 0.8rem;
-                padding: 5px;
-                font-size: 0.8rem;
-                font-weight: 500;
-            }
+        label {
+            display: inline-block;
         }
 
+        .new-card-input {
+            position: relative;
+            margin: 0 auto;
+            border-radius: 5px;
+            width: 200px;
+            height: 30px;
+            padding: 5px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+    }
+}
 
-        .current-cards-container{
-        	position: relative;
-			height: 400px;
-			width: 100%;
-		
-			.card-item{
-				height: 70px;
-				width: 120px;
-				border: 1px solid rgba(0,0,0,0.15);
-				text-align: center;
-				padding-top: 30px;
-				float: left;
-				margin: 20px;
+.current-cards-container {
+    position: relative;
+    height: 400px;
+    width: 100%;
+    top: 100px;
 
-				&:hover{
-					cursor: pointer;
-				}
-			}
+    .card-item {
+        height: 50px;
+        width: 80px;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        text-align: center;
+        padding-top: 15px;
+        float: left;
+        border-radius: 5px;
+        margin: 20px;
 
-
+        &:hover {
+            cursor: pointer;
         }
     }
 }

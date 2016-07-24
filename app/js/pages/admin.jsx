@@ -1,5 +1,8 @@
 import React from 'react'
 import Dropzone from 'react-dropzone'
+
+import SlideShow from './../components/SlideShow.jsx'
+
 import RequestMixin from './../mixins/requests.js'
 import UtilityMixin from './../mixins/utility.js'
 
@@ -139,13 +142,11 @@ export default React.createClass({
 	},
 	renderCurrentProducts: function() {
 		if(this.state.section == 'ADMIN_PRODUCTS' ) {
-
 			if(this.props.page.state.products && this.props.page.state.products.length) {
 				return (
 					<div className="current-products-container">
 						<div className="inside">
 							{this.props.page.state.products.map((product, productIndex) => {
-								console.log(product);
 								return (
 									<div className="current-product" key={productIndex}>
 										{product.name}
@@ -238,6 +239,7 @@ export default React.createClass({
 					
 								{this.renderActiveProductSizesContainer(this.state.activeProduct.sizes)}
 								
+								
 						</div>
 						<div style={{position: 'absolute', top: '450px', left: '250px'}}>
 									<div className="button" onClick={() => {
@@ -267,15 +269,27 @@ export default React.createClass({
 			formData.append(fileIndex, file);
 		});
 
-      	this.addProductMediaRequest(formData, this.state.activeProduct._id)
+      	this.addProductMediaRequest(formData, this.state.activeProduct._id, files.length)
       	.then((res) => {
       		console.log(res);
-      	})
+      	});
     },
     onOpenClick: function () {
       this.refs.dropzone.open();
     },
-	renderActiveProductMediaContainer: function() {
+    renderActiveProductMediaContainer: function() {
+    	var media = this.state.activeProduct.media;
+
+    	if(media && media.length) {
+	    	return (
+	    		<SlideShow 
+	    			page={this.props.page}
+	    			mediaArray={media}
+	    		/>
+	    	);
+    	}
+    },
+	renderAddProductMediaContainer: function() {
 			return (
 				<div className="add-images-container">
 					<Dropzone ref="dropzone" onDrop={this.onDrop}>
@@ -367,7 +381,12 @@ export default React.createClass({
 				<div className="content-container">
 					{this.renderAdminNavigation()}
 					{this.renderCurrentProducts()}
-					{this.renderActiveProduct()}
+					<div className="50-percent width">
+						{this.renderActiveProduct()}
+					</div>
+					<div className="width 50-percent">
+						{this.renderActiveProductMediaContainer()}
+					</div>
 					{this.renderOrders()}
 				</div>
 			);

@@ -77,16 +77,18 @@ export default React.createClass({
 					<h2>
 						Checkout Payment
 					</h2>
-					<StripeCardManager
-						page={this.props.page}
-					/>
-					<div style={{width: '50%', float: 'left', position: 'relative', top: '19px'}}>
+					<div className="square-container" style={{width: '300px', float: 'left'}}>
+						<StripeCardManager
+							page={this.props.page}
+						/>
+					</div>
+					<div className="square-container" style={{width: '300px', float: 'left'}}>
 						<ShippingAddress
 							page={this.props.page}
 							canSetAddress={true}
 						/>
 					</div>
-					<div style={{width: '50%', float: 'left', position: 'relative', top: '19px'}}>
+					<div className="square-container" style={{width: '300px', float: 'left'}}>
 						<Checkout
 							page={this.props.page}
 						/>
