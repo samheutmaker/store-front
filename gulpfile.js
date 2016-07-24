@@ -127,7 +127,7 @@ gulp.task('dev:watch', function() {
 
 
 
-gulp.task('build:dev', ['sass:all', 'webpack:dev', 'html:dev']);
+gulp.task('build:dev', ['sass:all', 'webpack:dev', 'html:dev', 'assets:dev']);
 
 gulp.task('default', ['dev:watch', 'sass:watch']);
 

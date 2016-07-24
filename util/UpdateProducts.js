@@ -6,8 +6,6 @@ module.exports = exports = () => {
 	cron.schedule('* * * * *', function() {
 		pollForUpdatesRequest()
 			.then((products) => {
-				console.log(products);
-				console.warn('Products Updated');
 				exec('gulp webpack:dev', (error, stdout, stderr) => {
 					if (error) {
 						console.error(`exec error: ${error}`);
