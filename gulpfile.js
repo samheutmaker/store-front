@@ -34,27 +34,28 @@ gulp.task('sass:compile', function() {
 });
 
 gulp.task('sass:all', ['sass:compile'], function() {
-  fs.readFile(__dirname + '/build/styles/styles.min.css', 'utf8', function(err, allCSS) {
-    allCSS = ' <style> ' + allCSS + '</style>';
-    gulp.src(__dirname + '/app/index.html')
-      .pipe(insert.transform(function(contents, files) {
+  setTimeout(function() {
+    fs.readFile(__dirname + '/build/styles/styles.min.css', 'utf8', function(err, allCSS) {
+      allCSS = ' <style> ' + allCSS + '</style>';
 
-        var firstHalfStartIndex = 0;
-        var firstHalfEndIndex = (contents.indexOf('<style>') > 0) ? contents.indexOf('<style>') : contents.length;
+      gulp.src(__dirname + '/app/index.html')
+        .pipe(insert.transform(function(contents, files) {
 
-        var secondHalfSStartIndex = (contents.indexOf('</style>') > 0) ? contents.indexOf('</style>') + 8 : contents.length;
-        var secondHalfEndIndex = contents.length;
+          var firstHalfStartIndex = 0;
+          var firstHalfEndIndex = (contents.indexOf('<style>') > 0) ? contents.indexOf('<style>') : contents.length;
 
-        var firstHalf = contents.substr(firstHalfStartIndex, firstHalfEndIndex);
-        var secondHalf = contents.substr(secondHalfSStartIndex, secondHalfEndIndex);
+          var secondHalfSStartIndex = (contents.indexOf('</style>') > 0) ? contents.indexOf('</style>') + 8 : contents.length;
+          var secondHalfEndIndex = contents.length;
 
-        return firstHalf + allCSS + secondHalf;
-      }))
-      .pipe(gulp.dest(__dirname + '/app/'));
-  });
+          var firstHalf = contents.substr(firstHalfStartIndex, firstHalfEndIndex);
+          var secondHalf = contents.substr(secondHalfSStartIndex, secondHalfEndIndex);
+
+          return firstHalf + allCSS + secondHalf;
+        }))
+        .pipe(gulp.dest(__dirname + '/build/'));
+    });
+  }, 3000);
 });
-
-
 
 
 // Webpack
@@ -85,7 +86,7 @@ gulp.task('webpack:dev', ['webpack:bundle'], function() {
   fs.readFile(__dirname + '/build/bundle.js', 'utf8', function(err, allJS) {
 
     allJS = '<script type="text/javascript" data-name="bundle"> ' + allJS;
-    
+
     gulp.src(__dirname + '/app/index.html')
       .pipe(insert.transform(function(contents, files) {
         var firstHalf = contents.substr(0, contents.indexOf('<script type="text/javascript" data-name="bundle">'));
@@ -94,7 +95,7 @@ gulp.task('webpack:dev', ['webpack:bundle'], function() {
 
         return firstHalf + allJS  + '</script>' + secondHalf;
       }))
-      .pipe(gulp.dest(__dirname + '/build/'));
+      .pipe(gulp.dest(__dirname + '/app/'));
   });
 });
 
@@ -120,7 +121,7 @@ gulp.task('dev:watch', function() {
 
 
 
-gulp.task('build:dev', ['sass:all', 'webpack:dev', 'html:dev', 'assets:dev']);
+gulp.task('build:dev', ['webpack:dev', 'assets:dev', 'sass:all', ]);
 
 gulp.task('default', ['dev:watch', 'sass:watch']);
 
