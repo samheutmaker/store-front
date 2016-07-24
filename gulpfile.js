@@ -52,7 +52,7 @@ gulp.task('sass:all', ['sass:compile'], function() {
 
           return firstHalf + allCSS + secondHalf;
         }))
-        .pipe(gulp.dest(__dirname + '/build/'));
+        .pipe(gulp.dest(__dirname + '/app/'));
     });
   }, 3000);
 });
@@ -83,20 +83,21 @@ gulp.task('webpack:bundle', function() {
 
 
 gulp.task('webpack:dev', ['webpack:bundle'], function() {
-  fs.readFile(__dirname + '/build/bundle.js', 'utf8', function(err, allJS) {
+  setTimeout(function() {
+    fs.readFile(__dirname + '/build/bundle.js', 'utf8', function(err, allJS) {
+      allJS = '<script type="text/javascript" data-name="bundle"> ' + allJS;
 
-    allJS = '<script type="text/javascript" data-name="bundle"> ' + allJS;
+      gulp.src(__dirname + '/app/index.html')
+        .pipe(insert.transform(function(contents, files) {
+          var firstHalf = contents.substr(0, contents.indexOf('<script type="text/javascript" data-name="bundle">'));
+          var secondHalf = contents.substr(contents.indexOf('</body>'), contents.length);
+          allJS = allJS.substr(0, allJS.length - 1) + '()';
 
-    gulp.src(__dirname + '/app/index.html')
-      .pipe(insert.transform(function(contents, files) {
-        var firstHalf = contents.substr(0, contents.indexOf('<script type="text/javascript" data-name="bundle">'));
-        var secondHalf = contents.substr(contents.indexOf('</body>'), contents.length);
-        allJS = allJS.substr(0, allJS.length -1) + '()';
-
-        return firstHalf + allJS  + '</script>' + secondHalf;
-      }))
-      .pipe(gulp.dest(__dirname + '/app/'));
-  });
+          return firstHalf + allJS + '</script>' + secondHalf;
+        }))
+        .pipe(gulp.dest(__dirname + '/app/'));
+    });
+  }, 3500)
 });
 
 
@@ -105,7 +106,7 @@ gulp.task('sass:watch', function() {
   gulp.watch(files.sass, ['sass:all']);
 });
 
-gulp.task('html:dev', function() {
+gulp.task('html:dev',['webpack:dev'], function() {
   gulp.src([__dirname + '/app/**/*.html'])
     .pipe(gulp.dest(__dirname + '/build'))
 })
@@ -121,7 +122,7 @@ gulp.task('dev:watch', function() {
 
 
 
-gulp.task('build:dev', ['webpack:dev', 'assets:dev', 'sass:all', ]);
+gulp.task('build:dev', ['assets:dev', 'sass:all', 'html:dev']);
 
 gulp.task('default', ['dev:watch', 'sass:watch']);
 
