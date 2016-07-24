@@ -250,15 +250,7 @@ import UtilityMixin from './../mixins/utility.js';
 					</div>
 				</nav>
 				
-
-				  <RouteTransition
-				    pathname={this.props.location.pathname}
-				    atEnter={{ opacity: 0 }}
-				    atLeave={{ opacity: 0 }}
-				    atActive={{ opacity: 1 }}
-				  >
 				    {(this.props.children) ? React.cloneElement(this.props.children, {page: this}) : null}
-				  </RouteTransition>
 				
 			</div>
 		);

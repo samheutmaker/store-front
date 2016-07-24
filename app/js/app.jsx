@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Router, Route, DefaultRoute, hashHistory } from 'react-router';
+import { Router, Route, DefaultRoute, browserHistory } from 'react-router';
 
 import Layout from './layout/Layout.jsx';
 
@@ -16,7 +16,7 @@ import Admin from './pages/admin.jsx'
 
 
 render((
-  <Router history={hashHistory}>
+  <Router history={browserHistory}>
     <Route path='/' component={Layout}>
     	<Route path="/clothes" component={Products} />
     	<Route path='/checkout' component={Checkout} />
