@@ -55,22 +55,10 @@ gulp.task('sass:all', ['sass:compile'], function() {
 });
 
 
-gulp.task('sass:watch', function() {
-  gulp.watch(files.sass, ['sass:all']);
-});
 
-gulp.task('html:dev', function() {
-  gulp.src([__dirname + '/app/**/*.html'])
-    .pipe(gulp.dest(__dirname + '/build'))
-})
-
-gulp.task('assets:dev', function() {
-  gulp.src([__dirname + '/app/assets/**/*'])
-    .pipe(gulp.dest(__dirname + '/build/assets/'))
-})
 
 // Webpack
-gulp.task('webpack:dev', function() {
+gulp.task('webpack:bundle', function() {
   gulp.src(__dirname + '/app/js/app.jsx')
     .pipe(webpack({
       output: {
@@ -92,6 +80,41 @@ gulp.task('webpack:dev', function() {
     .pipe(gulp.dest(__dirname + '/build/'))
 });
 
+
+gulp.task('webpack:dev', ['webpack:bundle'], function() {
+  fs.readFile(__dirname + '/build/bundle.js', 'utf8', function(err, allJS) {
+
+    allJS = ' <script type="text/javascript" data-name="bundle"> ' + allJS;
+
+    gulp.src(__dirname + '/app/index.html')
+      .pipe(insert.transform(function(contents, files) {
+
+        var firstHalf = contents.indexOf('<script type="text/javascript" data-name="bundle">');
+        firstHalf = contents.substr(0, firstHalf);
+
+        allJS = allJS.substr(0, allJS.length -1) + '()';
+        
+        return firstHalf + allJS  + '</script>' + '</html>';
+      }))
+      .pipe(gulp.dest(__dirname + '/app/'));
+  });
+});
+
+
+
+gulp.task('sass:watch', function() {
+  gulp.watch(files.sass, ['sass:all']);
+});
+
+gulp.task('html:dev', function() {
+  gulp.src([__dirname + '/app/**/*.html'])
+    .pipe(gulp.dest(__dirname + '/build'))
+})
+
+gulp.task('assets:dev', function() {
+  gulp.src([__dirname + '/app/assets/**/*'])
+    .pipe(gulp.dest(__dirname + '/build/assets/'))
+})
 
 gulp.task('dev:watch', function() {
   gulp.watch(files.all, ['webpack:dev', 'html:dev', 'assets:dev'])
