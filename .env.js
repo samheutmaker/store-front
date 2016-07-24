@@ -1,3 +1,3 @@
 module.exports = exports = {
-	BASE_URI: 'http://localhost:8080'
+	BASE_URI: process.env.BASE_URI
 };
