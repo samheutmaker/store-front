@@ -85,16 +85,16 @@ gulp.task('webpack:dev', ['webpack:bundle'], function() {
   fs.readFile(__dirname + '/build/bundle.js', 'utf8', function(err, allJS) {
 
     allJS = '<script type="text/javascript" data-name="bundle"> ' + allJS;
-
+    
     gulp.src(__dirname + '/app/index.html')
       .pipe(insert.transform(function(contents, files) {
         var firstHalf = contents.substr(0, contents.indexOf('<script type="text/javascript" data-name="bundle">'));
         var secondHalf = contents.substr(contents.indexOf('</body>'), contents.length);
         allJS = allJS.substr(0, allJS.length -1) + '()';
-        
+
         return firstHalf + allJS  + '</script>' + secondHalf;
       }))
-      .pipe(gulp.dest(__dirname + '/app/'));
+      .pipe(gulp.dest(__dirname + '/build/'));
   });
 });
 

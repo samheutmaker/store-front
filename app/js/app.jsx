@@ -17,7 +17,7 @@ import Admin from './pages/admin.jsx'
 
 render((
   <Router history={browserHistory}>
-    <Route path='locahost:3000' component={Layout}>
+    <Route path='/' component={Layout}>
         <IndexRedirect to="/home" />
     	<Route path="/clothes" component={Products} />
     	<Route path='/checkout' component={Checkout} />
