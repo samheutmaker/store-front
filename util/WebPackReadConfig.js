@@ -8,7 +8,7 @@ module.exports = exports = function() {
 
 	const files = fs.readdirSync(finalFilePath, {}, 'utf8');
 	const productsArray = [];
-	files.forEach( file => {
+	files.forEach( function(file) {
 		if(file.substring(file.length - 5, file.length) == '.json')
 		productsArray.push(JSON.parse(fs.readFileSync(finalFilePath + file)));
 	});
