@@ -9,6 +9,7 @@ samheutmaker/store-front:
   PreRelease:
     - npm install
     - gulp build:dev
+    - gulp build:dev
 
   PreInstall:
     - echo "Starting PreInstall"
