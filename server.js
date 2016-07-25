@@ -4,11 +4,16 @@ const compression = require('compression');
 const UpdateProducts = require(__dirname + '/util/UpdateProducts');
 const app = express();
 
+
 // UpdateProducts();
 
 app.use(compression());
 
-app.get(['/', '/home', '/clothes', '/checkout', '/admin', '/account', '/about', '/product/:id'], function (request, response){
+app.get(['/:nothing/bundle.js', '/bundle.js'], (req, res) => {
+	res.sendFile(path.resolve(__dirname, 'build', 'bundle.js'));
+});
+
+app.get(['/', '/home', '/clothes', '/checkout', '/admin', '/account', '/about', '/product/:id', ], (request, response) => {
   response.sendFile(path.resolve(__dirname, 'build', 'index.html'))
 });
 
